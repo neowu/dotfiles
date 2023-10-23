@@ -29,6 +29,10 @@ if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
     zcompile_files $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
 fi
 
+if (( $+commands[docker] )); then
+    docker completion zsh > "$HOME/.zsh/functions/_docker"
+fi
+
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/mac.zshrc $HOME/.zsh/.zshrc

@@ -44,4 +44,4 @@ fi
 
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
-cp zsh/devcontainer.zshrc $HOME/.zsh/.zshrc
+cp zsh/debian.zshrc $HOME/.zsh/.zshrc

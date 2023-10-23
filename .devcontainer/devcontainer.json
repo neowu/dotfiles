@@ -1,7 +1,9 @@
 {
     "name": "Shell",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
-    "features": {},
+    "features": {
+        "ghcr.io/hwaien/devcontainer-features/match-host-time-zone": {}
+    },
     "runArgs": [
         "--name",
         "dotfiles-devcontainer"
