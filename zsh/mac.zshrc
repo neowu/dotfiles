@@ -7,7 +7,7 @@ fi
 
 FPATH=/opt/homebrew/share/zsh/site-functions:$ZDOTDIR/functions:$FPATH
 
-source $ZDOTDIR/plugins/lscolors/lscolors.plugin.zsh
+source $ZDOTDIR/plugins/lscolors/lscolors.plugin.zsh    # LS_COLORS is used by default.zsh
 source $ZDOTDIR/default.zsh
 
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
