@@ -1,5 +1,5 @@
 #!/bin/zsh
-mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions
+mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
 
 function zcompile_files() {
     local f
@@ -30,5 +30,5 @@ if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
 fi
 
 cp zsh/.zshenv $HOME/.zshenv
-cp zsh/*.zsh $HOME/.zsh/
+cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/mac.zshrc $HOME/.zsh/.zshrc

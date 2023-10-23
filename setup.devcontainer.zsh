@@ -1,5 +1,4 @@
 #!/usr/bin/zsh
-
 if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then
     sudo mkdir -p /etc/apt/keyrings
     wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
@@ -7,8 +6,9 @@ if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then
 fi
 
 sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza
+sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
-mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions
+mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
 
 function zcompile_files() {
     local f
@@ -39,5 +39,5 @@ if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
 fi
 
 cp zsh/.zshenv $HOME/.zshenv
-cp zsh/*.zsh $HOME/.zsh/
+cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/devcontainer.zshrc $HOME/.zsh/.zshrc

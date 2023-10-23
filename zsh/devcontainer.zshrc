@@ -23,6 +23,5 @@ alias l='eza -la --time-style iso'
 alias ll='eza -l --time-style iso'
 alias tree='eza -Ta --time-style iso'
 alias c='batcat -p'
-alias fd='fdfind'
 
 source $ZDOTDIR/.p10k.zsh

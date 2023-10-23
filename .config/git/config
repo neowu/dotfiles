@@ -1,0 +1,7 @@
+[user]
+	name = neo
+	email = <>
+[color]
+	ui = true
+[core]
+	autocrlf = false
