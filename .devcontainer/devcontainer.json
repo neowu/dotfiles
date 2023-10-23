@@ -1,0 +1,16 @@
+{
+    "name": "Shell",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {},
+    "runArgs": [
+        "--name",
+        "dotfiles-devcontainer"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    }
+}
