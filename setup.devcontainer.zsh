@@ -8,8 +8,7 @@ fi
 
 sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza
 
-mkdir -p $HOME/.zsh/plugins
-mkdir -p $HOME/.zsh/functions
+mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions
 
 function zcompile_files() {
     local f
@@ -34,5 +33,11 @@ zcompile_files $HOME/.zsh/plugins/zsh-syntax-highlighting/{zsh-syntax-highlighti
 update_plugin "zsh-users/zsh-autosuggestions"
 zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
 
+if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
+    wget https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/lscolors.sh -O $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
+    zcompile_files $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
+fi
+
 cp zsh/.zshenv $HOME/.zshenv
-cp zsh/.zshrc zsh/.p10k.zsh $HOME/.zsh/
+cp zsh/*.zsh $HOME/.zsh/
+cp zsh/devcontainer.zshrc $HOME/.zsh/.zshrc

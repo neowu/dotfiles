@@ -24,11 +24,11 @@ zcompile_files $HOME/.zsh/plugins/zsh-syntax-highlighting/{zsh-syntax-highlighti
 update_plugin "zsh-users/zsh-autosuggestions"
 zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
 
-if [[ -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
+if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
     wget https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/lscolors.sh -O $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
     zcompile_files $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
 fi
 
 cp zsh/.zshenv $HOME/.zshenv
-cp zsh/.p10k.zsh $HOME/.zsh/
+cp zsh/*.zsh $HOME/.zsh/
 cp zsh/mac.zshrc $HOME/.zsh/.zshrc
