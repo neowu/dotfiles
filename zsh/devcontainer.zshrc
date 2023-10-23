@@ -42,7 +42,7 @@ unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 
 zstyle ':completion::complete:*' use-cache on       # Use caching to make completion for cammands such as dpkg and apt usable.
-zstyle ':completion::complete:*' cache-path $ZDOTDIR/cache
+zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'    # Case-insensitive (all), partial-word, and then substring completion.
 zstyle ':completion:*' special-dirs true
@@ -51,9 +51,6 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USERNAME -o pid,user,comm -w -w"
 
 function apply_plugin() {
     local plugin="$1"

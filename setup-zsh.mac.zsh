@@ -30,4 +30,5 @@ if [[ -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
 fi
 
 cp zsh/.zshenv $HOME/.zshenv
-cp zsh/.zshrc zsh/.p10k.zsh $HOME/.zsh/
+cp zsh/.p10k.zsh $HOME/.zsh/
+cp zsh/mac.zshrc $HOME/.zsh/.zshrc
