@@ -38,6 +38,10 @@ if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
     zcompile_files $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
 fi
 
+if (( $+commands[kubectl] )); then
+    kubectl completion zsh > "$HOME/.zsh/functions/_kubectl"
+fi
+
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/devcontainer.zshrc $HOME/.zsh/.zshrc

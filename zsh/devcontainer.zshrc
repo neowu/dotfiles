@@ -17,6 +17,11 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
 source $ZDOTDIR/fzf.zsh
 
+# gcloud load "autoload -U +X bashcompinit && bashcompinit" already
+[[ ! -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] || source /usr/share/google-cloud-sdk/completion.zsh.inc
+[[ ! -e /usr/bin/terraform ]] || complete -o nospace -C /usr/bin/terraform terraform
+[[ ! -e /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
+
 # alias
 export EZA_COLORS="uu=0:gu=0:ur=34:uw=34:ue=34:ux=34:gr=36:gw=36:gx=36:tr=31:tw=31:tx=31"
 alias l='eza -la --time-style iso'
