@@ -2,11 +2,13 @@
 sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep
 sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
+if (( ! $+commands[lsd] )); then
 # lsd on debian bookworm is still 0.23 yet
-wget 'https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_arm64.deb' -O '/tmp/lsd_1.0.0_arm64.deb' &&
-    sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
+    wget 'https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_arm64.deb' -O '/tmp/lsd_1.0.0_arm64.deb' &&
+        sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
+fi
 
-mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
+mkdir -p $HOME/.zsh/plugins $HOME/.zsh/functions $HOME/.cache
 
 function zcompile_files() {
     local f

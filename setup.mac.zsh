@@ -1,5 +1,5 @@
 #!/bin/zsh
-mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
+mkdir -p $HOME/.zsh/plugins $HOME/.zsh/functions $HOME/.cache
 
 function zcompile_files() {
     local f
