@@ -26,6 +26,8 @@ alias l='lsd -l -a'
 alias ls='lsd'
 alias ll='lsd -l'
 alias lt='lsd -a --tree'
+
+export BAT_THEME='Nord'
 alias cat='batcat -p'
 
 source $ZDOTDIR/.p10k.zsh

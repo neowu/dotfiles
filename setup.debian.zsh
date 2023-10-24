@@ -4,7 +4,7 @@ sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
 # lsd on debian bookworm is still 0.23 yet
 wget 'https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_arm64.deb' -O '/tmp/lsd_1.0.0_arm64.deb' &&
-  sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
+    sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
 
 mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
 

@@ -10,14 +10,14 @@ permission:
   acl: dark_cyan
   context: cyan
 date:
-  hour-old: 2                     
-  day-old: 6
-  older: 4
+  hour-old: cyan                     
+  day-old: blue
+  older: dark_grey
 size:
   none: dark_grey
-  small: 2
-  medium: 6
-  large: 4
+  small: blue
+  medium: yellow
+  large: red
 inode:
   valid: dark_red
   invalid: 245
