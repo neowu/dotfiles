@@ -1,12 +1,10 @@
 #!/usr/bin/zsh
-if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then
-    sudo mkdir -p /etc/apt/keyrings
-    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-fi
-
-sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza
+sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep
 sudo ln -s /usr/bin/fdfind /usr/bin/fd
+
+# lsd on debian bookworm is still 0.23 yet
+wget 'https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_arm64.deb' -O '/tmp/lsd_1.0.0_arm64.deb' &&
+  sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
 
 mkdir -p $HOME/.zsh/plugins/lscolors $HOME/.zsh/functions $HOME/.cache
 
@@ -33,11 +31,6 @@ zcompile_files $HOME/.zsh/plugins/zsh-syntax-highlighting/{zsh-syntax-highlighti
 update_plugin "zsh-users/zsh-autosuggestions"
 zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
 
-if [[ ! -e $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh ]]; then
-    wget https://raw.githubusercontent.com/trapd00r/LS_COLORS/master/lscolors.sh -O $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
-    zcompile_files $HOME/.zsh/plugins/lscolors/lscolors.plugin.zsh
-fi
-
 if (( $+commands[kubectl] )); then
     kubectl completion zsh > "$HOME/.zsh/functions/_kubectl"
 fi
@@ -45,3 +38,5 @@ fi
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/debian.zshrc $HOME/.zsh/.zshrc
+# ignore .config/git, vscode devcontainer/remote handles it 
+cp -r .config/lsd ~/.config
