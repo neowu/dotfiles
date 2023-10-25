@@ -17,11 +17,14 @@ setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
 # history
 HISTSIZE=50000                      # The number of events to save in the internal history.
 SAVEHIST=10000                      # The number of events to save in the history file.
+HISTORY_IGNORE="(l|l[lt]|cd|cd ..|pwd|exit)"
 setopt EXTENDED_HISTORY             # record timestamp of command in HISTFILE
-setopt HIST_EXPIRE_DUPS_FIRST       # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt HIST_IGNORE_DUPS             # ignore duplicated commands history list
+setopt HIST_IGNORE_ALL_DUPS         # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+setopt HIST_IGNORE_DUPS             # Do not enter command lines into the history list if they are duplicates of the previous event.
 setopt HIST_IGNORE_SPACE            # ignore commands that start with space
 setopt HIST_VERIFY                  # show command with history expansion to user before running it
+setopt HIST_SAVE_NO_DUPS            # When writing out the history file, older commands that duplicate newer ones are omitted.
+setopt HIST_NO_STORE                # history commands are not registered in history
 setopt SHARE_HISTORY                # share command history data
 
 # completion

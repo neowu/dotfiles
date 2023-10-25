@@ -7,8 +7,9 @@ fi
 
 FPATH=/opt/homebrew/share/zsh/site-functions:$ZDOTDIR/functions:$FPATH
 
-source $ZDOTDIR/default.zsh
+source $ZDOTDIR/config.zsh
 
+# plugins
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
@@ -17,6 +18,7 @@ FZF_PLUGIN_BASE=/opt/homebrew/opt/fzf/shell
 source $ZDOTDIR/fzf.zsh
 
 # alias
+alias d='dirs -v'
 alias l='lsd -l -a'
 alias ls='lsd'
 alias ll='lsd -l'
@@ -24,5 +26,7 @@ alias lt='lsd -a --tree'
 
 export BAT_THEME='Nord'
 alias cat='bat -p'
+
+cdpath=($HOME/depot $HOME/projects)
 
 source $ZDOTDIR/.p10k.zsh

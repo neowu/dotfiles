@@ -31,4 +31,5 @@ fi
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/mac.zshrc $HOME/.zsh/.zshrc
-cp -r .config ~/
+# ignore .config/git, which is personal info 
+cp -r .config/lsd ~/.config
