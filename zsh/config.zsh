@@ -8,6 +8,7 @@ PS1='%B[%n@%m:%~]%# %b'
 
 # refer to https://zsh.sourceforge.io/Doc/Release/Options.html
 # directory
+setopt CD_SILENT            # Never print the working directory after a cd (whether explicit or implied with the AUTO_CD option set)
 setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
