@@ -1,12 +1,13 @@
 #!/usr/bin/zsh
-sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep
-sudo ln -s /usr/bin/fdfind /usr/bin/fd
-
-if (( ! $+commands[lsd] )); then
-# lsd on debian bookworm is still 0.23 yet
-    wget 'https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd_1.0.0_arm64.deb' -O '/tmp/lsd_1.0.0_arm64.deb' &&
-        sudo dpkg --install /tmp/lsd_1.0.0_arm64.deb && rm /tmp/lsd_1.0.0_arm64.deb
+if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then    
+    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
 fi
+
+sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza 
+sudo ln -sf /usr/bin/fdfind /usr/bin/fd
+sudo ln -sf /usr/bin/batcat /usr/bin/bat
+
 
 mkdir -p $HOME/.zsh/plugins $HOME/.zsh/functions $HOME/.cache
 
@@ -40,5 +41,3 @@ fi
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/debian.zshrc $HOME/.zsh/.zshrc
-# ignore .config/git, vscode devcontainer/remote handles it 
-cp -r .config/lsd ~/.config

@@ -8,7 +8,6 @@ PS1='%B[%n@%m:%~]%# %b'
 
 # refer to https://zsh.sourceforge.io/Doc/Release/Options.html
 # directory
-setopt AUTO_CD              # Auto changes to a directory without typing cd.
 setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
@@ -17,7 +16,7 @@ setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
 # history
 HISTSIZE=50000                      # The number of events to save in the internal history.
 SAVEHIST=10000                      # The number of events to save in the history file.
-HISTORY_IGNORE="(l|l[lt]|cd|cd ..|pwd|exit)"
+HISTORY_IGNORE="(l|l[lt]|cd|..|pwd|exit)"
 setopt EXTENDED_HISTORY             # record timestamp of command in HISTFILE
 setopt HIST_IGNORE_ALL_DUPS         # If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
 setopt HIST_IGNORE_DUPS             # Do not enter command lines into the history list if they are duplicates of the previous event.
@@ -28,8 +27,6 @@ setopt HIST_NO_STORE                # history commands are not registered in his
 setopt SHARE_HISTORY                # share command history data
 
 # completion
-setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
-setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
 setopt AUTO_MENU           # Show completion menu on a succesive tab press.
 unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.

@@ -4,9 +4,10 @@
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install bat lsd fd fzf git p7zip ripgrep wget
+brew install git p7zip wget
+brew install bat eza fd fzf ripgrep 
 brew install arc visual-studio-code
-brew install orbstack warp intellij-idea
+brew install orbstack intellij-idea
 ```
 
 ## macos options
