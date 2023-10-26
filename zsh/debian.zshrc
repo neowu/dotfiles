@@ -23,7 +23,7 @@ source $ZDOTDIR/fzf.zsh
 [[ ! -e /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
 
 # alias
-cdpath=($HOME/workspaces)
+cdpath=(/workspaces)
 alias d='dirs -v'
 alias ..='cd ..'
 
