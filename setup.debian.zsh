@@ -33,10 +33,6 @@ zcompile_files $HOME/.zsh/plugins/zsh-syntax-highlighting/{zsh-syntax-highlighti
 update_plugin "zsh-users/zsh-autosuggestions"
 zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
 
-if (( $+commands[kubectl] )); then
-    kubectl completion zsh > "$HOME/.zsh/functions/_kubectl"
-fi
-
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/debian.zshrc $HOME/.zsh/.zshrc
