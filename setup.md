@@ -6,8 +6,9 @@
 
 brew install git p7zip wget
 brew install bat eza fd fzf ripgrep 
+brew install docker docker-buildx docker-compose colima
 brew install arc visual-studio-code
-brew install orbstack intellij-idea
+brew install intellij-idea
 ```
 
 ## macos options

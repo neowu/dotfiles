@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-FPATH=$ZDOTDIR/functions:$FPATH
-
 source $ZDOTDIR/config.zsh
 
 # plugins
@@ -19,8 +17,9 @@ source $ZDOTDIR/fzf.zsh
 
 # gcloud load "autoload -U +X bashcompinit && bashcompinit" already
 [[ ! -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] || source /usr/share/google-cloud-sdk/completion.zsh.inc
-[[ ! -e /usr/bin/terraform ]] || complete -o nospace -C /usr/bin/terraform terraform
+[[ ! $+commands[terraform] ]] || complete -o nospace -C terraform terraform
 [[ ! -e /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
+[[ ! $+commands[kubectl] ]] || source <(kubectl completion zsh)
 
 # alias
 cdpath=(/workspaces)

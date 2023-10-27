@@ -8,8 +8,7 @@ sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza
 sudo ln -sf /usr/bin/fdfind /usr/bin/fd
 sudo ln -sf /usr/bin/batcat /usr/bin/bat
 
-
-mkdir -p $HOME/.zsh/plugins $HOME/.zsh/functions $HOME/.cache
+mkdir -p $HOME/.zsh/plugins $HOME/.cache
 
 function zcompile_files() {
     local f

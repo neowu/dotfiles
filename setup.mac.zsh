@@ -1,5 +1,5 @@
 #!/bin/zsh
-mkdir -p $HOME/.zsh/plugins $HOME/.zsh/functions $HOME/.cache
+mkdir -p $HOME/.zsh/plugins $HOME/.cache
 
 function zcompile_files() {
     local f
@@ -23,10 +23,6 @@ zcompile_files $HOME/.zsh/plugins/zsh-syntax-highlighting/{zsh-syntax-highlighti
 
 update_plugin "zsh-users/zsh-autosuggestions"
 zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
-
-if (( $+commands[docker] )); then
-    docker completion zsh > "$HOME/.zsh/functions/_docker"
-fi
 
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
