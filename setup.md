@@ -4,7 +4,7 @@
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git p7zip wget
+brew install git p7zip wget gpg
 brew install bat eza fd fzf ripgrep 
 brew install docker docker-buildx docker-compose colima
 brew install arc visual-studio-code
@@ -23,4 +23,16 @@ defaults write com.apple.dock ResetLaunchPad -bool true
 ## update highlight color
 defaults write -g NSColorSimulateHardwareAccent -bool YES
 defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 4
+```
+
+### macos sudo
+sudo visudo, add sudo password tiemout in mins
+```
+Defaults        timestamp_timeout=120
+```
+
+### git
+```
+git config --global color.ui auto
+git config --global core.autocrlf false
 ```

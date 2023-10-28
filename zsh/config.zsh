@@ -28,6 +28,8 @@ setopt HIST_NO_STORE                # history commands are not registered in his
 setopt SHARE_HISTORY                # share command history data
 
 # completion
+WORDCHARS=''
+
 setopt AUTO_MENU           # Show completion menu on a succesive tab press.
 unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.

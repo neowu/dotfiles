@@ -23,13 +23,15 @@ alias d='dirs -v'
 alias ..='cd ..'
 
 export EZA_COLORS='uu=2:gu=2:ur=34:uw=34:ue=34:ux=34:gr=36:gw=36:gx=36:tr=35:tw=35:tx=35:nm=33:ng=31:nt=31'
-alias l='eza -l -a --time-style=long-iso'
+alias l='eza -l -a --time-style=iso'
 alias ls='eza'
-alias ll='eza -l --time-style=long-iso'
-alias lt='eza --tree -a --time-style=long-iso'
+alias ll='eza -l --time-style=iso'
+alias lt='eza --tree -a --time-style=iso'
 
 export BAT_THEME='Nord'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias cat='bat -p'
+
+alias gpg='gpg --pinentry-mode loopback'    # doens't need export GPG_TTY=$(tty)
 
 source $ZDOTDIR/.p10k.zsh
