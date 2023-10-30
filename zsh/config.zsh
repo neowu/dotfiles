@@ -13,6 +13,8 @@ setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
+setopt COMPLETE_IN_WORD     # If unset, the cursor is set to the end of the word if completion is started. Otherwise it stays there and completion is done from both ends.
+setopt ALWAYS_TO_END        # If a completion is performed with the cursor within a word, and a full completion is inserted, the cursor is moved to the end of the word.
 
 # history
 HISTSIZE=50000                      # The number of events to save in the internal history.
@@ -37,7 +39,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 zstyle ':completion::complete:*' use-cache on       # Use caching to make completion for cammands such as dpkg and apt usable.
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 
-zstyle ':completion:*' matcher-list 'r:|?=**'       # find every substring that ends in ? (any one char), insert a wildcard (*) into every position indicated by the | and try to find completion matches with that.
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' special-dirs true
 
 zstyle ':completion:*:*:*:*:*' menu select
