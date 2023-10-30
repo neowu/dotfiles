@@ -44,5 +44,8 @@ zstyle ':completion:*' special-dirs true
 
 zstyle ':completion:*:*:*:*:*' menu select
 
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=1;30;43'
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USERNAME -o pid,user,comm -w -w"
