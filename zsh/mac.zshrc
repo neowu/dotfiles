@@ -32,6 +32,4 @@ export BAT_THEME='Nord'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias cat='bat -p'
 
-alias gpg='gpg --pinentry-mode loopback'    # doens't need export GPG_TTY=$(tty)
-
 source $ZDOTDIR/.p10k.zsh

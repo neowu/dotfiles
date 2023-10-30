@@ -4,7 +4,7 @@
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git p7zip wget gpg
+brew install git p7zip wget
 brew install bat eza fd fzf ripgrep 
 brew install docker docker-buildx docker-compose colima
 brew install arc visual-studio-code
@@ -33,6 +33,14 @@ Defaults        timestamp_timeout=120
 
 ### git
 ```
+git config --global user.name neo
+git config --global user.email "1100909+neowu@users.noreply.github.com"
+git config --global user.signingkey ~/.ssh/id_github_signing.pub
+
 git config --global color.ui auto
 git config --global core.autocrlf false
+
+git config --global gpg.format ssh
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+git config --global commit.gpgsign true
 ```
