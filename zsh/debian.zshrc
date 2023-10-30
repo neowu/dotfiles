@@ -16,10 +16,10 @@ FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
 source $ZDOTDIR/fzf.zsh
 
 # gcloud load "autoload -U +X bashcompinit && bashcompinit" already
-[[ ! -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] || source /usr/share/google-cloud-sdk/completion.zsh.inc
-[[ ! $+commands[terraform] ]] || complete -o nospace -C terraform terraform
-[[ ! -e /etc/bash_completion.d/azure-cli ]] || source /etc/bash_completion.d/azure-cli
-[[ ! $+commands[kubectl] ]] || source <(kubectl completion zsh)
+[[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] && source /usr/share/google-cloud-sdk/completion.zsh.inc
+[[ -e /etc/bash_completion.d/azure-cli ]] && source /etc/bash_completion.d/azure-cli
+(( $+commands[terraform] )) && complete -o nospace -C terraform terraform
+(( $+commands[kubectl] )) && source <(kubectl completion zsh)
 
 # alias
 cdpath=(/workspaces)
