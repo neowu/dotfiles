@@ -37,7 +37,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 zstyle ':completion::complete:*' use-cache on       # Use caching to make completion for cammands such as dpkg and apt usable.
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
 
-zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'    # Case-insensitive (all), partial-word, and then substring completion.
+zstyle ':completion:*' matcher-list 'r:|?=**'       # find every substring that ends in ? (any one char), insert a wildcard (*) into every position indicated by the | and try to find completion matches with that.
 zstyle ':completion:*' special-dirs true
 
 zstyle ':completion:*:*:*:*:*' menu select
