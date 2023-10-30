@@ -20,7 +20,7 @@ defaults write com.apple.Dock autohide-delay -float 0     # show hidden dock fas
 defaults write com.apple.dock springboard-columns -int 8
 defaults write com.apple.dock springboard-rows -int 6
 defaults write com.apple.dock ResetLaunchPad -bool true
-## update highlight color
+# update highlight color
 defaults write -g NSColorSimulateHardwareAccent -bool YES
 defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 4
 ```
@@ -32,10 +32,10 @@ Defaults        timestamp_timeout=120
 ```
 
 ### git
-```
+```sh
 git config --global user.name neo
 git config --global user.email "1100909+neowu@users.noreply.github.com"
-git config --global user.signingkey ~/.ssh/id_github_signing.pub
+git config --global user.signingkey "$(cat ~/.ssh/id_github_signing.pub)"
 
 git config --global color.ui auto
 git config --global core.autocrlf false
@@ -43,4 +43,6 @@ git config --global core.autocrlf false
 git config --global gpg.format ssh
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 git config --global commit.gpgsign true
+
+echo "$(git config --get user.email) namespaces=\"git\" $(cat $(git config --get user.signingkey))" > ~/.ssh/allowed_signers
 ```
