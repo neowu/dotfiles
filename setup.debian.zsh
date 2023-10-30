@@ -36,3 +36,7 @@ zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,s
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/debian.zshrc $HOME/.zsh/.zshrc
+
+# setup git signing
+git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
