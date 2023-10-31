@@ -35,7 +35,7 @@ Defaults        timestamp_timeout=120
 ```sh
 git config --global user.name neo
 git config --global user.email "1100909+neowu@users.noreply.github.com"
-git config --global user.signingkey "$(cat ~/.ssh/id_github_signing.pub)"
+git config --global user.signingkey "$(cat ~/.ssh/id_github.pub)"
 
 git config --global color.ui auto
 git config --global core.autocrlf false
