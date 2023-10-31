@@ -55,7 +55,7 @@
     # fvm                   # flutter version management (https://github.com/leoafarias/fvm)
     # luaenv                # lua version from luaenv (https://github.com/cehoffman/luaenv)        
     kubecontext             # current kubernetes context (https://kubernetes.io/)
-    terraform               # terraform workspace (https://www.terraform.io)
+    # terraform             # terraform workspace (https://www.terraform.io)
     # terraform_version     # terraform version (https://www.terraform.io)
     # aws                   # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)    
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
