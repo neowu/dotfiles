@@ -7,6 +7,7 @@ fi
 
 FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
 
+source $ZDOTDIR/color.zsh
 source $ZDOTDIR/config.zsh
 
 # plugins
@@ -17,19 +18,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 FZF_PLUGIN_BASE=/opt/homebrew/opt/fzf/shell
 source $ZDOTDIR/fzf.zsh
 
-# alias
 cdpath=($HOME/depot $HOME/projects)
-alias d='dirs -v'
-alias ..='cd ..'
-
-export EZA_COLORS='uu=2:gu=2:ur=34:uw=34:ue=34:ux=34:gr=36:gw=36:gx=36:tr=35:tw=35:tx=35:nm=33:ng=31:nt=31'
-alias l='eza -l -a'
-alias ls='eza'
-alias ll='eza -l'
-alias lt='eza --tree -a'
-
-export BAT_THEME='Nord'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-alias cat='bat -p'
+source $ZDOTDIR/alias.zsh
 
 source $ZDOTDIR/.p10k.zsh

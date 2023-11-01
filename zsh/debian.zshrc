@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source $ZDOTDIR/color.zsh
 source $ZDOTDIR/config.zsh
 
 # plugins
@@ -21,19 +22,7 @@ source $ZDOTDIR/fzf.zsh
 (( $+commands[terraform] )) && complete -o nospace -C terraform terraform
 (( $+commands[kubectl] )) && source <(kubectl completion zsh)
 
-# alias
 cdpath=(/workspaces)
-alias d='dirs -v'
-alias ..='cd ..'
-
-export EZA_COLORS='uu=2:gu=2:ur=34:uw=34:ue=34:ux=34:gr=36:gw=36:gx=36:tr=35:tw=35:tx=35:nm=33:ng=31:nt=31'
-alias l='eza -l -a'
-alias ls='eza'
-alias ll='eza -l'
-alias lt='eza --tree -a'
-
-export BAT_THEME='Nord'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-alias cat='bat -p'
+source $ZDOTDIR/alias.zsh
 
 source $ZDOTDIR/.p10k.zsh

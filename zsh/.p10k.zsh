@@ -178,7 +178,7 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=5
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='magenta'
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=1
   # Default prompt symbol.
@@ -197,17 +197,17 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=4
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='cyan'
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=103
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='blue'
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=4
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='cyan'
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -534,7 +534,7 @@
   # Show this many fractional digits. Zero means round to seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='yellow'
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
   # Custom icon.
@@ -546,7 +546,7 @@
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=true
   # Background jobs color.
-  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=3
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='yellow'
   # Custom icon.
   # typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -778,7 +778,7 @@
 
   ######################################[ load: CPU load ]######################################
   # Show average CPU load over this many last minutes. Valid values are 1, 5 and 15.
-  typeset -g POWERLEVEL9K_LOAD_WHICH=5
+  typeset -g POWERLEVEL9K_LOAD_WHICH='magenta'
   # Load color when load is under 50%.
   typeset -g POWERLEVEL9K_LOAD_NORMAL_FOREGROUND=66
   # Load color when load is between 50% and 70%.
@@ -857,11 +857,11 @@
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=3
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='yellow'
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=4
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND='blue'
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=4
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='blue'
 
   # Context format when running with privileges: bold user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%n@%m'
@@ -881,7 +881,7 @@
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=5
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND='magenta'
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # If set to "false", won't show virtualenv if pyenv is already shown.
@@ -1085,7 +1085,7 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=5
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND='magenta'
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='| 󱃾'
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext
@@ -1167,12 +1167,12 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'         OTHER)
-  typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND=38
+  typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND='magenta'
   # typeset -g POWERLEVEL9K_TERRAFORM_OTHER_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   #############[ terraform_version: terraform version (https://www.terraform.io) ]##############
   # Terraform version color.
-  typeset -g POWERLEVEL9K_TERRAFORM_VERSION_FOREGROUND=5
+  typeset -g POWERLEVEL9K_TERRAFORM_VERSION_FOREGROUND='magenta'
   # Custom icon.
   # typeset -g POWERLEVEL9K_TERRAFORM_VERSION_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
@@ -1220,7 +1220,7 @@
   ##########[ azure: azure account name (https://docs.microsoft.com/en-us/cli/azure) ]##########
   # Show azure only when the command you are typing invokes one of these tools.
   # Tip: Remove the next line to always show azure.
-  typeset -g POWERLEVEL9K_AZURE_SHOW_ON_COMMAND='az|terraform|pulumi|terragrunt'
+  typeset -g POWERLEVEL9K_AZURE_SHOW_ON_COMMAND='az'
 
   # POWERLEVEL9K_AZURE_CLASSES is an array with even number of elements. The first element
   # in each pair defines a pattern against which the current azure account name gets matched.
@@ -1251,16 +1251,16 @@
       '*'         OTHER)
 
   # Azure account name color.
-  typeset -g POWERLEVEL9K_AZURE_OTHER_FOREGROUND=5
+  typeset -g POWERLEVEL9K_AZURE_OTHER_FOREGROUND='magenta'
   # Custom icon.
   typeset -g POWERLEVEL9K_AZURE_OTHER_VISUAL_IDENTIFIER_EXPANSION='| 󰠅'
 
   ##########[ gcloud: google cloud account and project (https://cloud.google.com/) ]###########
   # Show gcloud only when the command you are typing invokes one of these tools.
   # Tip: Remove the next line to always show gcloud.
-  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs|gsutil|terraform'
+  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs|gsutil'
   # Google cloud color.
-  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=5
+  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND='magenta'
 
   # Google cloud format. Change the value of POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION and/or
   # POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION if the default is too verbose or not informative
