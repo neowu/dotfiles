@@ -5,16 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $ZDOTDIR/color.zsh
 source $ZDOTDIR/config.zsh
 
 # plugins
 source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source $ZDOTDIR/highlighting.zsh
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
 source $ZDOTDIR/fzf.zsh
+source $ZDOTDIR/eza.zsh
 
 # gcloud load "autoload -U +X bashcompinit && bashcompinit" already
 [[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] && source /usr/share/google-cloud-sdk/completion.zsh.inc
@@ -23,6 +23,11 @@ source $ZDOTDIR/fzf.zsh
 (( $+commands[kubectl] )) && source <(kubectl completion zsh)
 
 cdpath=(/workspaces)
-source $ZDOTDIR/alias.zsh
+alias d='dirs -v'
+alias ..='cd ..'
+
+export BAT_THEME='Nord'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+alias cat='bat -p'
 
 source $ZDOTDIR/.p10k.zsh
