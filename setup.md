@@ -39,6 +39,7 @@ git config --global user.signingkey "$(cat ~/.ssh/id_github.pub)"
 
 git config --global color.ui auto
 git config --global core.autocrlf false
+git config --global pull.rebase true
 
 git config --global gpg.format ssh
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
