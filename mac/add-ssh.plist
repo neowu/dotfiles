@@ -15,8 +15,8 @@
         <key>KeepAlive</key>
         <false/>
         <key>StandardErrorPath</key>
-        <string>/var/log/ssh-add.log</string>
+        <string>/Users/neo/Library/Logs/ssh-add.log</string>
         <key>StandardOutPath</key>
-        <string>/var/log/ssh-add.log</string>
+        <string>/Users/neo/Library/Logs/ssh-add.log</string>
 </dict>
 </plist>
