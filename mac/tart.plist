@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>Label</key>
+        <string>tart</string>
+        <key>ProgramArguments</key>
+        <array>
+                <string>/Users/neo/Library/LaunchAgents/tart.sh</string>                
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <false/>
+        <key>StandardErrorPath</key>
+        <string>/Users/neo/Library/Logs/tart.log</string>
+        <key>StandardOutPath</key>
+        <string>/Users/neo/Library/Logs/tart.log</string>
+</dict>
+</plist>
