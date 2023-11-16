@@ -17,7 +17,7 @@ setopt COMPLETE_IN_WORD     # If unset, the cursor is set to the end of the word
 setopt ALWAYS_TO_END        # If a completion is performed with the cursor within a word, and a full completion is inserted, the cursor is moved to the end of the word.
 
 # history
-HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=50000                      # The number of events to save in the internal history.
 SAVEHIST=10000                      # The number of events to save in the history file.
 HISTORY_IGNORE="(l|l[lt]|cd|..|pwd|exit)"
