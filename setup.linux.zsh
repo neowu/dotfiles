@@ -10,7 +10,8 @@ if [[ -e "/etc/debian_version" ]]; then
     sudo ln -sf /usr/bin/fdfind /usr/bin/fd
     sudo ln -sf /usr/bin/batcat /usr/bin/bat
 elif [[ -e "/etc/alpine-release" ]]; then
-    apk add eza --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
+    sudo apk add eza --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
+    sudo apk add bat --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
     sudo apk update && sudo apk add bat fd fzf ripgrep eza 
 fi
 
@@ -41,7 +42,7 @@ zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,s
 
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
-cp zsh/debian.zshrc $HOME/.zsh/.zshrc
+cp zsh/linux.zshrc $HOME/.zsh/.zshrc
 
 # setup git signing
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
