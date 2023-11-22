@@ -4,7 +4,7 @@
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git p7zip wget
+brew install git p7zip wget socat
 brew install bat eza fd fzf ripgrep 
 brew install docker docker-buildx docker-compose cirruslabs/cli/tart
 brew install arc visual-studio-code

@@ -6,7 +6,8 @@
         <string>ssh-add</string>
         <key>ProgramArguments</key>
         <array>
-                <string>/Users/neo/Library/LaunchAgents/ssh-add.sh</string>
+                <string>/usr/bin/ssh-add</string>
+                <string>--apple-load-keychain</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

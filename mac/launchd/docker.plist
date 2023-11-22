@@ -6,7 +6,9 @@
         <string>docker</string>
         <key>ProgramArguments</key>
         <array>
-                <string>/Users/neo/Library/LaunchAgents/docker.sh</string>
+                <string>/usr/local/bin/vz</string>
+                <string>run</string>
+                <string>debian</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
