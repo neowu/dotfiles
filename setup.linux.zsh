@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 
 if [[ -e "/etc/debian_version" ]]; then
     if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then    
