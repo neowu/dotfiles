@@ -1,12 +1,18 @@
 #!/usr/bin/zsh
-if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then    
-    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-fi
 
-sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza 
-sudo ln -sf /usr/bin/fdfind /usr/bin/fd
-sudo ln -sf /usr/bin/batcat /usr/bin/bat
+if [[ -e "/etc/debian_version" ]]; then
+    if [[ ! -e "/etc/apt/sources.list.d/gierens.list" ]]; then    
+        wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+    fi
+
+    sudo apt-get update && sudo apt-get install -y bat fd-find fzf ripgrep eza 
+    sudo ln -sf /usr/bin/fdfind /usr/bin/fd
+    sudo ln -sf /usr/bin/batcat /usr/bin/bat
+elif [[ -e "/etc/alpine-release" ]]; then
+    apk add eza --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
+    sudo apk update && sudo apk add bat fd fzf ripgrep eza 
+fi
 
 mkdir -p $HOME/.zsh/plugins $HOME/.cache
 
