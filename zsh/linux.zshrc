@@ -12,13 +12,7 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/highlighting.zsh
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
-if [[ -e "/usr/share/doc/fzf/examples" ]]; then
-    # debian
-    FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
-elif [[ -e "/usr/share/zsh/plugins/fzf" ]]    
-    # alpine
-    FZF_PLUGIN_BASE=/usr/share/zsh/plugins/fzf
-fi
+FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/eza.zsh
 
