@@ -1,0 +1,30 @@
+{
+  "name": "neo",
+  "displayName": "Neo",
+  "description": "Neo's vscode theme",
+  "publisher": "Neo",
+  "repository": "https://github.com/neowu/dotfiles",
+  "version": "0.1.0",
+  "scripts": {
+    "generate": "node src/generate.js",
+    "build": "node src/generate.js && ./node_modules/.bin/vsce package"
+  },
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Neo",
+        "uiTheme": "vs-dark",
+        "path": "./themes/neo-color-theme.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
