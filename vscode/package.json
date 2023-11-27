@@ -7,7 +7,7 @@
   "version": "0.1.0",
   "scripts": {
     "generate": "node src/generate.js",
-    "build": "node src/generate.js && ./node_modules/.bin/vsce package"
+    "build": "node src/generate.js && ./node_modules/.bin/vsce package --out ../mac"
   },
   "engines": {
     "vscode": "^1.84.0"
