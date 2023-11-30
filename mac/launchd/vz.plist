@@ -17,8 +17,8 @@
         <key>ExitTimeOut</key>
         <integer>60</integer>
         <key>StandardErrorPath</key>
-        <string>/Users/neo/Library/Logs/docker.log</string>
+        <string>/Users/neo/Library/Logs/vz.log</string>
         <key>StandardOutPath</key>
-        <string>/Users/neo/Library/Logs/docker.log</string>
+        <string>/Users/neo/Library/Logs/vz.log</string>
 </dict>
 </plist>

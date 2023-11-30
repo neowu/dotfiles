@@ -29,11 +29,11 @@ var shadow = "#000000" + alpha[4]
 var primary = blue1
 var background = dark0
 var text = light0
+var reverseText = dark0
 
 // var selectedBackground = dark3 + "CC"
 // var secondaryText = grey0
 // var ignoreText = dark3
-// var reverseText = dark0
 // var highlightBackground = dark2
 // var hoverBackground = dark1 + "CC"
 // var string = green
@@ -52,30 +52,45 @@ var template = {
     "semanticHighlighting": true,
     "colors": {
         "focusBorder": transparent,
-        "foreground": light0,
+        "foreground": text,
         "widget.border": transparent,
         "widget.shadow": shadow,
         "selection.background": primary + alpha[4],
-        "descriptionForeground": "#d8dee9e6",
+        "descriptionForeground": text + alpha[9],
         "errorForeground": red,
-        "icon.foreground": light0,
+        "icon.foreground": text,
         "sash.hoverBorder": primary,
+
+        "textBlockQuote.background": dark1,
+        "textBlockQuote.border": blue2,
+        "textCodeBlock.background": dark3,
+        "textLink.activeForeground": primary + alpha[9],
+        "textLink.foreground": primary,
+        "textPreformat.foreground": blue0,
+        "textSeparator.foreground": primary,
+
+        "button.background": primary,
+        "button.foreground": reverseText,
+        "button.hoverBackground": primary + alpha[9],
+        "button.secondaryBackground": dark2,
+        "button.secondaryForeground": text,
+        "button.secondaryHoverBackground": dark3,
+        "checkbox.foreground": primary,
+
+        "dropdown.background": dark1,
+        "dropdown.foreground": primary,
 
         "activityBar.background": background,
         "activityBar.foreground": text,
-        "activityBar.activeBorder": "#88c0d0",
-        "activityBar.activeBackground": "#3b4252",
-        "activityBarBadge.background": "#88c0d0",
-        "activityBarBadge.foreground": "#2e3440",
+        "activityBar.activeBorder": primary,
+        "activityBar.activeFocusBorder": primary,
+        "activityBar.activeBackground": dark1,
+        "activityBarBadge.background": primary,
+        "activityBarBadge.foreground": reverseText,
 
         "badge.foreground": "#2e3440",
         "badge.background": "#88c0d0",
-        "button.background": "#88c0d0ee",
-        "button.foreground": "#2e3440",
-        "button.hoverBackground": primary,
-        "button.secondaryBackground": "#434c5e",
-        "button.secondaryForeground": "#d8dee9",
-        "button.secondaryHoverBackground": "#4c566a",
+
         "charts.red": red,
         "charts.blue": "#81a1c1",
         "charts.yellow": yellow,
@@ -95,9 +110,7 @@ var template = {
 
         "diffEditor.insertedTextBackground": "#81a1c133",
         "diffEditor.removedTextBackground": "#bf616a4d",
-        "dropdown.background": "#3b4252",
-        "dropdown.border": "#3b4252",
-        "dropdown.foreground": "#d8dee9",
+
         "editorCursor.foreground": "#d8dee9",
         "editorHint.border": "#ebcb8b00",
         "editorHint.foreground": "#ebcb8b",
@@ -346,13 +359,7 @@ var template = {
         "terminal.ansiBrightWhite": light2,
         "terminal.tab.activeBorder": primary,
 
-        "textBlockQuote.background": "#3b4252",
-        "textBlockQuote.border": "#81a1c1",
-        "textCodeBlock.background": "#4c566a",
-        "textLink.activeForeground": "#88c0d0",
-        "textLink.foreground": "#88c0d0",
-        "textPreformat.foreground": "#8fbcbb",
-        "textSeparator.foreground": "#eceff4",
+
         "titleBar.activeBackground": "#2e3440",
         "titleBar.activeForeground": "#d8dee9",
         "titleBar.border": "#2e344000",
@@ -362,7 +369,7 @@ var template = {
         "walkThrough.embeddedEditorBackground": "#2e3440",
         "widget.shadow": "#00000066",
 
-        "debugIcon.breakpointForeground": red
+        "debugIcon.breakpointForeground": red,
     },
     "tokenColors": [
         {
