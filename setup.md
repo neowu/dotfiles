@@ -6,7 +6,7 @@
 
 brew install git p7zip wget socat
 brew install bat eza fd fzf ripgrep 
-brew install docker docker-buildx docker-compose cirruslabs/cli/tart
+brew install docker docker-buildx docker-compose
 brew install arc visual-studio-code
 brew install intellij-idea
 ```
@@ -25,10 +25,9 @@ defaults write -g NSColorSimulateHardwareAccent -bool true
 defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 4
 ```
 
-### macos sudo
-sudo visudo, add sudo password tiemout in mins
-```
-Defaults        timestamp_timeout=120
+### sudo
+```sh
+sudo sed -i -e 's/%admin\t.*/%admin\t\tALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 ```
 
 ### git
