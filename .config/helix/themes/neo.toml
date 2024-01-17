@@ -1,0 +1,8 @@
+inherits = "nord"
+
+"ui.cursorline.primary" = { bg = "#323845" }
+"ui.virtual.ruler" = { bg = "#323845" }
+"ui.selection" = { bg = "nord3" }
+
+"ui.bufferline" = { fg = "nord4", bg = "nord1" }
+"ui.bufferline.active" = { fg = "nord4", bg = "nord0", underline = { color = "nord8", style = "line" } }

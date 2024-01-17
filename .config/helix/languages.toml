@@ -5,4 +5,8 @@ name = "rust"
 command = "clippy"
 
 [[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
 name = "swift"

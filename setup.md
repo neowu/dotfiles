@@ -5,9 +5,9 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git p7zip wget socat
-brew install bat eza fd fzf ripgrep 
+brew install bat eza fd fzf ripgrep helix
 brew install docker docker-buildx docker-compose
-brew install arc visual-studio-code
+brew install arc visual-studio-code wezterm
 brew install intellij-idea
 ```
 
@@ -49,7 +49,7 @@ echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.
 
 ### rust
 ```sh
-brew install rustup-init
+brew install rustup-init taplo
 rustup 
 rustup component add rust-analyzer
 rustup completions zsh | sudo tee /usr/local/share/zsh/site-functions/_rustup

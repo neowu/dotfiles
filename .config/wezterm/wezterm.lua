@@ -11,15 +11,12 @@ config.line_height = 1.1
 
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
-config.enable_scroll_bar = true
-config.auto-save = true
 
 config.initial_cols = 200
 config.initial_rows = 50
-
 config.window_padding = {
     left = 2,
-    right = "1cell",
+    right = 2,
     top = 2,
     bottom = 2,
 }
@@ -76,6 +73,14 @@ config.key_tables = {
     },
 }
 
+wezterm.on("update-right-status", function(window, pane)
+    local mode = window:active_key_table()
+    if mode then
+        mode = " " .. string.upper(mode) .. " "
+    end
+    window:set_right_status(mode or "")
+end)
+
 local dark0 = "#2e3440"
 local dark1 = "#3b4252"
 local dark2 = "#434c5e"
@@ -105,13 +110,5 @@ config.colors = {
 
 config.command_palette_bg_color = dark1
 config.command_palette_fg_color = light0
-
-wezterm.on("update-right-status", function(window, pane)
-    local mode = window:active_key_table()
-    if mode then
-        mode = string.upper(mode)
-    end
-    window:set_right_status(mode or "")
-end)
 
 return config
