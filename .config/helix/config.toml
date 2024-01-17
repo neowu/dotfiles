@@ -1,0 +1,38 @@
+theme = "nord"
+
+[editor]
+bufferline = "multiple"
+line-number = "relative"
+rulers = [120]
+color-modes = true
+true-color = true
+auto-save = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "separator", "selections", "primary-selection-length", "register", "position", "file-encoding", "separator", "file-type"]
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+"C-/" = "toggle_comments"
+"A-up" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+"A-down" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"tab" = "indent"
+"S-tab" = "unindent"
+
+[keys.normal.space]
+"c" = ":buffer-close"

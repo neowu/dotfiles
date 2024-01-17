@@ -46,3 +46,12 @@ git config --global commit.gpgsign true
 
 echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
 ```
+
+### rust
+```sh
+brew install rustup-init
+rustup 
+rustup component add rust-analyzer
+rustup completions zsh | sudo tee /usr/local/share/zsh/site-functions/_rustup
+rustup completions zsh cargo | sudo tee /usr/local/share/zsh/site-functions/_cargo
+```
