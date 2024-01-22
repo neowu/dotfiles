@@ -64,6 +64,14 @@ hidden = false
 [keys.normal.space]
 "q" = ":buffer-close"
 
+[keys.normal."["]
+"b" = "goto_previous_buffer"
+"j" = "jump_backward"
+
+[keys.normal."]"]
+"b" = "goto_next_buffer"
+"j" = "jump_forward"
+
 [keys.insert]
 "C-space" = "completion"
 "tab" = ["move_next_long_word_start", "collapse_selection"]
