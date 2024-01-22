@@ -50,3 +50,6 @@ zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-dir
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USERNAME -o pid,user,comm -w -w"
+
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word

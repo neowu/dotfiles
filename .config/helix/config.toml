@@ -9,7 +9,7 @@ color-modes = true
 true-color = true
 auto-save = true
 scroll-lines = 1
-completion-trigger-len = 1
+auto-completion = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -58,6 +58,13 @@ hidden = false
 "A-down" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 "tab" = "indent"
 "S-tab" = "unindent"
+"ret" = "insert_newline"
+"backspace" = "delete_char_backward"
 
 [keys.normal.space]
 "q" = ":buffer-close"
+
+[keys.insert]
+"C-space" = "completion"
+"tab" = ["move_next_long_word_start", "collapse_selection"]
+"S-tab" = ["move_prev_long_word_start", "collapse_selection"]

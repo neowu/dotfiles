@@ -24,12 +24,7 @@ config.window_padding = {
 config.audible_bell = "Disabled"
 config.enable_kitty_keyboard = true
 config.disable_default_key_bindings = true
-config.keys = {
-    -- make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
-    { key = "LeftArrow", mods = "OPT", action = act{SendString="\x1bb"} },
-    -- make Option-Right equivalent to Alt-f; forward-word
-    { key = "RightArrow", mods = "OPT", action = act{SendString="\x1bf"} },
-    
+config.keys = {    
     { key = "{", mods = "CMD|SHIFT", action = act.ActivatePaneDirection "Prev" },
     { key = "}", mods = "CMD|SHIFT", action = act.ActivatePaneDirection "Next" },      
     { key = "p", mods = "CMD", action = act.ActivateKeyTable { name = "pane_mode", timeout_milliseconds = 3000 } },

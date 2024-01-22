@@ -27,3 +27,4 @@ zcompile_files $HOME/.zsh/plugins/zsh-autosuggestions/{zsh-autosuggestions.zsh,s
 cp zsh/.zshenv $HOME/.zshenv
 cp zsh/*.zsh(D) $HOME/.zsh/
 cp zsh/mac.zshrc $HOME/.zsh/.zshrc
+cp -r .config $HOME
