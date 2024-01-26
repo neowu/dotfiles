@@ -4,6 +4,8 @@ local act = wezterm.action
 config = wezterm.config_builder()
 config.automatically_reload_config = false
 config.use_fancy_tab_bar = true
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.native_macos_fullscreen_mode = true
 
 config.color_scheme = "Nord (base16)"
 config.font = wezterm.font "JetBrainsMono Nerd Font"
