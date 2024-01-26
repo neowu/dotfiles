@@ -74,5 +74,3 @@ hidden = false
 
 [keys.insert]
 "C-space" = "completion"
-"tab" = ["move_next_long_word_start", "collapse_selection"]
-"S-tab" = ["move_prev_long_word_start", "collapse_selection"]
