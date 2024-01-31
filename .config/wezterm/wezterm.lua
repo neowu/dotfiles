@@ -2,6 +2,7 @@ local wezterm = require "wezterm"
 local act = wezterm.action
 
 config = wezterm.config_builder()
+config.front_end = "WebGpu"
 config.automatically_reload_config = false
 config.use_fancy_tab_bar = true
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
@@ -10,6 +11,8 @@ config.native_macos_fullscreen_mode = true
 config.color_scheme = "Nord (base16)"
 config.font = wezterm.font "JetBrainsMono Nerd Font"
 config.font_size = 13.0
+config.freetype_load_target = "Light"
+config.freetype_load_flags = "NO_HINTING"
 config.line_height = 1.1
 config.initial_cols = 200
 config.initial_rows = 50
@@ -26,7 +29,7 @@ config.enable_kitty_keyboard = true
 
 config.disable_default_key_bindings = true
 config.keys = {        
-    { key = "p", mods = "CMD", action = act.ActivateKeyTable { name = "pane_mode", one_shot = false, prevent_fallback = true, replace_current = true } },
+    { key = "p", mods = "CMD", action = act.ActivateKeyTable { name = "pane_mode", one_shot = false, prevent_fallback = true, replace_current = true, until_unknown = true } },
 
     { key = "=", mods = "CMD", action = act.IncreaseFontSize },
     { key = "-", mods = "CMD", action = act.DecreaseFontSize },
@@ -42,7 +45,7 @@ config.keys = {
     { key = "q", mods = "CMD", action = act.QuitApplication },
 
     { key = "t", mods = "CMD", action = act.SpawnTab "DefaultDomain" },
-    { key = "w", mods = "CMD", action = act.CloseCurrentTab{ confirm = false } },
+    { key = "w", mods = "CMD", action = act.CloseCurrentTab { confirm = false } },
     { key = "e", mods = "CMD", action = act.PromptInputLine { description = "Enter new name for tab", 
         action = wezterm.action_callback(function(window, pane, line)
             if line then
@@ -141,7 +144,7 @@ function tab_title(tab)
     return tab.active_pane.title
 end
 
-wezterm.on("format-tab-title", function(tab)
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
     local title = { { Text = tab.tab_index + 1 .. ":" } }
     local is_zoomed = tab.active_pane.is_zoomed
     if is_zoomed then
@@ -174,11 +177,12 @@ config.window_frame = {
 config.colors = {
     tab_bar = {
         background = dark0,
-        active_tab = { bg_color = dark0, fg_color = light0 },
+        active_tab = { bg_color = dark0, fg_color = blue1 },
         inactive_tab = { bg_color = dark1, fg_color = light0 },
         inactive_tab_hover = { bg_color = dark2, fg_color = light0 },  
         new_tab = { bg_color = dark0, fg_color = light0 },
         new_tab_hover = { bg_color = dark2, fg_color = light0 },
+        inactive_tab_edge = dark0,
     },
     scrollbar_thumb = dark2,
     split = dark2,
