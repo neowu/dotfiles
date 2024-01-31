@@ -23,6 +23,7 @@ var orange = "#d08770";
 var yellow = "#ebcb8b";
 var green = "#a3be8c";
 var purple = "#b48ead";
+var cyan = blue1
 
 var transparent = "#000000" + alpha[0]
 var shadow = "#000000" + alpha[4]
@@ -51,6 +52,7 @@ var template = {
     "name": "neo",
     "semanticHighlighting": true,
     "colors": {
+        // Base colors
         "focusBorder": transparent,
         "foreground": text,
         "widget.border": transparent,
@@ -61,6 +63,7 @@ var template = {
         "icon.foreground": text,
         "sash.hoverBorder": primary,
 
+        // Text colors
         "textBlockQuote.background": dark1,
         "textBlockQuote.border": blue2,
         "textCodeBlock.background": dark3,
@@ -69,6 +72,7 @@ var template = {
         "textPreformat.foreground": blue0,
         "textSeparator.foreground": primary,
 
+        // Button control
         "button.background": primary,
         "button.foreground": reverseText,
         "button.hoverBackground": primary + alpha[9],
@@ -77,8 +81,24 @@ var template = {
         "button.secondaryHoverBackground": dark3,
         "checkbox.foreground": primary,
 
+        // Dropdown control
         "dropdown.background": dark1,
         "dropdown.foreground": primary,
+
+        // Input control
+        "input.background": "#3b4252",
+        "input.foreground": "#d8dee9",
+        "input.placeholderForeground": "#d8dee999",
+        "input.border": "#3b4252",
+        "inputOption.activeBackground": "#5e81ac",
+        "inputOption.activeBorder": "#5e81ac",
+        "inputOption.activeForeground": "#eceff4",
+        "inputValidation.errorBackground": "#bf616a",
+        "inputValidation.errorBorder": "#bf616a",
+        "inputValidation.infoBackground": "#81a1c1",
+        "inputValidation.infoBorder": "#81a1c1",
+        "inputValidation.warningBackground": "#d08770",
+        "inputValidation.warningBorder": "#d08770",
 
         "activityBar.background": background,
         "activityBar.foreground": text,
@@ -134,7 +154,7 @@ var template = {
         "editor.findMatchHighlightBackground": "#88c0d033",
         "editor.findRangeHighlightBackground": "#88c0d033",
 
-        "editor.lineHighlightBackground": dark1,
+        "editor.lineHighlightBackground": dark1 + alpha[5],
 
         "editor.inactiveSelectionBackground": dark3 + alpha[7],
         "editor.inlineValuesBackground": "#4c566a",
@@ -217,19 +237,7 @@ var template = {
         "gitDecoration.submoduleResourceForeground": "#8fbcbb",
         "gitDecoration.stageDeletedResourceForeground": "#bf616a",
         "gitDecoration.stageModifiedResourceForeground": "#ebcb8b",
-        "input.background": "#3b4252",
-        "input.foreground": "#d8dee9",
-        "input.placeholderForeground": "#d8dee999",
-        "input.border": "#3b4252",
-        "inputOption.activeBackground": "#5e81ac",
-        "inputOption.activeBorder": "#5e81ac",
-        "inputOption.activeForeground": "#eceff4",
-        "inputValidation.errorBackground": "#bf616a",
-        "inputValidation.errorBorder": "#bf616a",
-        "inputValidation.infoBackground": "#81a1c1",
-        "inputValidation.infoBorder": "#81a1c1",
-        "inputValidation.warningBackground": "#d08770",
-        "inputValidation.warningBorder": "#d08770",
+
         "keybindingLabel.background": "#4c566a",
         "keybindingLabel.border": "#4c566a",
         "keybindingLabel.bottomBorder": "#4c566a",
@@ -329,15 +337,15 @@ var template = {
         "statusBarItem.warningBackground": "#ebcb8b",
         "statusBarItem.warningForeground": "#2e3440",
 
-        "tab.activeBackground": dark1,
+        "tab.activeBackground": dark0,
         "tab.activeForeground": "#d8dee9",
         "tab.activeBorder": primary,
         "tab.border": transparent,
-        "tab.inactiveBackground": "#2e3440",
+        "tab.inactiveBackground": dark0,
         "tab.inactiveForeground": "#d8dee966",
         "tab.unfocusedActiveForeground": "#d8dee999",
         "tab.unfocusedInactiveForeground": "#d8dee966",
-        "tab.activeBorderTop": "#88c0d000",
+        // "tab.activeBorderTop": "#88c0d000",
 
         "terminal.background": dark0,
         "terminal.foreground": light0,
