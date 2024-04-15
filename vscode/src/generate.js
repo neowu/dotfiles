@@ -149,7 +149,7 @@ var template = {
 
         "editor.background": dark0,
         "editor.foreground": "#d8dee9",
-        "editor.hoverHighlightBackground": "#3b4252",
+        "editor.hoverHighlightBackground": dark1 + alpha[5],
         "editor.findMatchBackground": "#88c0d066",
         "editor.findMatchHighlightBackground": "#88c0d033",
         "editor.findRangeHighlightBackground": "#88c0d033",
@@ -328,8 +328,8 @@ var template = {
         "statusBar.border": "#3b425200",
 
         "statusBarItem.activeBackground": "#4c566a",
-        "statusBarItem.hoverBackground": dark2,
-        "statusBarItem.compactHoverBackground": dark2,
+        "statusBarItem.hoverBackground": dark3 + alpha[7],
+        "statusBarItem.compactHoverBackground": dark3 + alpha[3],
         "statusBarItem.prominentBackground": "#3b4252",
         "statusBarItem.prominentHoverBackground": "#434c5e",
         "statusBarItem.errorBackground": "#3b4252",

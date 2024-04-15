@@ -69,11 +69,12 @@ config.keys = {
 config.key_tables = {
     pane_mode = {
         { key = "p", mods = "CMD", action = act.PopKeyTable },
+        { key = "Escape", action = act.PopKeyTable },
         { key = "s", action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
         { key = "v", action = act.SplitVertical { domain = "CurrentPaneDomain" } },
         { key = "q", action = act.CloseCurrentPane { confirm = false } },
         { key = "z", action = act.TogglePaneZoomState },
-        { key = "a", action = act.PaneSelect },
+        { key = "a", action = act.Multiple { act.ClearKeyTableStack, act.PaneSelect } },
         { key = "f", action = act.ToggleFullScreen },
         { key = "h", action = act.ActivatePaneDirection "Left" },
         { key = "l", action = act.ActivatePaneDirection "Right" },
@@ -83,7 +84,6 @@ config.key_tables = {
         { key = "]", action = act.ActivatePaneDirection "Next" },  
         { key = "{", mods = "SHIFT", action = act.RotatePanes "CounterClockwise" },
         { key = "}", mods = "SHIFT", action = act.RotatePanes "Clockwise" },
-        { key = "Escape", action = act.PopKeyTable },
     },
 }
 
