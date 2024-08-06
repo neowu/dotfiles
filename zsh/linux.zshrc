@@ -12,7 +12,6 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/highlighting.zsh
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
-FZF_PLUGIN_BASE=/usr/share/doc/fzf/examples
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/eza.zsh
 
@@ -30,4 +29,4 @@ export BAT_THEME='Nord'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias cat='bat -p'
 
-source $ZDOTDIR/.p10k.zsh
+source $ZDOTDIR/p10k.zsh

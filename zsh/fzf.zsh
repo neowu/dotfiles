@@ -7,5 +7,4 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
     fd --type d --color=always --hidden --follow --exclude '.git' . "$1"
 }
-source $FZF_PLUGIN_BASE/completion.zsh
-source $FZF_PLUGIN_BASE/key-bindings.zsh
+source <(fzf --zsh)

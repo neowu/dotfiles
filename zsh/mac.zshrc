@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
+[[ -e $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 source $ZDOTDIR/config.zsh
 
@@ -14,7 +15,6 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/highlighting.zsh
 source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
-FZF_PLUGIN_BASE=/opt/homebrew/opt/fzf/shell
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/eza.zsh
 
@@ -26,4 +26,4 @@ export BAT_THEME='Nord'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias cat='bat -p'
 
-source $ZDOTDIR/.p10k.zsh
+source $ZDOTDIR/p10k.zsh
