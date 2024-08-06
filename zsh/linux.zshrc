@@ -14,6 +14,7 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/eza.zsh
+source $ZDOTDIR/bat.zsh
 
 # gcloud load "autoload -U +X bashcompinit && bashcompinit" already
 [[ -e /usr/share/google-cloud-sdk/completion.zsh.inc ]] && source /usr/share/google-cloud-sdk/completion.zsh.inc
@@ -24,9 +25,5 @@ source $ZDOTDIR/eza.zsh
 cdpath=(/workspaces)
 alias d='dirs -v'
 alias ..='cd ..'
-
-export BAT_THEME='Nord'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-alias cat='bat -p'
 
 source $ZDOTDIR/p10k.zsh

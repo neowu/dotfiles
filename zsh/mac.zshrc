@@ -17,13 +17,10 @@ source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 source $ZDOTDIR/fzf.zsh
 source $ZDOTDIR/eza.zsh
+source $ZDOTDIR/bat.zsh
 
 cdpath=($HOME/depot $HOME/projects)
 alias d='dirs -v'
 alias ..='cd ..'
-
-export BAT_THEME='Nord'
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-alias cat='bat -p'
 
 source $ZDOTDIR/p10k.zsh

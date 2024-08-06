@@ -49,7 +49,3 @@ cp zsh/linux.zshrc $HOME/.zsh/.zshrc
 # setup git signing
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
-
-if [[ -e "/etc/alpine-release" ]]; then
-    sed -i -e 's/FZF_PLUGIN_BASE=.*/FZF_PLUGIN_BASE=\/usr\/share\/zsh\/plugins\/fzf/' ~/.zsh/.zshrc
-fi
