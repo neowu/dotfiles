@@ -8,8 +8,9 @@ brew install git p7zip wget socat
 brew install bat eza fd fzf ripgrep
 brew install docker docker-buildx docker-compose
 
-brew install visual-studio-code
-brew install intellij-idea
+brew install font-jetbrains-mono-nerd-font
+brew install zed firefox
+brew install intellij-idea visual-studio-code
 ```
 
 ## macos options
