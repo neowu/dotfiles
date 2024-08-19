@@ -1,7 +1,10 @@
+status is-interactive; or exit
+
 set -U fish_greeting
+
+set -x CDPATH $HOME/depot $HOME/projects
 
 fish_add_path $HOME/.cargo/bin
 
-if status is-interactive
-    set -x CDPATH $HOME/depot $HOME/projects
-end
+abbr h history
+abbr dh dirh

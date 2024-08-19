@@ -5,7 +5,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git p7zip wget socat
-brew install bat eza fd fzf ripgrep
+brew install bat eza fd ripgrep
 brew install docker docker-buildx docker-compose
 
 brew install font-jetbrains-mono-nerd-font
