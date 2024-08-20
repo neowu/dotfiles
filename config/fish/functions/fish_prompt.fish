@@ -1,31 +1,30 @@
 function fish_prompt
     set -l last_status $status
 
-    # pwd
-    set -l git_root (command -q git; and command git --no-optional-locks rev-parse --show-toplevel 2>/dev/null)
-    set -l cwd
-    if string length -q -- $git_root
-        set cwd (string replace -- $git_root (path dirname $git_root)'/:' $PWD)
-        set cwd (prompt_pwd --full-length-dirs=2 -- $cwd | string replace -- ':' (set_color magenta)(path basename $git_root)(set_color $fish_color_cwd))
+    # pwd / git
+    set -l git_info (command -q git; and command git rev-parse --show-toplevel --abbrev-ref HEAD 2>/dev/null)
+    if string length -q -- $git_info
+        set -l repo_path $git_info[1]
+        set -l branch $git_info[2]
+        set -l cwd (string replace -- $repo_path (path dirname $repo_path)'/:' $PWD)
+        set -l cwd (prompt_pwd --dir-length=0 -- $cwd | string replace -- ':' (set_color magenta)(path basename $repo_path)(set_color $fish_color_cwd))
+
+        set_color $fish_color_cwd
+        printf (prompt_pwd --dir-length=0 $cwd)
+
+        set_color --dim white
+        printf " $branch"
+        set_color normal
     else
-        set cwd (prompt_pwd --full-length-dirs=2)
+        set_color $fish_color_cwd
+        printf (prompt_pwd --dir-length=0)
     end
 
-    set_color $fish_color_cwd
-    printf $cwd
-
-    # git
-    set -g __fish_git_prompt_show_informative_status true
-    set -g __fish_git_prompt_char_cleanstate ''
-    set -g __fish_git_prompt_char_stateseparator ' '
-    set -g __fish_git_prompt_char_upstream_prefix ' '
-    set -g __fish_git_prompt_char_stagedstate '󰐕'
-    set -g __fish_git_prompt_char_dirtystate '󰈅'
-
-    set -g __fish_git_prompt_showcolorhints true
-    set -g __fish_git_prompt_color_branch --dim white
-    set -g __fish_git_prompt_color_upstream yellow
-    fish_git_prompt ' %s'
+    # background jobs
+    if jobs -q
+        set_color yellow
+        printf ' ✦'
+    end
 
     # command duration
     if test $CMD_DURATION -ge 3000
@@ -41,13 +40,13 @@ function fish_prompt
         test $secs -gt 0; and printf $secs's'
     end
 
-    # background jobs
-    if jobs -q
-        set_color yellow
-        printf ' ✦'
-    end
-
     printf '\n'
+
+    # python venv
+    if set -q VIRTUAL_ENV
+        set_color magenta
+        printf (path basename (path dirname $VIRTUAL_ENV))' '
+    end
 
     # prompt char
     if test $last_status -eq 0
