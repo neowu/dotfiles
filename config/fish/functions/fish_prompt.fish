@@ -2,17 +2,16 @@ function fish_prompt
     set -l last_status $status
 
     # pwd
-    set_color $fish_color_cwd
-
-    set -l git_root (command git --no-optional-locks rev-parse --show-toplevel 2>/dev/null)
+    set -l git_root (command -q git; and command git --no-optional-locks rev-parse --show-toplevel 2>/dev/null)
     set -l cwd
     if string length -q -- $git_root
-        set -l segments (string split -r -m1 -- / $git_root)
-        set cwd (string replace -- $git_root "$segments[1]/:" $PWD)
-        set cwd (prompt_pwd --full-length-dirs=2 -- $cwd | string replace -- : "$(set_color magenta)$segments[2]$(set_color $fish_color_cwd)")
+        set cwd (string replace -- $git_root (path dirname $git_root)'/:' $PWD)
+        set cwd (prompt_pwd --full-length-dirs=2 -- $cwd | string replace -- ':' (set_color magenta)(path basename $git_root)(set_color $fish_color_cwd))
     else
         set cwd (prompt_pwd --full-length-dirs=2)
     end
+
+    set_color $fish_color_cwd
     printf $cwd
 
     # git
@@ -31,23 +30,21 @@ function fish_prompt
     # command duration
     if test $CMD_DURATION -ge 3000
         set_color yellow
+        printf ' '
 
         set -l hours (math --scale=0 $CMD_DURATION/3600000)
         set -l mins (math --scale=0 $CMD_DURATION/60000 % 60)
         set -l secs (math --scale=1 $CMD_DURATION/1000 % 60)
 
-        set -l elapsed
-        test $hours -gt 0 && set -a elapsed $hours"h"
-        test $mins -gt 0 && set -a elapsed $mins"m"
-        test $secs -gt 0 && set -a elapsed $secs"s"
-
-        printf ' %s' $elapsed
+        test $hours -gt 0; and printf $hours'h'
+        test $mins -gt 0; and printf $mins'm'
+        test $secs -gt 0; and printf $secs's'
     end
 
     # background jobs
     if jobs -q
         set_color yellow
-        printf ' 󰒓'
+        printf ' ✦'
     end
 
     printf '\n'
@@ -56,7 +53,7 @@ function fish_prompt
     if test $last_status -eq 0
         set_color magenta
     else
-        set_color red
+        set_color $fish_color_error
     end
     printf '❯ '
 
