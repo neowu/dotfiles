@@ -7,10 +7,11 @@
 brew install git p7zip wget socat
 brew install bat eza fd ripgrep
 brew install docker docker-buildx docker-compose
+brew install rustup
 
 brew install font-jetbrains-mono-nerd-font
 brew install zed firefox
-brew install intellij-idea visual-studio-code
+brew install intellij-idea
 ```
 
 ## macos options
@@ -47,13 +48,4 @@ git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 git config --global commit.gpgsign true
 
 echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
-```
-
-### rust
-```sh
-brew install rustup
-rustup
-rustup component add rust-analyzer
-rustup completions zsh | sudo tee /usr/local/share/zsh/site-functions/_rustup
-rustup completions zsh cargo | sudo tee /usr/local/share/zsh/site-functions/_cargo
 ```
