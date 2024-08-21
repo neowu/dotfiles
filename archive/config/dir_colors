@@ -1,3 +1,4 @@
+# refer to https://github.com/nordtheme/dircolors/blob/develop/src/dir_colors
 # generate LS_COLORS by 'dircolors ./dir_colors'
 COLOR tty
 

@@ -1,0 +1,79 @@
+{
+  "vim_mode": false,
+  "theme": "Nord",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 14,
+  "autosave": "on_focus_change",
+  "inlay_hints": {
+    "enabled": true
+  },
+  "wrap_guides": [120],
+  "preferred_line_length": 120,
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
+  "assistant": {
+    "enabled": false,
+    "version": "2"
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "detect_venv": "off"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "languages": {
+    "JSON": {
+      "preferred_line_length": 120
+    },
+    "Markdown": {
+      "preferred_line_length": 300
+    },
+    "TOML": {
+      "language_servers": ["!taplo"]
+    }
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rustfmt": {
+          "extraArgs": ["+nightly"]
+        },
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "punctuation": {
+        "color": "#81A1C1"
+      },
+      "punctuation.bracket": {
+        "color": "#81A1C1"
+      }
+    },
+    "players": [
+      {
+        "selection": "#e5e9f033"
+      }
+    ]
+  }
+}

@@ -30,7 +30,7 @@ fish_add_path -g $HOME/.cargo/bin
 
 set -x CDPATH $HOME/depot $HOME/projects
 
-abbr ... 'cd ../../'
-abbr .... 'cd ../../../'
+abbr ... '../../'
+abbr .... '../../../'
 
 abbr lg 'lazygit'
