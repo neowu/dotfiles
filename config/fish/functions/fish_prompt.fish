@@ -41,6 +41,12 @@ function fish_prompt
 
     printf '\n'
 
+    # ssh host
+    if set -q SSH_TTY
+        set_color $fish_color_host_remote
+        printf (prompt_hostname)' '
+    end
+
     # prompt char
     if test $last_status -eq 0
         set_color magenta
