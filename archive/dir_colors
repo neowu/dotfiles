@@ -59,168 +59,64 @@ OTHER_WRITABLE 01;04;34
 STICKY 04;37;44
 
 # --- Archives ---
-.7z 01;32
-.bz2 01;32
-.cab 01;32
-.deb 01;32
-.gz 01;32
-.jar 01;32
-.lz 01;32
-.lz4 01;32
-.lzma 01;32
-.lzo 01;32
-.rar 01;32
-.rpm 01;32
-.rz 01;32
-.t7z 01;32
-.tar 01;32
-.taz 01;32
-.tbz 01;32
-.tbz2 01;32
-.tgz 01;32
-.tlz 01;32
-.txz 01;32
-.tz 01;32
-.xz 01;32
-.z 01;32
-.zip 01;32
-.zst 01;32
+.7z   01;32
+.tar  01;32
+.gz   01;32
+.bz2  01;32
+.lz   01;32
+.xz   01;32
+.zip  01;32
+.jar  01;32
+.rar  01;32
 
 #+--- Audio ---+
-.aac 32
-.au 32
+.aac  32
 .flac 32
-.m4a 32
-.mid 32
-.mp3 32
-.mpa 32
-.mpeg 32
-.mpg 32
-.ogg 32
-.opus 32
-.ra 32
-.wav 32
-
-#+--- Customs ---+
-.3des 01;35
-.aes 01;35
-.gpg 01;35
-.pgp 01;35
+.mid  32
+.mp3  32
+.ogg  32
+.wav  32
 
 #+--- Documents ---+
-.doc 32
+.doc  32
 .docx 32
-.pdf 32
-.ppt 32
+.pdf  32
+.ppt  32
 .pptx 32
-.xls 32
+.xls  32
 .xlsx 32
 
-# --- Executables ---
-.app 01;36
-.bat 01;36
-.cmd 01;36
-.com 01;36
-.exe 01;36
-.reg 01;36
-
 # --- ignores / unimportant ---
-*~ 02;37
-.bak 02;37
-.log 02;37
-.log 02;37
-.old 02;37
-.orig 02;37
-.swo 02;37
-.swp 02;37
-.lock 02;37
-.DS_Store 02;37
-.gitignore 02;37
+*~            02;37
+.bak          02;37
+.log          02;37
+.old          02;37
+.orig         02;37
+.swo          02;37
+.swp          02;37
+.lock         02;37
+.DS_Store     02;37
+.gitignore    02;37
 .dockerignore 02;37
 
 # --- Images ---
-.bmp 32
-.gif 32
-.jpeg 32
-.jpg 32
-.png 32
-.ps 32
-.svg 32
-.tga 32
-.tif 32
-.tiff 32
+.bmp  35
+.gif  35
+.jpeg 35
+.jpg  35
+.png  35
+.ps   35
+.svg  35
+.tif  35
+.tiff 35
 
 # --- Video ---
-.avi 32
-.flc 32
-.fli 32
-.flv 32
-.m4v 32
-.mkv 32
-.mov 32
-.mp4 32
-.mpeg 32
-.mpg 32
-.qt 32
-.webm 32
-.wmv 32
-
-# --- text / config / markup ---
-.cfg 35
-.conf 35
-.config 35
-.ini 35
-.json 35
-.tml 35
-.toml 35
-.xml 35
-.yaml 35
-.yml 35
-*Dockerfile 35
-.properties 35
-
-.txt 35
-.htm 35
-.html 35
-.csv 35
-.md 35
-
-# --- source code ---
-.css 32
-.sass 32
-.scss 32
-.c 32
-.cpp 32
-.h 32
-.dart 32
-.diff 32
-.patch 32
-.go 32
-.dot 32
-.groovy 32
-.gradle 32
-.ipynb 32
-.java 32
-.js  32
-.jsx 32
-.ts  32
-.tsx 32
-.kt  32
-.kts 32
-.lua 32
-.php 32
-.py 32
-.rb 32
-.rs 32
-.sh  32
-.bash 32
-.zsh  32
-.fish 32
-.sql 32
-.swift 32
-.vim 32
-
-# --- special ---
-*README.md 04;33
-*CHANGELOG.md 04;33
-*INSTALL.md 04;33
+.avi  01;35
+.mkv  01;35
+.mov  01;35
+.mp4  01;35
+.mpeg 01;35
+.mpg  01;35
+.qt   01;35
+.webm 01;35
+.wmv  01;35
