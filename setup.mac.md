@@ -7,7 +7,6 @@
 brew install git p7zip wget socat
 brew install bat eza fd ripgrep
 brew install docker docker-buildx docker-compose
-brew install rustup
 
 brew install font-jetbrains-mono-nerd-font
 brew install zed firefox
@@ -48,4 +47,12 @@ git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 git config --global commit.gpgsign true
 
 echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
+```
+
+### rust
+```sh
+brew install rustup
+/opt/homebrew/opt/rustup/bin/rustup-init --no-modify-path
+rustup component add rust-analyzer
+rustup toolchain install nightly
 ```
