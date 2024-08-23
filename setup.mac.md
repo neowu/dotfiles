@@ -1,6 +1,6 @@
 # setup macos
 
-## brew
+### brew
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -14,7 +14,7 @@ brew install zed firefox
 brew install intellij-idea
 ```
 
-## macos options
+### macos options
 ```sh
 defaults write com.apple.dock tilesize -float 48
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -30,7 +30,7 @@ defaults write -g NSColorSimulatedHardwareEnclosureNumber -int 4
 
 ### sudo
 ```sh
-sudo sed -i -e 's/%admin\t.*/%admin\t\tALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
+sudo sed -i -e 's/^%admin\t.*/%admin\t\tALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 ```
 
 ### git
