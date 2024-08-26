@@ -51,6 +51,9 @@
   },
   "lsp": {
     "rust-analyzer": {
+      "binary": {
+        "path": "/Users/neo/.local/share/cargo/bin/rust-analyzer"
+      },
       "initialization_options": {
         "rustfmt": {
           "extraArgs": ["+nightly"]

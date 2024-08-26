@@ -6,10 +6,8 @@
 
 brew install git p7zip wget socat
 brew install bat eza fd ripgrep
-brew install docker docker-buildx docker-compose
 
-brew install font-jetbrains-mono-nerd-font
-brew install zed firefox
+brew install font-jetbrains-mono-nerd-font zed firefox
 brew install intellij-idea
 ```
 
@@ -55,4 +53,21 @@ brew install rustup
 /opt/homebrew/opt/rustup/bin/rustup-init --no-modify-path
 rustup component add rust-analyzer
 rustup toolchain install nightly
+```
+
+### ~/.ssh/config
+```
+Host github.com
+  User git
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_github
+  AddKeysToAgent yes
+  ForwardAgent yes
+
+Host *
+  IdentityFile ~/.ssh/id_ed25519
+  ForwardAgent yes
+  ControlMaster auto
+  ControlPath ~/.cache/ssh/%r@%h-%p
+  ControlPersist 600
 ```
