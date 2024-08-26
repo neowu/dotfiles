@@ -29,7 +29,6 @@ end
 set -x XDG_DATA_HOME $HOME/.local/share
 
 set -x LESSHISTFILE $XDG_DATA_HOME/lesshst
-set -x GRADLE_USER_HOME $XDG_DATA_HOME/gradle
 
 set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -x CARGO_HOME $XDG_DATA_HOME/cargo
