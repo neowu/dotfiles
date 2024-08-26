@@ -5,4 +5,12 @@ cp -r config/fish $HOME/.config/
 set -U fish_greeting
 fish_config theme choose Nord
 set -U fish_color_cwd cyan
-set -U fish_color_host_remote yellow
+
+switch (hostname)
+case '*dev*'
+    set -U fish_color_host_remote green
+case '*prod*'
+    set -U fish_color_host_remote red
+case '*'
+    set -U fish_color_host_remote yellow
+end

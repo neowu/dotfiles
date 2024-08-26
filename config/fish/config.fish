@@ -35,7 +35,7 @@ set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -x CARGO_HOME $XDG_DATA_HOME/cargo
 fish_add_path -g $CARGO_HOME/bin
 
-set -x CDPATH $HOME/depot $HOME/projects
+set -x CDPATH . $HOME/depot $HOME/projects
 
 abbr ... ../../
 abbr .... ../../../
