@@ -74,6 +74,7 @@ STICKY 04;37;44
 .flac 32
 .mid  32
 .mp3  32
+.m4a  32
 .ogg  32
 .wav  32
 

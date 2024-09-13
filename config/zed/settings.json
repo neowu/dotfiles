@@ -1,5 +1,4 @@
 {
-  "vim_mode": false,
   "theme": "Nord",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 14,
@@ -9,13 +8,30 @@
   },
   "wrap_guides": [120],
   "preferred_line_length": 120,
+  "relative_line_numbers": true,
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+    "use_multiline_find": true,
+    "use_smartcase_find": true,
+    "use_system_clipboard": "on_yank"
+  },
+  // "proxy": "socks5://dev.internal:1080",
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "enabled": false,
+    "version": "2"
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "detect_venv": "off"
+  },
   "features": {
     "copilot": false,
     "inline_completion_provider": "none"
-  },
-  "assistant": {
-    "enabled": false,
-    "version": "2"
   },
   "chat_panel": {
     "button": false
@@ -28,10 +44,6 @@
   },
   "tabs": {
     "git_status": true
-  },
-  "terminal": {
-    "copy_on_select": true,
-    "detect_venv": "off"
   },
   "git": {
     "inline_blame": {
@@ -52,7 +64,8 @@
   "lsp": {
     "rust-analyzer": {
       "binary": {
-        "path": "/Users/neo/.local/share/cargo/bin/rust-analyzer"
+        "path": "/Users/neo/.local/share/cargo/bin/rust-analyzer",
+        "arguments": ["--no-log-buffering"]
       },
       "initialization_options": {
         "rustfmt": {
@@ -65,17 +78,24 @@
     }
   },
   "experimental.theme_overrides": {
+    "editor.active_line.background": "#97acd633",
     "syntax": {
       "punctuation": {
-        "color": "#81A1C1"
+        "color": "#81a1c1"
       },
       "punctuation.bracket": {
-        "color": "#81A1C1"
+        "color": "#81a1c1"
+      },
+      "variable.parameter": {
+        "color": "#d8dee9"
+      },
+      "attribute": {
+        "color": "#d08770"
       }
     },
     "players": [
       {
-        "selection": "#e5e9f033"
+        "selection": "#97acd633"
       }
     ]
   }
