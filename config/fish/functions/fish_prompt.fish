@@ -11,7 +11,7 @@ function fish_prompt
         set_color $fish_color_cwd
         printf (prompt_pwd --dir-length=0 $cwd)
 
-        set_color --dim white
+        set_color --dim black
         printf " $rev"
         set_color normal
     else

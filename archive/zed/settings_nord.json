@@ -1,8 +1,9 @@
 {
+  "icon_theme": "Catppuccin Latte",
   "autosave": "on_focus_change",
-  "theme": "Github Light",
+  "theme": "Nord",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 15,
+  "buffer_font_size": 14,
   "cursor_blink": true,
   "inlay_hints": {
     "enabled": true
@@ -36,7 +37,7 @@
     "modal_max_width": "large"
   },
   "indent_guides": {
-    "coloring": "indent_aware"
+    "background_coloring": "indent_aware"
   },
   "features": {
     "copilot": true,
@@ -84,10 +85,27 @@
     }
   },
   "experimental.theme_overrides": {
-    "terminal.background": "#ffffff",
+    "accents": ["#2e3440", "#3b4252", "#434c5e", "#4c566a", "#5c6578", "#6b7384", "#78808f", "#848c99"],
+    "predictive": "#6f788a",
+    "editor.active_line.background": "#97acd633",
+    "syntax": {
+      "punctuation": {
+        "color": "#81a1c1"
+      },
+      "punctuation.bracket": {
+        "color": "#81a1c1"
+      },
+      "variable.parameter": {
+        "color": "#d8dee9"
+      },
+      "attribute": {
+        "color": "#d08770"
+      }
+    },
     "players": [
       {
-        "selection": "#0969da33"
+        "cursor": "#d8dee9",
+        "selection": "#97acd633"
       }
     ]
   }

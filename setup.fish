@@ -3,8 +3,33 @@ cp -r config/fish $HOME/.config/
 
 # set universal variables
 set -U fish_greeting
-fish_config theme choose Nord
+
+# set theme
+set -U fish_color_normal normal
+set -U fish_color_command blue
+set -U fish_color_param normal
+set -U fish_color_keyword magenta
+set -U fish_color_quote green
+set -U fish_color_redirection magenta
+set -U fish_color_end magenta
+set -U fish_color_comment --dim black
+set -U fish_color_error red
+set -U fish_color_gray --dim black
+set -U fish_color_selection --background=brwhite
+set -U fish_color_search_match --background=brwhite
+set -U fish_color_option cyan
+set -U fish_color_operator magenta
+set -U fish_color_escape brred
+set -U fish_color_autosuggestion --dim brwhite
+set -U fish_color_cancel red
 set -U fish_color_cwd cyan
+set -U fish_color_user cyan
+set -U fish_color_host blue
+set -U fish_color_status red
+set -U fish_pager_color_progress --dim black
+set -U fish_pager_color_prefix blue
+set -U fish_pager_color_completion normal
+set -U fish_pager_color_description yellow
 
 switch (hostname)
 case '*dev*'

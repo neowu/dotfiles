@@ -1,0 +1,14 @@
+[
+  {
+    "bindings": {
+      "cmd-[": "pane::GoBack",
+      "cmd-]": "pane::GoForward"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "f1": "editor::OpenDocs"
+    }
+  }
+]
