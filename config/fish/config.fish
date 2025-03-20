@@ -38,5 +38,3 @@ set -x CDPATH . $HOME/depot $HOME/projects
 
 abbr ... ../../
 abbr .... ../../../
-
-abbr lg lazygit

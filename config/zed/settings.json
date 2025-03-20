@@ -12,14 +12,13 @@
   },
   "preferred_line_length": 120,
   "wrap_guides": [120],
-  // "proxy": "socks5://dev.internal:1080",
   "assistant": {
     "enabled": true,
     "version": "2",
     "enable_experimental_live_diffs": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
+      "model": "claude-3-7-sonnet"
     }
   },
   "terminal": {
@@ -42,15 +41,6 @@
     "copilot": true,
     "edit_prediction_provider": "copilot"
   },
-  "chat_panel": {
-    "button": "never"
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  "notification_panel": {
-    "button": false
-  },
   "tabs": {
     "file_icons": true,
     "git_status": true
@@ -60,15 +50,18 @@
       "enabled": false
     }
   },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": "error"
+    }
+  },
   "languages": {
     "JSON": {
       "preferred_line_length": 120
     },
     "Markdown": {
       "preferred_line_length": 300
-    },
-    "TOML": {
-      "language_servers": ["!taplo"]
     }
   },
   "lsp": {
@@ -85,10 +78,24 @@
   },
   "experimental.theme_overrides": {
     "terminal.background": "#ffffff",
+    "elevated_surface.background": "#f6f8fa",
+    "editor.document_highlight.read_background": "#d1d9e066",
+    "editor.document_highlight.write_background": "#d1d9e066",
+    "hint": "#818b98",
     "players": [
       {
         "selection": "#0969da33"
       }
     ]
+  },
+  "chat_panel": {
+    "button": "never"
+  },
+  "show_user_picture": false,
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
   }
 }
