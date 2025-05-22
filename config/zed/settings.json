@@ -1,8 +1,7 @@
 {
   "autosave": "on_focus_change",
-  "theme": "Github Light",
+  "theme": "Primer",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 15,
   "cursor_blink": true,
   "inlay_hints": {
     "enabled": true
@@ -12,13 +11,13 @@
   },
   "preferred_line_length": 120,
   "wrap_guides": [120],
-  "assistant": {
+  "agent": {
+    "default_profile": "ask",
     "enabled": true,
     "version": "2",
-    "enable_experimental_live_diffs": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "model": "claude-3.7-sonnet"
     }
   },
   "terminal": {
@@ -36,6 +35,9 @@
   },
   "indent_guides": {
     "coloring": "indent_aware"
+  },
+  "minimap": {
+    "show": "always"
   },
   "features": {
     "copilot": true,
@@ -73,25 +75,16 @@
         "check": {
           "command": "clippy"
         }
-      }
+      },
+      "enable_lsp_tasks": false
     }
-  },
-  "experimental.theme_overrides": {
-    "terminal.background": "#ffffff",
-    "elevated_surface.background": "#f6f8fa",
-    "editor.document_highlight.read_background": "#d1d9e066",
-    "editor.document_highlight.write_background": "#d1d9e066",
-    "hint": "#818b98",
-    "players": [
-      {
-        "selection": "#0969da33"
-      }
-    ]
   },
   "chat_panel": {
     "button": "never"
   },
-  "show_user_picture": false,
+  "title_bar": {
+    "show_user_picture": false
+  },
   "collaboration_panel": {
     "button": false
   },
