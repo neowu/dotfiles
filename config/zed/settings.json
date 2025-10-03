@@ -1,8 +1,9 @@
 {
+  "show_edit_predictions": false,
   "autosave": "on_focus_change",
   "theme": "Primer",
   "buffer_font_family": "JetBrainsMono Nerd Font",
-  "cursor_blink": true,
+  "use_system_window_tabs": true,
   "inlay_hints": {
     "enabled": true
   },
@@ -12,12 +13,11 @@
   "preferred_line_length": 120,
   "wrap_guides": [120],
   "agent": {
-    "default_profile": "ask",
     "enabled": true,
-    "version": "2",
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "gpt-5"
     }
   },
   "terminal": {
@@ -25,6 +25,7 @@
     "detect_venv": "off",
     "option_as_meta": true,
     "cursor_shape": "bar",
+    "keep_selection_on_copy": true,
     "blinking": "on",
     "toolbar": {
       "breadcrumbs": false
@@ -37,11 +38,12 @@
     "coloring": "indent_aware"
   },
   "minimap": {
-    "show": "always"
+    "show": "always",
+    "thumb_border": "none",
+    "display_in": "active_editor"
   },
   "features": {
-    "copilot": true,
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "none"
   },
   "tabs": {
     "file_icons": true,
@@ -79,10 +81,8 @@
       "enable_lsp_tasks": false
     }
   },
-  "chat_panel": {
-    "button": "never"
-  },
   "title_bar": {
+    "show_sign_in": false,
     "show_user_picture": false
   },
   "collaboration_panel": {

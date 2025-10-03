@@ -8,7 +8,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "f1": "editor::OpenDocs"
+      "f1": "editor::OpenDocs",
+      "cmd-shift-u": "editor::ToggleCase"
     }
   }
 ]
