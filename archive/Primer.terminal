@@ -146,15 +146,25 @@
 	Y3QIERokKTI3SUxRU1ddZGp3fp2foaaxusLFAAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAA
 	AAAAAAAAAM4=
 	</data>
+	<key>BackgroundAlphaInactive</key>
+	<real>1</real>
+	<key>BackgroundBlur</key>
+	<real>0.0</real>
+	<key>BackgroundBlurInactive</key>
+	<real>0.27031250298023224</real>
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
-	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
-	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC45NTY4NjI3NDc3IDAuOTU2ODYyNzQ3
-	NyAwLjk1Njg2Mjc0NzcAEAKAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
-	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
-	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGlCwwVGSBVJG51bGzUDQ4PEBES
+	ExRVTlNSR0JcTlNDb2xvclNwYWNlXxASTlNDdXN0b21Db2xvclNwYWNlViRjbGFzc0Yx
+	IDEgMQAQAYACgATSFhAXGFROU0lEEAGAA9IaGxwdWiRjbGFzc25hbWVYJGNsYXNzZXNc
+	TlNDb2xvclNwYWNloh4fXE5TQ29sb3JTcGFjZVhOU09iamVjdNIaGyEiV05TQ29sb3Ki
+	IR8ACAARABoAJAApADIANwBJAEwAUQBTAFkAXwBoAG4AewCQAJcAngCgAKIApACpAK4A
+	sACyALcAwgDLANgA2wDoAPEA9gD+AAAAAAAAAgEAAAAAAAAAIwAAAAAAAAAAAAAAAAAA
+	AQE=
 	</data>
+	<key>BackgroundSettingsForInactiveWindows</key>
+	<false/>
 	<key>Bell</key>
 	<false/>
 	<key>CursorBlink</key>
@@ -170,6 +180,8 @@
 	</data>
 	<key>CursorType</key>
 	<integer>2</integer>
+	<key>DynamicANSIForegroundColors</key>
+	<true/>
 	<key>EnableSmoothResizing</key>
 	<true/>
 	<key>Font</key>
@@ -184,15 +196,15 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.0699999999999998</real>
+	<real>2.0899999999999999</real>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
-	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAnMC42NjI3NDUxMTgxIDAuNzU2ODYyNzU5
-	NiAwLjg4NjI3NDUxNjYAEAKAAtIUFRYXWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xv
-	cqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+qKqssbzFzdAAAAAAAAABAQAAAAAA
-	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxArMC42NjI3NDUxMTgxIDAuNzU2ODYyNzU5
+	NiAwLjg4NjI3NDUxNjYgMC41ABACgALSFBUWF1okY2xhc3NuYW1lWCRjbGFzc2VzV05T
+	Q29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1ddZGp3fqyusLXAydHUAAAAAAAAAQEA
+	AAAAAAAAGQAAAAAAAAAAAAAAAAAAAN0=
 	</data>
 	<key>ShouldRestoreContent</key>
 	<false/>
@@ -229,7 +241,7 @@
 	<key>columnCount</key>
 	<integer>120</integer>
 	<key>name</key>
-	<string>Github</string>
+	<string>Primer</string>
 	<key>rowCount</key>
 	<integer>30</integer>
 	<key>type</key>
