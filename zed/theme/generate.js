@@ -2,10 +2,10 @@
 import fs from "node:fs/promises";
 
 // Zen Bg Shades
-const ZEN_BG = "#090E13";
-const ZEN_BG1 = "#1C1E25";
-const ZEN_BG2 = "#22262D";
-const ZEN_BG3 = "#393B44";
+const D_BG = "#090E13";
+const D_BG1 = "#1C1E25";
+const D_BG2 = "#22262D";
+const D_BG3 = "#393B44";
 
 // Popup and Floats
 const ALT_BLUE1 = "#223249";
@@ -46,7 +46,7 @@ const GRAY5 = "#5C6066";
 const OPERATORS = GRAY3; // original is "#9E9B93";
 
 // Light theme colors (pearl prefix)
-const PEARL_BLACK = ZEN_BG2;
+const PEARL_BLACK = D_BG2;
 const PEARL_BLACK1 = "#545464";
 const PEARL_BLACK2 = "#43436c";
 const PEARL_GRAY = "#e2e1df";
@@ -54,41 +54,39 @@ const PEARL_GRAY2 = "#5C6068";
 const PEARL_GRAY3 = "#6D6D69";
 const PEARL_GRAY4 = "#9F9F99";
 
-const PEARL_WHITE = "#f2f1ef";
+const L_BG = "#f2f1ef";
 const PEARL_WHITE1 = "#e2e1df";
-const PEARL_WHITE2 = "#dddddb";
+const L_BG2 = "#dddddb";
 const PEARL_WHITE3 = "#cacac7";
 const PEARL_VIOLET1 = "#a09cac";
 const PEARL_VIOLET2 = "#766b90";
 const PEARL_VIOLET3 = "#c9cbd1";
-const PEARL_VIOLET4 = "#624c83";
+const L_VIOLET4 = "#624c83";
 const PEARL_BLUE1 = "#c7d7e0";
 const PEARL_BLUE2 = "#b5cbd2";
 const PEARL_BLUE3 = "#9fb5c9";
-const PEARL_BLUE4 = "#4d699b";
+const L_BLUE4 = "#4d699b";
 const PEARL_BLUE5 = "#5d57a3";
-const PEARL_GREEN = "#6f894e";
+const L_GREEN = "#6f894e";
 const PEARL_GREEN2 = "#6e915f";
 const PEARL_GREEN3 = "#b7d0ae";
-const PEARL_PINK = "#b35b79";
-const PEARL_ORANGE = "#cc6d00";
+const L_PINK = "#b35b79";
+const L_ORANGE = "#cc6d00";
 const PEARL_ORANGE2 = "#e98a00";
 const PEARL_YELLOW = "#77713f";
 const PEARL_YELLOW2 = "#836f4a";
-const PEARL_YELLOW3 = "#de9800";
+const L_YELLOW3 = "#de9800";
 const PEARL_YELLOW4 = "#f9d791";
 const PEARL_RED = "#c84053";
 const PEARL_RED2 = "#d7474b";
-const PEARL_RED3 = "#e82424";
+const L_RED3 = "#e82424";
 const PEARL_RED4 = "#d9a594";
-const PEARL_AQUA = "#597b75";
+const L_AQUA = "#597B75";
 const PEARL_AQUA2 = "#5e857a";
 const PEARL_TEAL1 = "#4e8ca2";
 const PEARL_TEAL2 = "#6693bf";
 const PEARL_TEAL3 = "#5a7785";
 const PEARL_CYAN = "#d7e3d8";
-
-const C_BG = [ZEN_BG, PEARL_WHITE];
 
 let theme_data = themes();
 await fs.writeFile("./neo_theme.json", JSON.stringify(theme_data, null, 2));
@@ -100,330 +98,36 @@ function themes() {
     name: "Neo",
     author: "Neo",
     themes: [
-      {
-        name: "Neo Dark",
-        appearance: "dark",
-        style: {
-          accents: [BLUE3, ORANGE2, PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
-
-          background: ZEN_BG,
-
-          border: ZEN_BG2,
-          "border.variant": ZEN_BG2 + "a0",
-          "border.focused": ZEN_BG2,
-          "border.selected": ZEN_BG2,
-          "border.transparent": ZEN_BG2 + "00",
-          "border.disabled": ZEN_BG2 + "80",
-
-          "drop_target.background": ZEN_BG2,
-
-          "editor.foreground": FG,
-          "editor.background": ZEN_BG,
-          "editor.gutter.background": ZEN_BG,
-          "editor.subheader.background": ZEN_BG1,
-          "editor.active_line.background": ZEN_BG2,
-          "editor.highlighted_line.background": ZEN_BG2,
-          "editor.line_number": GRAY5,
-          "editor.active_line_number": FG,
-          "editor.invisible": ZEN_BG2,
-          "editor.wrap_guide": GRAY5,
-          "editor.active_wrap_guide": GRAY5,
-          "editor.document_highlight.read_background": ZEN_BG3,
-          "editor.document_highlight.write_background": ZEN_BG3,
-
-          "elevated_surface.background": ZEN_BG1,
-          "element.background": ZEN_BG2,
-          "element.hover": ZEN_BG2,
-          "element.active": ZEN_BG3,
-          "element.selected": ZEN_BG3,
-          "element.disabled": ZEN_BG1,
-
-          "ghost_element.background": "#00000000",
-          "ghost_element.hover": ZEN_BG2,
-          "ghost_element.active": ZEN_BG3,
-          "ghost_element.selected": ZEN_BG3,
-          "ghost_element.disabled": ZEN_BG1,
-
-          text: FG,
-          "text.muted": GRAY4,
-          "text.placeholder": GRAY5,
-          "text.disabled": GRAY5,
-          "text.accent": RED3,
-
-          icon: FG,
-          "icon.muted": GRAY4,
-          "icon.disabled": GRAY5,
-          "icon.placeholder": ZEN_BG1,
-          "icon.accent": BLUE3,
-
-          "tab_bar.background": ZEN_BG,
-          "tab.inactive_background": ZEN_BG,
-          "tab.active_background": ZEN_BG1,
-          "title_bar.background": ZEN_BG,
-          "toolbar.background": ZEN_BG,
-
-          "panel.background": ZEN_BG,
-          "panel.focused_border": BLUE3,
-          "pane.focused_border": VIOLET3,
-
-          "search.match_background": ZEN_BG3,
-          "status_bar.background": ZEN_BG,
-          "scrollbar.thumb.background": GRAY5 + "33",
-          "scrollbar.thumb.hover_background": GRAY5,
-          "scrollbar.thumb.border": ZEN_BG2,
-          "scrollbar.track.background": ZEN_BG,
-          "scrollbar.track.border": ZEN_BG,
-          "surface.background": ZEN_BG,
-
-          "terminal.background": ZEN_BG,
-          "terminal.foreground": FG,
-          "terminal.bright_foreground": YELLOW3,
-          "terminal.dim_foreground": GRAY4,
-
-          "terminal.ansi.black": ZEN_BG1,
-          "terminal.ansi.bright_black": ZEN_BG2,
-          "terminal.ansi.dim_black": ZEN_BG1,
-
-          "terminal.ansi.red": RED3,
-          "terminal.ansi.dim_red": RED,
-          "terminal.ansi.bright_red": RED2,
-
-          "terminal.ansi.green": GREEN3,
-          "terminal.ansi.bright_green": GREEN2,
-          "terminal.ansi.dim_green": "#658594",
-          "terminal.ansi.yellow": YELLOW3,
-          "terminal.ansi.bright_yellow": YELLOW3,
-          "terminal.ansi.dim_yellow": "#dca561",
-          "terminal.ansi.blue": BLUE3,
-          "terminal.ansi.bright_blue": BLUE,
-          "terminal.ansi.dim_blue": VIOLET3,
-          "terminal.ansi.magenta": "#a292a3",
-          "terminal.ansi.bright_magenta": "#d27e99",
-          "terminal.ansi.dim_magenta": CYAN,
-          "terminal.ansi.cyan": CYAN,
-          "terminal.ansi.bright_cyan": "#7aa89f",
-          "terminal.ansi.dim_cyan": CYAN,
-          "terminal.ansi.white": FG,
-          "terminal.ansi.bright_white": ORANGE,
-          "terminal.ansi.dim_white": FG,
-
-          "link_text.hover": "#6a9589",
-          "link_text.border": ZEN_BG2,
-          "link_text.background": ZEN_BG1,
-          conflict: "#ff5d62",
-          created: GREEN2,
-          deleted: RED,
-          error: RED3,
-          warning: YELLOW3,
-          "warning.border": ZEN_BG2,
-          "warning.background": ZEN_BG1,
-          hidden: VIOLET3,
-          success: GREEN2,
-          "success.border": ZEN_BG2,
-          "success.background": ZEN_BG1,
-          info: VIOLET3,
-          "info.border": ZEN_BG2,
-          "info.background": ZEN_BG1,
-          hint: BLUE3,
-          "hint.border": ZEN_BG2,
-          "hint.background": ZEN_BG1,
-          modified: YELLOW,
-          renamed: ORANGE,
-          unreachable: FG,
-          ignored: ORANGE,
-          predictive: GRAY4,
-
-          players: [
-            {
-              cursor: FG,
-              background: ZEN_BG,
-              selection: BLUE3 + "33",
-            },
-            {
-              cursor: ORANGE2,
-            },
-            {
-              cursor: PINK,
-            },
-            {
-              cursor: GREEN3,
-            },
-            {
-              cursor: VIOLET3,
-            },
-            {
-              cursor: YELLOW3,
-            },
-            {
-              cursor: CYAN,
-            },
-            {
-              cursor: RED3,
-            },
-          ],
-
-          syntax: {
-            attribute: {
-              color: VIOLET2,
-            },
-            boolean: {
-              color: ORANGE,
-            },
-            comment: {
-              color: GRAY4,
-            },
-            "comment.doc": {
-              color: GRAY4,
-            },
-            constant: {
-              color: ORANGE,
-            },
-            constructor: {
-              color: VIOLET3,
-            },
-            embedded: {
-              color: ORANGE,
-            },
-            emphasis: {
-              color: ORANGE,
-            },
-            enum: {
-              color: ORANGE,
-            },
-            function: {
-              color: BLUE3,
-            },
-            hint: {
-              color: GRAY5,
-              font_weight: 300,
-            },
-            keyword: {
-              color: VIOLET2,
-            },
-            label: {
-              color: VIOLET2,
-            },
-            link_text: {
-              color: OPERATORS,
-              font_style: "normal",
-            },
-            link_uri: {
-              color: VIOLET2,
-            },
-            number: {
-              color: PINK,
-            },
-            operator: {
-              color: OPERATORS,
-            },
-            predictive: {
-              color: OPERATORS,
-            },
-            preproc: {
-              color: OPERATORS,
-            },
-            primary: {
-              color: FG,
-            },
-            property: {
-              color: YELLOW3,
-            },
-            punctuation: {
-              color: OPERATORS,
-              font_weight: 300,
-            },
-            "punctuation.bracket": {
-              color: OPERATORS,
-              font_weight: 300,
-            },
-            "punctuation.delimiter": {
-              color: OPERATORS,
-              font_weight: 300,
-            },
-            "punctuation.list_marker": {
-              color: OPERATORS,
-              font_weight: 300,
-            },
-            "punctuation.special": {
-              color: OPERATORS,
-              font_weight: 300,
-            },
-            string: {
-              color: GREEN3,
-            },
-            "string.escape": {
-              color: BLUE3,
-              font_weight: 700,
-            },
-            "string.regex": {
-              color: GREEN3,
-            },
-            "string.special": {
-              color: GREEN3,
-            },
-            tag: {
-              color: YELLOW3,
-            },
-            "text.literal": {
-              color: FG,
-            },
-            title: {
-              color: VIOLET2,
-              font_weight: 700,
-            },
-            type: {
-              color: CYAN,
-            },
-            "type.builtin": {
-              color: CYAN,
-            },
-            "type.super": {
-              color: CYAN,
-            },
-            variable: {
-              color: FG,
-            },
-            "variable.parameter": {
-              color: YELLOW3,
-            },
-            "variable.special": {
-              color: YELLOW3,
-            },
-            variant: {
-              color: null,
-            },
-          },
-        },
-      },
+      theme(true),
       {
         name: "Neo Light",
         appearance: "light",
         style: {
-          accents: [PEARL_BLUE4, PEARL_ORANGE, PEARL_PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
+          accents: [L_BLUE4, L_ORANGE, L_PINK, L_GREEN, L_VIOLET4, L_YELLOW3, L_AQUA, L_RED3],
 
-          background: PEARL_WHITE,
+          background: L_BG,
 
-          border: PEARL_WHITE2,
-          "border.variant": PEARL_WHITE2 + "a0",
-          "border.focused": PEARL_WHITE2,
-          "border.selected": PEARL_WHITE2,
-          "border.transparent": PEARL_WHITE2 + "00",
-          "border.disabled": PEARL_WHITE2 + "80",
+          border: L_BG2,
+          "border.variant": L_BG2 + "a0",
+          "border.focused": L_BG2,
+          "border.selected": L_BG2,
+          "border.transparent": L_BG2 + "00",
+          "border.disabled": L_BG2 + "80",
 
-          "elevated_surface.background": PEARL_WHITE,
-          "surface.background": PEARL_WHITE,
+          "elevated_surface.background": L_BG,
+          "surface.background": L_BG,
           "element.background": PEARL_WHITE1,
           "element.hover": PEARL_WHITE1,
-          "element.active": PEARL_WHITE2,
-          "element.selected": PEARL_WHITE2,
-          "element.disabled": PEARL_WHITE,
+          "element.active": L_BG2,
+          "element.selected": L_BG2,
+          "element.disabled": L_BG,
 
           "drop_target.background": "#00000000",
-          "ghost_element.background": PEARL_WHITE,
+          "ghost_element.background": L_BG,
           "ghost_element.hover": PEARL_WHITE1,
-          "ghost_element.active": PEARL_WHITE2,
-          "ghost_element.selected": PEARL_WHITE2,
-          "ghost_element.disabled": PEARL_WHITE,
+          "ghost_element.active": L_BG2,
+          "ghost_element.selected": L_BG2,
+          "ghost_element.disabled": L_BG,
 
           text: "#22262D",
           "text.muted": "#6D6D69",
@@ -434,33 +138,33 @@ function themes() {
           icon: "#22262D",
           "icon.muted": "#6D6D69",
           "icon.disabled": "#9F9F99",
-          "icon.placeholder": PEARL_WHITE,
+          "icon.placeholder": L_BG,
           "icon.accent": "#5E857A",
 
-          "status_bar.background": PEARL_WHITE,
-          "title_bar.background": PEARL_WHITE,
-          "toolbar.background": PEARL_WHITE,
-          "tab_bar.background": PEARL_WHITE,
-          "tab.inactive_background": PEARL_WHITE,
+          "status_bar.background": L_BG,
+          "title_bar.background": L_BG,
+          "toolbar.background": L_BG,
+          "tab_bar.background": L_BG,
+          "tab.inactive_background": L_BG,
           "tab.active_background": PEARL_WHITE1,
 
           "search.match_background": PEARL_WHITE3,
-          "panel.background": PEARL_WHITE,
-          "panel.focused_border": PEARL_WHITE2,
-          "pane.focused_border": PEARL_WHITE2,
+          "panel.background": L_BG,
+          "panel.focused_border": L_BG2,
+          "pane.focused_border": L_BG2,
 
           "scrollbar.thumb.background": "#6D6D6934",
           "scrollbar.thumb.hover_background": "#6D6D69",
           "scrollbar.thumb.border": PEARL_WHITE1,
-          "scrollbar.track.background": PEARL_WHITE,
-          "scrollbar.track.border": PEARL_WHITE,
+          "scrollbar.track.background": L_BG,
+          "scrollbar.track.border": L_BG,
 
           "editor.foreground": "#22262D",
-          "editor.background": PEARL_WHITE,
-          "editor.gutter.background": PEARL_WHITE,
-          "editor.subheader.background": PEARL_WHITE,
-          "editor.active_line.background": PEARL_WHITE2,
-          "editor.highlighted_line.background": PEARL_WHITE2,
+          "editor.background": L_BG,
+          "editor.gutter.background": L_BG,
+          "editor.subheader.background": L_BG,
+          "editor.active_line.background": L_BG2,
+          "editor.highlighted_line.background": L_BG2,
           "editor.line_number": PEARL_GRAY4,
           "editor.active_line_number": "#22262D",
           "editor.invisible": PEARL_WHITE1,
@@ -469,7 +173,7 @@ function themes() {
           "editor.document_highlight.read_background": PEARL_WHITE3,
           "editor.document_highlight.write_background": PEARL_WHITE3,
 
-          "terminal.background": PEARL_WHITE,
+          "terminal.background": L_BG,
           "terminal.foreground": "#22262D",
           "terminal.bright_foreground": "#22262D",
           "terminal.dim_foreground": "#6D6D69",
@@ -477,48 +181,48 @@ function themes() {
           "terminal.ansi.black": "#22262D",
           "terminal.ansi.bright_black": "#22262D",
           "terminal.ansi.dim_black": "#6D6D69",
-          "terminal.ansi.red": "#c84053",
-          "terminal.ansi.bright_red": "#e82424",
+          "terminal.ansi.red": PEARL_RED,
+          "terminal.ansi.bright_red": L_RED3,
           "terminal.ansi.dim_red": "#c34043",
-          "terminal.ansi.green": "#6f894e",
+          "terminal.ansi.green": L_GREEN,
           "terminal.ansi.bright_green": "#6e915f",
           "terminal.ansi.dim_green": "#b7d0ae",
-          "terminal.ansi.yellow": "#77713f",
-          "terminal.ansi.bright_yellow": "#de9800",
+          "terminal.ansi.yellow": PEARL_YELLOW,
+          "terminal.ansi.bright_yellow": L_YELLOW3,
           "terminal.ansi.dim_yellow": "#f9d791",
-          "terminal.ansi.blue": PEARL_BLUE4,
-          "terminal.ansi.bright_blue": PEARL_BLUE4,
+          "terminal.ansi.blue": L_BLUE4,
+          "terminal.ansi.bright_blue": L_BLUE4,
           "terminal.ansi.dim_blue": "#9fb5c9",
-          "terminal.ansi.magenta": "#766b90",
-          "terminal.ansi.bright_magenta": "#624c83",
+          "terminal.ansi.magenta": PEARL_VIOLET2,
+          "terminal.ansi.bright_magenta": L_VIOLET4,
           "terminal.ansi.dim_magenta": "#a09cac",
-          "terminal.ansi.cyan": "#597b75",
+          "terminal.ansi.cyan": L_AQUA,
           "terminal.ansi.bright_cyan": "#4e8ca2",
           "terminal.ansi.dim_cyan": "#5a7785",
           "terminal.ansi.white": PEARL_WHITE1,
-          "terminal.ansi.bright_white": PEARL_WHITE,
-          "terminal.ansi.dim_white": PEARL_WHITE2,
+          "terminal.ansi.bright_white": L_BG,
+          "terminal.ansi.dim_white": L_BG2,
 
           "link_text.hover": "#6a9589",
-          "link_text.border": PEARL_WHITE2,
-          "link_text.background": PEARL_WHITE,
+          "link_text.border": L_BG2,
+          "link_text.background": L_BG,
           conflict: "#D7474B",
           created: "#6E915F",
           deleted: "#d9a594",
           error: "#D7474B",
           warning: "#77713f",
-          "warning.border": PEARL_WHITE2,
-          "warning.background": PEARL_WHITE,
+          "warning.border": L_BG2,
+          "warning.background": L_BG,
           success: "#6E915F",
-          "success.border": PEARL_WHITE2,
-          "success.background": PEARL_WHITE,
+          "success.border": L_BG2,
+          "success.background": L_BG,
           info: "#6693BF",
-          "info.border": PEARL_WHITE2,
-          "info.background": PEARL_WHITE,
+          "info.border": L_BG2,
+          "info.background": L_BG,
           hint: "#6D6D69",
-          "hint.border": PEARL_WHITE2,
-          "hint.background": PEARL_WHITE,
-          modified: "#DE9800",
+          "hint.border": L_BG2,
+          "hint.background": L_BG,
+          modified: L_YELLOW3,
           renamed: "#d9a594",
           unreachable: "#22262D",
           ignored: "#d9a594",
@@ -528,14 +232,14 @@ function themes() {
           players: [
             {
               cursor: PEARL_BLACK,
-              background: PEARL_WHITE,
-              selection: PEARL_BLUE4 + "33",
+              background: L_BG,
+              selection: L_BLUE4 + "33",
             },
             {
-              cursor: PEARL_ORANGE,
+              cursor: L_ORANGE,
             },
             {
-              cursor: PEARL_PINK,
+              cursor: L_PINK,
             },
             {
               cursor: GREEN3,
@@ -555,10 +259,10 @@ function themes() {
           ],
           syntax: {
             attribute: {
-              color: "#624C83",
+              color: L_VIOLET4,
             },
             boolean: {
-              color: PEARL_ORANGE,
+              color: L_ORANGE,
             },
             comment: {
               color: "#6D6D69",
@@ -567,19 +271,19 @@ function themes() {
               color: "#6D6D69",
             },
             constant: {
-              color: PEARL_ORANGE,
+              color: L_ORANGE,
             },
             constructor: {
               color: "#6693BF",
             },
             embedded: {
-              color: PEARL_ORANGE,
+              color: L_ORANGE,
             },
             emphasis: {
-              color: PEARL_ORANGE,
+              color: L_ORANGE,
             },
             enum: {
-              color: PEARL_ORANGE,
+              color: L_ORANGE,
             },
             function: {
               color: "#4D699B",
@@ -589,10 +293,10 @@ function themes() {
               font_weight: 300,
             },
             keyword: {
-              color: PEARL_VIOLET4,
+              color: L_VIOLET4,
             },
             label: {
-              color: PEARL_VIOLET4,
+              color: L_VIOLET4,
             },
             link_text: {
               color: "#6D6D69",
@@ -602,7 +306,7 @@ function themes() {
               color: "#6693BF",
             },
             number: {
-              color: PEARL_PINK,
+              color: L_PINK,
             },
             operator: {
               color: "#6D6D69",
@@ -640,38 +344,38 @@ function themes() {
               font_weight: 300,
             },
             string: {
-              color: PEARL_GREEN,
+              color: L_GREEN,
             },
             "string.escape": {
-              color: PEARL_BLUE4,
+              color: L_BLUE4,
             },
             "string.regex": {
-              color: PEARL_GREEN,
+              color: L_GREEN,
             },
             "string.special": {
-              color: PEARL_GREEN,
+              color: L_GREEN,
             },
             tag: {
               color: "#77713f",
             },
             "text.literal": {
-              color: "#22262D",
+              color: PEARL_BLACK,
             },
             title: {
-              color: PEARL_VIOLET4,
+              color: L_VIOLET4,
               font_weight: 700,
             },
             type: {
-              color: "#597B75",
+              color: L_AQUA,
             },
             "type.builtin": {
-              color: "#597B75",
+              color: L_AQUA,
             },
             "type.super": {
-              color: "#597B75",
+              color: L_AQUA,
             },
             variable: {
-              color: "#22262D",
+              color: PEARL_BLACK,
             },
             "variable.parameter": {
               color: "#77713f",
@@ -686,4 +390,303 @@ function themes() {
   };
 }
 
-function theme(dark) {}
+function theme(dark) {
+  let background = dark ? D_BG : L_BG;
+  let border = dark ? D_BG2 : L_BG2;
+
+  return {
+    name: dark ? "Neo Dark" : "Neo Light",
+    appearance: dark ? "dark" : "light",
+    style: {
+      accents: dark
+        ? [BLUE3, ORANGE2, PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3]
+        : [L_BLUE4, L_ORANGE, L_PINK, L_GREEN, L_VIOLET4, L_YELLOW3, L_AQUA, L_RED3],
+
+      background: background,
+
+      border: border,
+      "border.variant": border + "a0",
+      "border.focused": border,
+      "border.selected": border,
+      "border.transparent": "#00000000",
+      "border.disabled": border + "80",
+
+      "drop_target.background": D_BG2,
+
+      "editor.foreground": FG,
+      "editor.background": D_BG,
+      "editor.gutter.background": D_BG,
+      "editor.subheader.background": D_BG1,
+      "editor.active_line.background": D_BG2,
+      "editor.highlighted_line.background": D_BG2,
+      "editor.line_number": GRAY5,
+      "editor.active_line_number": FG,
+      "editor.invisible": D_BG2,
+      "editor.wrap_guide": GRAY5,
+      "editor.active_wrap_guide": GRAY5,
+      "editor.document_highlight.read_background": D_BG3,
+      "editor.document_highlight.write_background": D_BG3,
+
+      "elevated_surface.background": D_BG1,
+      "element.background": D_BG2,
+      "element.hover": D_BG2,
+      "element.active": D_BG3,
+      "element.selected": D_BG3,
+      "element.disabled": D_BG1,
+
+      "ghost_element.background": "#00000000",
+      "ghost_element.hover": D_BG2,
+      "ghost_element.active": D_BG3,
+      "ghost_element.selected": D_BG3,
+      "ghost_element.disabled": D_BG1,
+
+      text: FG,
+      "text.muted": GRAY4,
+      "text.placeholder": GRAY5,
+      "text.disabled": GRAY5,
+      "text.accent": RED3,
+
+      icon: FG,
+      "icon.muted": GRAY4,
+      "icon.disabled": GRAY5,
+      "icon.placeholder": D_BG1,
+      "icon.accent": BLUE3,
+
+      "tab_bar.background": background,
+      "tab.inactive_background": background,
+      "tab.active_background": D_BG1,
+      "title_bar.background": background,
+      "toolbar.background": background,
+
+      "panel.background": background,
+      "panel.focused_border": BLUE3,
+      "pane.focused_border": VIOLET3,
+
+      "search.match_background": D_BG3,
+      "status_bar.background": background,
+
+      "scrollbar.thumb.background": GRAY5 + "33",
+      "scrollbar.thumb.hover_background": GRAY5,
+      "scrollbar.thumb.border": D_BG2,
+      "scrollbar.track.background": D_BG,
+      "scrollbar.track.border": D_BG,
+      "surface.background": D_BG,
+
+      "terminal.background": background,
+      "terminal.foreground": FG,
+      "terminal.bright_foreground": YELLOW3,
+      "terminal.dim_foreground": GRAY4,
+
+      "terminal.ansi.black": D_BG1,
+      "terminal.ansi.bright_black": D_BG2,
+      "terminal.ansi.dim_black": D_BG1,
+
+      "terminal.ansi.red": RED3,
+      "terminal.ansi.dim_red": RED,
+      "terminal.ansi.bright_red": RED2,
+
+      "terminal.ansi.green": GREEN3,
+      "terminal.ansi.bright_green": GREEN2,
+      "terminal.ansi.dim_green": "#658594",
+      "terminal.ansi.yellow": YELLOW3,
+      "terminal.ansi.bright_yellow": YELLOW3,
+      "terminal.ansi.dim_yellow": "#dca561",
+      "terminal.ansi.blue": BLUE3,
+      "terminal.ansi.bright_blue": BLUE,
+      "terminal.ansi.dim_blue": VIOLET3,
+      "terminal.ansi.magenta": "#a292a3",
+      "terminal.ansi.bright_magenta": "#d27e99",
+      "terminal.ansi.dim_magenta": CYAN,
+      "terminal.ansi.cyan": CYAN,
+      "terminal.ansi.bright_cyan": "#7aa89f",
+      "terminal.ansi.dim_cyan": CYAN,
+      "terminal.ansi.white": FG,
+      "terminal.ansi.bright_white": ORANGE,
+      "terminal.ansi.dim_white": FG,
+
+      "link_text.hover": "#6a9589",
+      "link_text.border": D_BG2,
+      "link_text.background": D_BG1,
+      conflict: "#ff5d62",
+      created: GREEN2,
+      deleted: RED,
+      error: RED3,
+      warning: YELLOW3,
+      "warning.border": D_BG2,
+      "warning.background": D_BG1,
+      hidden: VIOLET3,
+      success: GREEN2,
+      "success.border": D_BG2,
+      "success.background": D_BG1,
+      info: VIOLET3,
+      "info.border": D_BG2,
+      "info.background": D_BG1,
+      hint: BLUE3,
+      "hint.border": D_BG2,
+      "hint.background": D_BG1,
+      modified: YELLOW,
+      renamed: ORANGE,
+      unreachable: FG,
+      ignored: ORANGE,
+      predictive: GRAY4,
+
+      players: [
+        {
+          cursor: FG,
+          background: D_BG,
+          selection: BLUE3 + "33",
+        },
+        {
+          cursor: ORANGE2,
+        },
+        {
+          cursor: PINK,
+        },
+        {
+          cursor: GREEN3,
+        },
+        {
+          cursor: VIOLET3,
+        },
+        {
+          cursor: YELLOW3,
+        },
+        {
+          cursor: CYAN,
+        },
+        {
+          cursor: RED3,
+        },
+      ],
+
+      syntax: {
+        attribute: {
+          color: VIOLET2,
+        },
+        boolean: {
+          color: ORANGE,
+        },
+        comment: {
+          color: GRAY4,
+        },
+        "comment.doc": {
+          color: GRAY4,
+        },
+        constant: {
+          color: ORANGE,
+        },
+        constructor: {
+          color: VIOLET3,
+        },
+        embedded: {
+          color: ORANGE,
+        },
+        emphasis: {
+          color: ORANGE,
+        },
+        enum: {
+          color: ORANGE,
+        },
+        function: {
+          color: BLUE3,
+        },
+        hint: {
+          color: GRAY5,
+          font_weight: 300,
+        },
+        keyword: {
+          color: VIOLET2,
+        },
+        label: {
+          color: VIOLET2,
+        },
+        link_text: {
+          color: OPERATORS,
+          font_style: "normal",
+        },
+        link_uri: {
+          color: VIOLET2,
+        },
+        number: {
+          color: PINK,
+        },
+        operator: {
+          color: OPERATORS,
+        },
+        predictive: {
+          color: OPERATORS,
+        },
+        preproc: {
+          color: OPERATORS,
+        },
+        primary: {
+          color: FG,
+        },
+        property: {
+          color: YELLOW3,
+        },
+        punctuation: {
+          color: OPERATORS,
+          font_weight: 300,
+        },
+        "punctuation.bracket": {
+          color: OPERATORS,
+          font_weight: 300,
+        },
+        "punctuation.delimiter": {
+          color: OPERATORS,
+          font_weight: 300,
+        },
+        "punctuation.list_marker": {
+          color: OPERATORS,
+          font_weight: 300,
+        },
+        "punctuation.special": {
+          color: OPERATORS,
+          font_weight: 300,
+        },
+        string: {
+          color: GREEN3,
+        },
+        "string.escape": {
+          color: BLUE3,
+          font_weight: 700,
+        },
+        "string.regex": {
+          color: GREEN3,
+        },
+        "string.special": {
+          color: GREEN3,
+        },
+        tag: {
+          color: YELLOW3,
+        },
+        "text.literal": {
+          color: FG,
+        },
+        title: {
+          color: VIOLET2,
+          font_weight: 700,
+        },
+        type: {
+          color: CYAN,
+        },
+        "type.builtin": {
+          color: CYAN,
+        },
+        "type.super": {
+          color: CYAN,
+        },
+        variable: {
+          color: FG,
+        },
+        "variable.parameter": {
+          color: YELLOW3,
+        },
+        "variable.special": {
+          color: YELLOW3,
+        },
+      },
+    },
+  };
+}
