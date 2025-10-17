@@ -1,11 +1,13 @@
 // node zed/theme/generate.js
 import fs from "node:fs/promises";
 
+const TRANSPARENT = "#00000000";
+
 // Zen Bg Shades
-const D_BG = "#090E13";
-const D_BG1 = "#1C1E25";
-const D_BG2 = "#22262D";
-const D_BG3 = "#393B44";
+const BG = "#090E13";
+const BG1 = "#1C1E25";
+const BG2 = "#22262D";
+const BG3 = "#393B44";
 
 // Popup and Floats
 const ALT_BLUE1 = "#223249";
@@ -46,7 +48,7 @@ const GRAY5 = "#5C6066";
 const OPERATORS = GRAY3; // original is "#9E9B93";
 
 // Light theme colors (pearl prefix)
-const PEARL_BLACK = D_BG2;
+const L_FG = BG2;
 const PEARL_BLACK1 = "#545464";
 const PEARL_BLACK2 = "#43436c";
 const PEARL_GRAY = "#e2e1df";
@@ -122,7 +124,7 @@ function themes() {
           "element.selected": L_BG2,
           "element.disabled": L_BG,
 
-          "drop_target.background": "#00000000",
+          "drop_target.background": L_BG2,
           "ghost_element.background": L_BG,
           "ghost_element.hover": PEARL_WHITE1,
           "ghost_element.active": L_BG2,
@@ -231,7 +233,7 @@ function themes() {
 
           players: [
             {
-              cursor: PEARL_BLACK,
+              cursor: L_FG,
               background: L_BG,
               selection: L_BLUE4 + "33",
             },
@@ -359,7 +361,7 @@ function themes() {
               color: "#77713f",
             },
             "text.literal": {
-              color: PEARL_BLACK,
+              color: L_FG,
             },
             title: {
               color: L_VIOLET4,
@@ -375,7 +377,7 @@ function themes() {
               color: L_AQUA,
             },
             variable: {
-              color: PEARL_BLACK,
+              color: L_FG,
             },
             "variable.parameter": {
               color: "#77713f",
@@ -391,8 +393,9 @@ function themes() {
 }
 
 function theme(dark) {
-  let background = dark ? D_BG : L_BG;
-  let border = dark ? D_BG2 : L_BG2;
+  let foreground = dark ? FG : L_FG;
+  let background = dark ? BG : L_BG;
+  let border = dark ? BG2 : L_BG2;
 
   return {
     name: dark ? "Neo Dark" : "Neo Light",
@@ -408,53 +411,53 @@ function theme(dark) {
       "border.variant": border + "a0",
       "border.focused": border,
       "border.selected": border,
-      "border.transparent": "#00000000",
+      "border.transparent": TRANSPARENT,
       "border.disabled": border + "80",
 
-      "drop_target.background": D_BG2,
+      "drop_target.background": BG2,
 
-      "editor.foreground": FG,
-      "editor.background": D_BG,
-      "editor.gutter.background": D_BG,
-      "editor.subheader.background": D_BG1,
-      "editor.active_line.background": D_BG2,
-      "editor.highlighted_line.background": D_BG2,
+      "editor.foreground": foreground,
+      "editor.background": background,
+      "editor.gutter.background": background,
+      "editor.subheader.background": BG1,
+      "editor.active_line.background": BG1,
+      "editor.highlighted_line.background": BG1,
       "editor.line_number": GRAY5,
-      "editor.active_line_number": FG,
-      "editor.invisible": D_BG2,
+      "editor.active_line_number": foreground,
+      "editor.invisible": BG2,
       "editor.wrap_guide": GRAY5,
       "editor.active_wrap_guide": GRAY5,
-      "editor.document_highlight.read_background": D_BG3,
-      "editor.document_highlight.write_background": D_BG3,
+      "editor.document_highlight.read_background": BG2,
+      "editor.document_highlight.write_background": BG2,
 
-      "elevated_surface.background": D_BG1,
-      "element.background": D_BG2,
-      "element.hover": D_BG2,
-      "element.active": D_BG3,
-      "element.selected": D_BG3,
-      "element.disabled": D_BG1,
+      "elevated_surface.background": BG1,
+      "element.background": BG2,
+      "element.hover": BG2,
+      "element.active": BG3,
+      "element.selected": BG3,
+      "element.disabled": BG1,
 
-      "ghost_element.background": "#00000000",
-      "ghost_element.hover": D_BG2,
-      "ghost_element.active": D_BG3,
-      "ghost_element.selected": D_BG3,
-      "ghost_element.disabled": D_BG1,
+      "ghost_element.background": TRANSPARENT,
+      "ghost_element.hover": BG2,
+      "ghost_element.active": BG3,
+      "ghost_element.selected": BG3,
+      "ghost_element.disabled": BG1,
 
-      text: FG,
+      text: foreground,
       "text.muted": GRAY4,
       "text.placeholder": GRAY5,
       "text.disabled": GRAY5,
       "text.accent": RED3,
 
-      icon: FG,
+      icon: foreground,
       "icon.muted": GRAY4,
       "icon.disabled": GRAY5,
-      "icon.placeholder": D_BG1,
+      "icon.placeholder": BG1,
       "icon.accent": BLUE3,
 
       "tab_bar.background": background,
       "tab.inactive_background": background,
-      "tab.active_background": D_BG1,
+      "tab.active_background": BG1,
       "title_bar.background": background,
       "toolbar.background": background,
 
@@ -462,24 +465,24 @@ function theme(dark) {
       "panel.focused_border": BLUE3,
       "pane.focused_border": VIOLET3,
 
-      "search.match_background": D_BG3,
+      "search.match_background": BG3,
       "status_bar.background": background,
 
       "scrollbar.thumb.background": GRAY5 + "33",
       "scrollbar.thumb.hover_background": GRAY5,
-      "scrollbar.thumb.border": D_BG2,
-      "scrollbar.track.background": D_BG,
-      "scrollbar.track.border": D_BG,
-      "surface.background": D_BG,
+      "scrollbar.thumb.border": TRANSPARENT,
+      "scrollbar.track.background": background,
+      "scrollbar.track.border": TRANSPARENT,
+      "surface.background": background,
 
       "terminal.background": background,
-      "terminal.foreground": FG,
+      "terminal.foreground": foreground,
       "terminal.bright_foreground": YELLOW3,
       "terminal.dim_foreground": GRAY4,
 
-      "terminal.ansi.black": D_BG1,
-      "terminal.ansi.bright_black": D_BG2,
-      "terminal.ansi.dim_black": D_BG1,
+      "terminal.ansi.black": BG1,
+      "terminal.ansi.bright_black": BG2,
+      "terminal.ansi.dim_black": BG1,
 
       "terminal.ansi.red": RED3,
       "terminal.ansi.dim_red": RED,
@@ -505,36 +508,36 @@ function theme(dark) {
       "terminal.ansi.dim_white": FG,
 
       "link_text.hover": "#6a9589",
-      "link_text.border": D_BG2,
-      "link_text.background": D_BG1,
+      "link_text.border": BG2,
+      "link_text.background": BG1,
       conflict: "#ff5d62",
       created: GREEN2,
       deleted: RED,
       error: RED3,
       warning: YELLOW3,
-      "warning.border": D_BG2,
-      "warning.background": D_BG1,
+      "warning.border": BG2,
+      "warning.background": BG1,
       hidden: VIOLET3,
       success: GREEN2,
-      "success.border": D_BG2,
-      "success.background": D_BG1,
+      "success.border": BG2,
+      "success.background": BG1,
       info: VIOLET3,
-      "info.border": D_BG2,
-      "info.background": D_BG1,
+      "info.border": BG2,
+      "info.background": BG1,
       hint: BLUE3,
-      "hint.border": D_BG2,
-      "hint.background": D_BG1,
+      "hint.border": BG2,
+      "hint.background": BG1,
       modified: YELLOW,
       renamed: ORANGE,
-      unreachable: FG,
+      unreachable: foreground,
       ignored: ORANGE,
       predictive: GRAY4,
 
       players: [
         {
-          cursor: FG,
-          background: D_BG,
-          selection: BLUE3 + "33",
+          cursor: foreground,
+          background: background,
+          selection: BLUE3 + "66",
         },
         {
           cursor: ORANGE2,
@@ -620,7 +623,7 @@ function theme(dark) {
           color: OPERATORS,
         },
         primary: {
-          color: FG,
+          color: foreground,
         },
         property: {
           color: YELLOW3,
@@ -662,7 +665,7 @@ function theme(dark) {
           color: YELLOW3,
         },
         "text.literal": {
-          color: FG,
+          color: foreground,
         },
         title: {
           color: VIOLET2,
@@ -678,7 +681,7 @@ function theme(dark) {
           color: CYAN,
         },
         variable: {
-          color: FG,
+          color: foreground,
         },
         "variable.parameter": {
           color: YELLOW3,
