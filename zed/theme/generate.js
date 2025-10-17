@@ -6,8 +6,8 @@ const TRANSPARENT = "#00000000";
 // Zen Bg Shades
 const BG = "#090E13";
 const BG1 = "#1C1E25";
-const BG2 = "#22262D";
-const BG3 = "#393B44";
+const BG2 = "#313239";
+const BG3 = "#44454B";
 
 // Popup and Floats
 const ALT_BLUE1 = "#223249";
@@ -57,7 +57,7 @@ const PEARL_GRAY3 = "#6D6D69";
 const PEARL_GRAY4 = "#9F9F99";
 
 const L_BG = "#f2f1ef";
-const PEARL_WHITE1 = "#e2e1df";
+const L_BG1 = "#e2e1df";
 const L_BG2 = "#dddddb";
 const PEARL_WHITE3 = "#cacac7";
 const PEARL_VIOLET1 = "#a09cac";
@@ -118,15 +118,15 @@ function themes() {
 
           "elevated_surface.background": L_BG,
           "surface.background": L_BG,
-          "element.background": PEARL_WHITE1,
-          "element.hover": PEARL_WHITE1,
+          "element.background": L_BG1,
+          "element.hover": L_BG1,
           "element.active": L_BG2,
           "element.selected": L_BG2,
           "element.disabled": L_BG,
 
           "drop_target.background": L_BG2,
           "ghost_element.background": L_BG,
-          "ghost_element.hover": PEARL_WHITE1,
+          "ghost_element.hover": L_BG1,
           "ghost_element.active": L_BG2,
           "ghost_element.selected": L_BG2,
           "ghost_element.disabled": L_BG,
@@ -148,7 +148,7 @@ function themes() {
           "toolbar.background": L_BG,
           "tab_bar.background": L_BG,
           "tab.inactive_background": L_BG,
-          "tab.active_background": PEARL_WHITE1,
+          "tab.active_background": L_BG1,
 
           "search.match_background": PEARL_WHITE3,
           "panel.background": L_BG,
@@ -157,7 +157,7 @@ function themes() {
 
           "scrollbar.thumb.background": "#6D6D6934",
           "scrollbar.thumb.hover_background": "#6D6D69",
-          "scrollbar.thumb.border": PEARL_WHITE1,
+          "scrollbar.thumb.border": L_BG1,
           "scrollbar.track.background": L_BG,
           "scrollbar.track.border": L_BG,
 
@@ -169,7 +169,7 @@ function themes() {
           "editor.highlighted_line.background": L_BG2,
           "editor.line_number": PEARL_GRAY4,
           "editor.active_line_number": "#22262D",
-          "editor.invisible": PEARL_WHITE1,
+          "editor.invisible": L_BG1,
           "editor.wrap_guide": PEARL_GRAY4,
           "editor.active_wrap_guide": VIOLET3,
           "editor.document_highlight.read_background": PEARL_WHITE3,
@@ -201,7 +201,7 @@ function themes() {
           "terminal.ansi.cyan": L_AQUA,
           "terminal.ansi.bright_cyan": "#4e8ca2",
           "terminal.ansi.dim_cyan": "#5a7785",
-          "terminal.ansi.white": PEARL_WHITE1,
+          "terminal.ansi.white": L_BG1,
           "terminal.ansi.bright_white": L_BG,
           "terminal.ansi.dim_white": L_BG2,
 
@@ -395,7 +395,7 @@ function themes() {
 function theme(dark) {
   let foreground = dark ? FG : L_FG;
   let background = dark ? BG : L_BG;
-  let border = dark ? BG2 : L_BG2;
+  let border = dark ? BG1 : L_BG1;
 
   return {
     name: dark ? "Neo Dark" : "Neo Light",
@@ -427,8 +427,8 @@ function theme(dark) {
       "editor.invisible": BG2,
       "editor.wrap_guide": GRAY5,
       "editor.active_wrap_guide": GRAY5,
-      "editor.document_highlight.read_background": BG2,
-      "editor.document_highlight.write_background": BG2,
+      "editor.document_highlight.read_background": BG2 + "a0",
+      "editor.document_highlight.write_background": BG2 + "a0",
 
       "elevated_surface.background": BG1,
       "element.background": BG2,
@@ -468,10 +468,12 @@ function theme(dark) {
       "search.match_background": BG3,
       "status_bar.background": background,
 
-      "scrollbar.thumb.background": GRAY5 + "33",
-      "scrollbar.thumb.hover_background": GRAY5,
+      "scrollbar.thumb.background": BG3 + "33",
+      "scrollbar.thumb.hover_background": BG3 + "66",
+      "scrollbar.thumb.active_background": BG3 + "99",
       "scrollbar.thumb.border": TRANSPARENT,
       "scrollbar.track.background": background,
+      "scrollbar.track.hover_background": BG2,
       "scrollbar.track.border": TRANSPARENT,
       "surface.background": background,
 
