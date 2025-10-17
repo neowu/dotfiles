@@ -10,12 +10,12 @@ const ZEN_BG3 = "#393B44";
 // Ink Bg Shades
 const INK_BG0 = "#14171d";
 const INK_BG1 = "#1F1F26";
-const INK_BG2 = "#22262D";
+const INK_BG2 = ZEN_BG2;
 const INK_BG3 = "#393B44";
 const INK_BG4 = "#4B4E57";
 
 // Mist Bg Shades
-const MIST_BG0 = "#22262D";
+const MIST_BG0 = ZEN_BG2;
 const MIST_BG1 = "#2A2C35";
 const MIST_BG2 = "#393B44";
 const MIST_BG3 = "#5C6066";
@@ -49,13 +49,13 @@ const BLUE = "#7FB4CA";
 const BLUE2 = "#658594";
 const BLUE3 = "#8ba4b0";
 const BLUE4 = "#8ea4a2";
-const VIOCONST = "#938AA9";
-const VIOCONST2 = "#8992a7";
-const VIOCONST3 = "#949fb5";
+const VIOLET = "#938AA9";
+const VIOLET2 = "#8992a7";
+const VIOLET3 = "#949fb5";
 const PINK = "#a292a3";
 const ORANGE = "#b6927b";
 const ORANGE2 = "#b98d7b";
-const AQUA = "#8ea4a2";
+const CYAN = BLUE4;
 
 // Saturated variants (20% more saturation)
 const RED_SATURATED = "#C93134";
@@ -73,9 +73,9 @@ const BLUE_SATURATED = "#6EBBD4";
 const BLUE2_SATURATED = "#568B8F";
 const BLUE3_SATURATED = "#7EAABA";
 const BLUE4_SATURATED = "#81AAA9";
-const VIOCONST_SATURATED = "#8A88B0";
-const VIOCONST2_SATURATED = "#7E91AF";
-const VIOCONST3_SATURATED = "#8A9FBE";
+const VIOLET_SATURATED = "#8A88B0";
+const VIOLET2_SATURATED = "#7E91AF";
+const VIOLET3_SATURATED = "#8A9FBE";
 const PINK_SATURATED = "#A08AA2";
 const ORANGE_SATURATED = "#BC8A6C";
 const ORANGE2_SATURATED = "#BF856B";
@@ -91,7 +91,7 @@ const GRAY4 = "#75797f";
 const GRAY5 = "#5C6066";
 
 // Light theme colors (pearl prefix)
-const PEARL_BLACK0 = "#22262D";
+const PEARL_BLACK = ZEN_BG2;
 const PEARL_BLACK1 = "#545464";
 const PEARL_BLACK2 = "#43436c";
 const PEARL_GRAY = "#e2e1df";
@@ -99,7 +99,7 @@ const PEARL_GRAY2 = "#5C6068";
 const PEARL_GRAY3 = "#6D6D69";
 const PEARL_GRAY4 = "#9F9F99";
 
-const PEARL_WHITE0 = "#f2f1ef";
+const PEARL_WHITE = "#f2f1ef";
 const PEARL_WHITE1 = "#e2e1df";
 const PEARL_WHITE2 = "#dddddb";
 const PEARL_WHITE3 = "#cacac7";
@@ -159,6 +159,7 @@ const PEARL_VIOLET4_SATURATED = "#44418F";
 
 let theme_data = theme();
 await fs.writeFile("./neo_theme.json", JSON.stringify(theme_data, null, 2));
+await fs.writeFile("/Users/neo/.config/zed/themes/neo_theme.json", JSON.stringify(theme_data, null, 2));
 
 function theme() {
   return {
@@ -170,86 +171,91 @@ function theme() {
         name: "Neo Dark",
         appearance: "dark",
         style: {
-          background: "#090E13",
+          accents: [BLUE3, ORANGE2, PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
 
-          border: "#22262D",
-          "border.variant": "#22262Da0",
-          "border.focused": "#22262D",
-          "border.selected": "#22262D",
-          "border.transparent": "#22262D00",
-          "border.disabled": "#22262D80",
+          background: ZEN_BG0,
 
-          "elevated_surface.background": "#14171d",
-          "surface.background": "#090E13",
-          "element.background": "#22262D",
-          "element.hover": "#393B44",
-          "element.active": "#393B44",
-          "element.selected": "#393B44",
-          "element.disabled": "#14171d",
+          border: ZEN_BG2,
+          "border.variant": ZEN_BG2 + "a0",
+          "border.focused": ZEN_BG2,
+          "border.selected": ZEN_BG2,
+          "border.transparent": ZEN_BG2 + "00",
+          "border.disabled": ZEN_BG2 + "80",
 
-          "drop_target.background": "#22262D",
-          "ghost_element.background": "#090E13",
-          "ghost_element.hover": "#393B44",
-          "ghost_element.active": "#393B44",
-          "ghost_element.selected": "#393B44",
-          "ghost_element.disabled": "#14171d",
+          "drop_target.background": ZEN_BG2,
 
-          text: "#c5c9c7",
+          "editor.foreground": FG,
+          "editor.background": ZEN_BG0,
+          "editor.gutter.background": ZEN_BG0,
+          "editor.subheader.background": INK_BG0,
+          "editor.active_line.background": ZEN_BG2,
+          "editor.highlighted_line.background": ZEN_BG2,
+          "editor.line_number": GRAY5,
+          "editor.active_line_number": FG,
+          "editor.invisible": ZEN_BG2,
+          "editor.wrap_guide": GRAY5,
+          "editor.active_wrap_guide": "#949fb5",
+          "editor.document_highlight.read_background": ZEN_BG3,
+          "editor.document_highlight.write_background": ZEN_BG2,
+
+          "elevated_surface.background": INK_BG0,
+          "element.background": ZEN_BG2,
+          "element.hover": ZEN_BG3,
+          "element.active": ZEN_BG3,
+          "element.selected": ZEN_BG3,
+          "element.disabled": INK_BG0,
+
+          "ghost_element.background": ZEN_BG0,
+          "ghost_element.hover": ZEN_BG3,
+          "ghost_element.active": ZEN_BG3,
+          "ghost_element.selected": ZEN_BG3,
+          "ghost_element.disabled": INK_BG0,
+
+          text: FG,
           "text.muted": "#75797f",
-          "text.placeholder": "#5C6066",
-          "text.disabled": "#5C6066",
-          "text.accent": "#c4746e",
+          "text.placeholder": GRAY5,
+          "text.disabled": GRAY5,
+          "text.accent": RED3,
 
-          icon: "#c5c9c7",
+          icon: FG,
           "icon.muted": "#75797f",
-          "icon.disabled": "#5C6066",
-          "icon.placeholder": "#14171d",
+          "icon.disabled": GRAY5,
+          "icon.placeholder": INK_BG0,
           "icon.accent": "#8ba4b0",
 
-          "status_bar.background": "#090E13",
-          "title_bar.background": "#090E13",
-          "toolbar.background": "#090E13",
-          "tab_bar.background": "#090E13",
-          "tab.inactive_background": "#090E13",
-          "tab.active_background": "#22262D",
+          "tab_bar.background": ZEN_BG0,
+          "tab.inactive_background": ZEN_BG0,
+          "tab.active_background": ZEN_BG2,
+          "title_bar.background": ZEN_BG0,
+          "toolbar.background": ZEN_BG0,
 
-          "search.match_background": "#536269",
-          "panel.background": "#090E13",
+          "panel.background": ZEN_BG0,
           "panel.focused_border": "#8ba4b0",
           "pane.focused_border": "#949fb5",
 
-          "scrollbar.thumb.background": "#5C606634",
-          "scrollbar.thumb.hover_background": "#5C6066",
-          "scrollbar.thumb.border": "#22262D",
-          "scrollbar.track.background": "#090E13",
-          "scrollbar.track.border": "#090E13",
+          "search.match_background": "#536269",
+          "status_bar.background": ZEN_BG0,
+          "scrollbar.thumb.background": GRAY5 + "34",
+          "scrollbar.thumb.hover_background": GRAY5,
+          "scrollbar.thumb.border": ZEN_BG2,
+          "scrollbar.track.background": ZEN_BG0,
+          "scrollbar.track.border": ZEN_BG0,
+          "surface.background": ZEN_BG0,
 
-          "editor.foreground": "#c5c9c7",
-          "editor.background": "#090E13",
-          "editor.gutter.background": "#090E13",
-          "editor.subheader.background": "#14171d",
-          "editor.active_line.background": "#22262D",
-          "editor.highlighted_line.background": "#22262D",
-          "editor.line_number": "#5C6066",
-          "editor.active_line_number": "#c5c9c7",
-          "editor.invisible": "#22262D",
-          "editor.wrap_guide": "#5C6066",
-          "editor.active_wrap_guide": "#949fb5",
-          "editor.document_highlight.read_background": "#393B44",
-          "editor.document_highlight.write_background": "#22262D",
-
-          "terminal.background": "#090E13",
-          "terminal.foreground": "#c5c9c7",
+          "terminal.background": ZEN_BG0,
+          "terminal.foreground": FG,
           "terminal.bright_foreground": "#c4b28a",
           "terminal.dim_foreground": "#75797f",
 
-          "terminal.ansi.black": "#14171d",
-          "terminal.ansi.bright_black": "#22262D",
-          "terminal.ansi.dim_black": "#14171d",
-          "terminal.ansi.red": "#c4746e",
-          "terminal.ansi.bright_red": "#e46876",
-          "terminal.ansi.dim_red": "#c34043",
-          "terminal.ansi.green": "#8a9a7b",
+          "terminal.ansi.black": INK_BG0,
+          "terminal.ansi.bright_black": ZEN_BG2,
+          "terminal.ansi.dim_black": INK_BG0,
+
+          "terminal.ansi.red": RED3,
+          "terminal.ansi.dim_red": RED,
+          "terminal.ansi.bright_red": RED2,
+
+          "terminal.ansi.green": GREEN3,
           "terminal.ansi.bright_green": "#87a987",
           "terminal.ansi.dim_green": "#658594",
           "terminal.ansi.yellow": "#c4b28a",
@@ -260,253 +266,195 @@ function theme() {
           "terminal.ansi.dim_blue": "#949fb5",
           "terminal.ansi.magenta": "#a292a3",
           "terminal.ansi.bright_magenta": "#d27e99",
-          "terminal.ansi.dim_magenta": "#8ea4a2",
-          "terminal.ansi.cyan": "#8ea4a2",
+          "terminal.ansi.dim_magenta": CYAN,
+          "terminal.ansi.cyan": CYAN,
           "terminal.ansi.bright_cyan": "#7aa89f",
-          "terminal.ansi.dim_cyan": "#8ea4a2",
-          "terminal.ansi.white": "#c5c9c7",
-          "terminal.ansi.bright_white": "#b6927b",
-          "terminal.ansi.dim_white": "#c5c9c7",
+          "terminal.ansi.dim_cyan": CYAN,
+          "terminal.ansi.white": FG,
+          "terminal.ansi.bright_white": ORANGE,
+          "terminal.ansi.dim_white": FG,
 
           "link_text.hover": "#6a9589",
-          "link_text.border": "#22262D",
-          "link_text.background": "#14171d",
+          "link_text.border": ZEN_BG2,
+          "link_text.background": INK_BG0,
           conflict: "#ff5d62",
           created: "#87a987",
           deleted: "#c34043",
-          error: "#c4746e",
+          error: RED3,
           warning: "#c4b28a",
-          "warning.border": "#22262D",
-          "warning.background": "#14171d",
+          "warning.border": ZEN_BG2,
+          "warning.background": INK_BG0,
           hidden: "#949fb5",
           success: "#87a987",
-          "success.border": "#22262D",
-          "success.background": "#14171d",
+          "success.border": ZEN_BG2,
+          "success.background": INK_BG0,
           info: "#949fb5",
-          "info.border": "#22262D",
-          "info.background": "#14171d",
+          "info.border": ZEN_BG2,
+          "info.background": INK_BG0,
           hint: "#8ba4b0",
-          "hint.border": "#22262D",
-          "hint.background": "#14171d",
+          "hint.border": ZEN_BG2,
+          "hint.background": INK_BG0,
           modified: "#dca561",
           renamed: "#b6927b",
-          unreachable: "#c5c9c7",
+          unreachable: FG,
           ignored: "#b6927b",
           predictive: "#75797f",
 
           players: [
             {
-              cursor: "#c5c9c7",
-              background: "#090E13",
-              selection: "#393B44",
+              cursor: FG,
+              background: ZEN_BG0,
+              selection: ZEN_BG3,
+            },
+            {
+              cursor: BLUE3,
+            },
+            {
+              cursor: ORANGE2,
+            },
+            {
+              cursor: PINK,
+            },
+            {
+              cursor: GREEN3,
+            },
+            {
+              cursor: VIOLET3,
+            },
+            {
+              cursor: YELLOW3,
+            },
+            {
+              cursor: CYAN,
+            },
+            {
+              cursor: RED3,
             },
           ],
 
           syntax: {
             attribute: {
-              color: "#8992A7",
-              font_style: null,
-              font_weight: null,
+              color: VIOLET2,
             },
             boolean: {
-              color: "#B6927B",
-              font_style: null,
-              font_weight: null,
+              color: ORANGE,
             },
             comment: {
               color: "#75797F",
-              font_style: null,
-              font_weight: null,
             },
             "comment.doc": {
               color: "#75797F",
-              font_style: null,
-              font_weight: null,
             },
             constant: {
-              color: "#B6927B",
-              font_style: null,
-              font_weight: null,
+              color: ORANGE,
             },
             constructor: {
               color: "#949FB5",
-              font_style: null,
-              font_weight: null,
             },
             embedded: {
-              color: "#B6927B",
-              font_style: null,
-              font_weight: null,
+              color: ORANGE,
             },
             emphasis: {
-              color: "#B6927B",
-              font_style: null,
-              font_weight: null,
+              color: ORANGE,
             },
             enum: {
-              color: "#B6927B",
-              font_style: null,
-              font_weight: null,
+              color: ORANGE,
             },
             function: {
               color: "#8BA4B0",
-              font_style: null,
-              font_weight: null,
             },
             hint: {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: 700,
+              font_weight: 300,
             },
             keyword: {
-              color: "#8992A7",
-              font_style: null,
-              font_weight: null,
+              color: VIOLET2,
             },
             label: {
-              color: null,
-              font_style: null,
-              font_weight: null,
+              color: VIOLET2,
             },
             link_text: {
               color: "#9E9B93",
               font_style: "normal",
-              font_weight: null,
             },
             link_uri: {
-              color: "#8992A7",
-              font_style: null,
-              font_weight: null,
+              color: VIOLET2,
             },
             number: {
               color: "#A292A3",
-              font_style: null,
-              font_weight: null,
             },
             operator: {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             predictive: {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             preproc: {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             primary: {
               color: "#C5C9C7",
-              font_style: null,
-              font_weight: null,
             },
             property: {
               color: "#C4B28A",
-              font_style: null,
-              font_weight: null,
             },
             punctuation: {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.bracket": {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.delimiter": {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.list_marker": {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.special": {
               color: "#9E9B93",
-              font_style: null,
-              font_weight: null,
             },
             string: {
-              color: "#8A9A7B",
-              font_style: null,
-              font_weight: null,
+              color: GREEN3,
             },
             "string.escape": {
-              color: "#8A9A7B",
-              font_style: null,
-              font_weight: null,
+              color: BLUE3,
             },
             "string.regex": {
-              color: "#8A9A7B",
-              font_style: null,
-              font_weight: null,
+              color: GREEN3,
             },
             "string.special": {
-              color: "#8A9A7B",
-              font_style: null,
-              font_weight: null,
-            },
-            "string.special.symbol": {
-              color: "#8A9A7B",
-              font_style: null,
-              font_weight: null,
+              color: GREEN3,
             },
             tag: {
               color: "#C4B28A",
-              font_style: null,
-              font_weight: null,
             },
             "text.literal": {
               color: "#C5C9C7",
-              font_style: null,
-              font_weight: null,
             },
             title: {
-              color: "#C5C9C7",
-              font_style: null,
-              font_weight: 400,
+              color: VIOLET2,
+              font_weight: 700,
             },
             type: {
-              color: "#8EA4A2",
-              font_style: null,
-              font_weight: null,
+              color: CYAN,
             },
             "type.builtin": {
-              color: "#8EA4A2",
-              font_style: null,
-              font_weight: null,
+              color: CYAN,
             },
             "type.super": {
-              color: "#8EA4A2",
-              font_style: null,
-              font_weight: null,
+              color: CYAN,
             },
             variable: {
               color: "#C5C9C7",
-              font_style: null,
-              font_weight: null,
             },
             "variable.parameter": {
               color: "#C4B28A",
-              font_style: null,
-              font_weight: null,
             },
             "variable.special": {
               color: "#C4B28A",
-              font_style: null,
-              font_weight: null,
             },
             variant: {
               color: null,
-              font_style: null,
-              font_weight: null,
             },
           },
         },
@@ -515,6 +463,8 @@ function theme() {
         name: "Neo Light",
         appearance: "light",
         style: {
+          accents: [PEARL_BLUE4, PEARL_ORANGE, PEARL_PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
+
           background: "#f2f1ef",
 
           border: "#dddddb",
@@ -600,8 +550,8 @@ function theme() {
           "terminal.ansi.yellow": "#77713f",
           "terminal.ansi.bright_yellow": "#de9800",
           "terminal.ansi.dim_yellow": "#f9d791",
-          "terminal.ansi.blue": "#4d699b",
-          "terminal.ansi.bright_blue": "#4d699b",
+          "terminal.ansi.blue": PEARL_BLUE4,
+          "terminal.ansi.bright_blue": PEARL_BLUE4,
           "terminal.ansi.dim_blue": "#9fb5c9",
           "terminal.ansi.magenta": "#766b90",
           "terminal.ansi.bright_magenta": "#624c83",
@@ -641,216 +591,155 @@ function theme() {
 
           players: [
             {
-              cursor: "#22262D",
-              background: "#f2f1ef",
+              cursor: PEARL_BLACK,
+              background: PEARL_WHITE,
               selection: "#C6C6C5",
+            },
+            {
+              cursor: PEARL_BLUE4,
+            },
+            {
+              cursor: PEARL_ORANGE,
+            },
+            {
+              cursor: PEARL_PINK,
+            },
+            {
+              cursor: GREEN3,
+            },
+            {
+              cursor: VIOLET3,
+            },
+            {
+              cursor: YELLOW3,
+            },
+            {
+              cursor: CYAN,
+            },
+            {
+              cursor: RED3,
             },
           ],
           syntax: {
             attribute: {
               color: "#624C83",
-              font_style: null,
-              font_weight: null,
             },
             boolean: {
-              color: "#CC6D00",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_ORANGE,
             },
             comment: {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             "comment.doc": {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             constant: {
-              color: "#CC6D00",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_ORANGE,
             },
             constructor: {
               color: "#6693BF",
-              font_style: null,
-              font_weight: null,
             },
             embedded: {
-              color: "#CC6D00",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_ORANGE,
             },
             emphasis: {
-              color: "#CC6D00",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_ORANGE,
             },
             enum: {
-              color: "#CC6D00",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_ORANGE,
             },
             function: {
               color: "#4D699B",
-              font_style: null,
-              font_weight: null,
             },
             hint: {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: 700,
+              font_weight: 300,
             },
             keyword: {
-              color: "#624C83",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_VIOLET4,
             },
             label: {
-              color: null,
-              font_style: null,
-              font_weight: null,
+              color: PEARL_VIOLET4,
             },
             link_text: {
               color: "#6D6D69",
               font_style: "normal",
-              font_weight: null,
             },
             link_uri: {
               color: "#6693BF",
-              font_style: null,
-              font_weight: null,
             },
             number: {
-              color: "#B35B79",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_PINK,
             },
             operator: {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             predictive: {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             preproc: {
               color: "#6D6F6E",
-              font_style: null,
-              font_weight: null,
             },
             primary: {
               color: "#22262D",
-              font_style: null,
-              font_weight: null,
             },
             property: {
               color: "#77713F",
-              font_style: null,
-              font_weight: null,
             },
             punctuation: {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.bracket": {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.delimiter": {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.list_marker": {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             "punctuation.special": {
               color: "#6D6D69",
-              font_style: null,
-              font_weight: null,
             },
             string: {
-              color: "#6F894E",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_GREEN,
             },
             "string.escape": {
-              color: "#6F894E",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_BLUE4,
             },
             "string.regex": {
-              color: "#6F894E",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_GREEN,
             },
             "string.special": {
-              color: "#6F894E",
-              font_style: null,
-              font_weight: null,
-            },
-            "string.special.symbol": {
-              color: "#6F894E",
-              font_style: null,
-              font_weight: null,
+              color: PEARL_GREEN,
             },
             tag: {
               color: "#77713f",
-              font_style: null,
-              font_weight: null,
             },
             "text.literal": {
               color: "#22262D",
-              font_style: null,
-              font_weight: null,
             },
             title: {
-              color: "#22262D",
-              font_style: null,
-              font_weight: 400,
+              color: PEARL_VIOLET4,
+              font_weight: 700,
             },
             type: {
               color: "#597B75",
-              font_style: null,
-              font_weight: null,
             },
             "type.builtin": {
               color: "#597B75",
-              font_style: null,
-              font_weight: null,
             },
             "type.super": {
               color: "#597B75",
-              font_style: null,
-              font_weight: null,
             },
             variable: {
               color: "#22262D",
-              font_style: null,
-              font_weight: null,
             },
             "variable.parameter": {
               color: "#77713f",
-              font_style: null,
-              font_weight: null,
             },
             "variable.special": {
               color: "#77713f",
-              font_style: null,
-              font_weight: null,
-            },
-            variant: {
-              color: null,
-              font_style: null,
-              font_weight: null,
             },
           },
         },
