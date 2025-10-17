@@ -412,7 +412,7 @@ function themes() {
 
           "elevated_surface.background": PEARL_WHITE,
           "surface.background": PEARL_WHITE,
-          "element.background": PEARL_WHITE,
+          "element.background": PEARL_WHITE1,
           "element.hover": PEARL_WHITE2,
           "element.active": PEARL_WHITE2,
           "element.selected": PEARL_WHITE2,
