@@ -7,31 +7,9 @@ const ZEN_BG1 = "#1C1E25";
 const ZEN_BG2 = "#22262D";
 const ZEN_BG3 = "#393B44";
 
-// Ink Bg Shades
-const INK_BG0 = "#14171d";
-const INK_BG1 = "#1F1F26";
-const INK_BG2 = ZEN_BG2;
-const INK_BG3 = "#393B44";
-const INK_BG4 = "#4B4E57";
-
-// Mist Bg Shades
-const MIST_BG0 = ZEN_BG2;
-const MIST_BG1 = "#2A2C35";
-const MIST_BG2 = "#393B44";
-const MIST_BG3 = "#5C6066";
-
 // Popup and Floats
 const ALT_BLUE1 = "#223249";
 const ALT_BLUE2 = "#2D4F67";
-
-// Diff and Git
-const DIFF_GREEN = "#2B3328";
-const DIFF_YELLOW = "#49443C";
-const DIFF_RED = "#43242B";
-const DIFF_BLUE = "#252535";
-const GIT_GREEN = "#76946A";
-const GIT_RED = "#C34043";
-const GIT_YELLOW = "#DCA561";
 
 // Main Colors
 const RED = "#C34043";
@@ -57,30 +35,6 @@ const ORANGE = "#b6927b";
 const ORANGE2 = "#b98d7b";
 const CYAN = BLUE4;
 
-// Saturated variants (20% more saturation)
-const RED_SATURATED = "#C93134";
-const RED2_SATURATED = "#ED5965";
-const RED3_SATURATED = "#CA675F";
-const YELLOW_SATURATED = "#E59F49";
-const YELLOW2_SATURATED = "#EDC272";
-const YELLOW3_SATURATED = "#CAAC7A";
-const GREEN_SATURATED = "#8FC055";
-const GREEN2_SATURATED = "#7CAF7C";
-const GREEN3_SATURATED = "#7F9F6E";
-const GREEN4_SATURATED = "#5B9A82";
-const GREEN5_SATURATED = "#6BAE97";
-const BLUE_SATURATED = "#6EBBD4";
-const BLUE2_SATURATED = "#568B8F";
-const BLUE3_SATURATED = "#7EAABA";
-const BLUE4_SATURATED = "#81AAA9";
-const VIOLET_SATURATED = "#8A88B0";
-const VIOLET2_SATURATED = "#7E91AF";
-const VIOLET3_SATURATED = "#8A9FBE";
-const PINK_SATURATED = "#A08AA2";
-const ORANGE_SATURATED = "#BC8A6C";
-const ORANGE2_SATURATED = "#BF856B";
-const AQUA_SATURATED = "#81AAA9";
-
 // Fg and Comments
 const FG = "#C5C9C7";
 const FG2 = "#f2f1ef";
@@ -89,6 +43,7 @@ const GRAY2 = "#A4A7A4";
 const GRAY3 = "#909398";
 const GRAY4 = "#75797f";
 const GRAY5 = "#5C6066";
+const OPERATORS = GRAY3; // original is "#9E9B93";
 
 // Light theme colors (pearl prefix)
 const PEARL_BLACK = ZEN_BG2;
@@ -133,30 +88,6 @@ const PEARL_TEAL2 = "#6693bf";
 const PEARL_TEAL3 = "#5a7785";
 const PEARL_CYAN = "#d7e3d8";
 
-// Pearl saturated variants (40% more saturation)
-const PEARL_GREEN_SATURATED = "#5E8F2F";
-const PEARL_GREEN2_SATURATED = "#5B9945";
-const PEARL_GREEN3_SATURATED = "#A8DA9B";
-const PEARL_PINK_SATURATED = "#C04062";
-const PEARL_ORANGE_SATURATED = "#E05700";
-const PEARL_ORANGE2_SATURATED = "#FF7700";
-const PEARL_YELLOW_SATURATED = "#656720";
-const PEARL_YELLOW2_SATURATED = "#72612B";
-const PEARL_YELLOW3_SATURATED = "#F28C00";
-const PEARL_YELLOW4_SATURATED = "#FFD56D";
-const PEARL_RED_SATURATED = "#D72436";
-const PEARL_RED2_SATURATED = "#E42D2C";
-const PEARL_RED3_SATURATED = "#F50000";
-const PEARL_RED4_SATURATED = "#E4977B";
-const PEARL_AQUA_SATURATED = "#3E8366";
-const PEARL_AQUA2_SATURATED = "#428F6A";
-const PEARL_TEAL1_SATURATED = "#2E96B0";
-const PEARL_TEAL2_SATURATED = "#469FD3";
-const PEARL_TEAL3_SATURATED = "#3D8077";
-const PEARL_BLUE4_SATURATED = "#2A73B1";
-const PEARL_BLUE5_SATURATED = "#3E56B8";
-const PEARL_VIOLET4_SATURATED = "#44418F";
-
 let theme_data = theme();
 await fs.writeFile("./neo_theme.json", JSON.stringify(theme_data, null, 2));
 await fs.writeFile("/Users/neo/.config/zed/themes/neo_theme.json", JSON.stringify(theme_data, null, 2));
@@ -187,55 +118,55 @@ function theme() {
           "editor.foreground": FG,
           "editor.background": ZEN_BG0,
           "editor.gutter.background": ZEN_BG0,
-          "editor.subheader.background": INK_BG0,
+          "editor.subheader.background": ZEN_BG1,
           "editor.active_line.background": ZEN_BG2,
           "editor.highlighted_line.background": ZEN_BG2,
           "editor.line_number": GRAY5,
           "editor.active_line_number": FG,
           "editor.invisible": ZEN_BG2,
           "editor.wrap_guide": GRAY5,
-          "editor.active_wrap_guide": "#949fb5",
+          "editor.active_wrap_guide": GRAY5,
           "editor.document_highlight.read_background": ZEN_BG3,
-          "editor.document_highlight.write_background": ZEN_BG2,
+          "editor.document_highlight.write_background": ZEN_BG3,
 
-          "elevated_surface.background": INK_BG0,
+          "elevated_surface.background": ZEN_BG1,
           "element.background": ZEN_BG2,
           "element.hover": ZEN_BG3,
           "element.active": ZEN_BG3,
           "element.selected": ZEN_BG3,
-          "element.disabled": INK_BG0,
+          "element.disabled": ZEN_BG1,
 
           "ghost_element.background": ZEN_BG0,
           "ghost_element.hover": ZEN_BG3,
           "ghost_element.active": ZEN_BG3,
           "ghost_element.selected": ZEN_BG3,
-          "ghost_element.disabled": INK_BG0,
+          "ghost_element.disabled": ZEN_BG1,
 
           text: FG,
-          "text.muted": "#75797f",
+          "text.muted": GRAY4,
           "text.placeholder": GRAY5,
           "text.disabled": GRAY5,
           "text.accent": RED3,
 
           icon: FG,
-          "icon.muted": "#75797f",
+          "icon.muted": GRAY4,
           "icon.disabled": GRAY5,
-          "icon.placeholder": INK_BG0,
-          "icon.accent": "#8ba4b0",
+          "icon.placeholder": ZEN_BG1,
+          "icon.accent": BLUE3,
 
           "tab_bar.background": ZEN_BG0,
           "tab.inactive_background": ZEN_BG0,
-          "tab.active_background": ZEN_BG2,
+          "tab.active_background": ZEN_BG1,
           "title_bar.background": ZEN_BG0,
           "toolbar.background": ZEN_BG0,
 
           "panel.background": ZEN_BG0,
-          "panel.focused_border": "#8ba4b0",
-          "pane.focused_border": "#949fb5",
+          "panel.focused_border": BLUE3,
+          "pane.focused_border": VIOLET3,
 
-          "search.match_background": "#536269",
+          "search.match_background": ZEN_BG3,
           "status_bar.background": ZEN_BG0,
-          "scrollbar.thumb.background": GRAY5 + "34",
+          "scrollbar.thumb.background": GRAY5 + "33",
           "scrollbar.thumb.hover_background": GRAY5,
           "scrollbar.thumb.border": ZEN_BG2,
           "scrollbar.track.background": ZEN_BG0,
@@ -244,26 +175,26 @@ function theme() {
 
           "terminal.background": ZEN_BG0,
           "terminal.foreground": FG,
-          "terminal.bright_foreground": "#c4b28a",
-          "terminal.dim_foreground": "#75797f",
+          "terminal.bright_foreground": YELLOW3,
+          "terminal.dim_foreground": GRAY4,
 
-          "terminal.ansi.black": INK_BG0,
+          "terminal.ansi.black": ZEN_BG1,
           "terminal.ansi.bright_black": ZEN_BG2,
-          "terminal.ansi.dim_black": INK_BG0,
+          "terminal.ansi.dim_black": ZEN_BG1,
 
           "terminal.ansi.red": RED3,
           "terminal.ansi.dim_red": RED,
           "terminal.ansi.bright_red": RED2,
 
           "terminal.ansi.green": GREEN3,
-          "terminal.ansi.bright_green": "#87a987",
+          "terminal.ansi.bright_green": GREEN2,
           "terminal.ansi.dim_green": "#658594",
-          "terminal.ansi.yellow": "#c4b28a",
-          "terminal.ansi.bright_yellow": "#c4b28a",
+          "terminal.ansi.yellow": YELLOW3,
+          "terminal.ansi.bright_yellow": YELLOW3,
           "terminal.ansi.dim_yellow": "#dca561",
-          "terminal.ansi.blue": "#8ba4b0",
+          "terminal.ansi.blue": BLUE3,
           "terminal.ansi.bright_blue": "#7fb4ca",
-          "terminal.ansi.dim_blue": "#949fb5",
+          "terminal.ansi.dim_blue": VIOLET3,
           "terminal.ansi.magenta": "#a292a3",
           "terminal.ansi.bright_magenta": "#d27e99",
           "terminal.ansi.dim_magenta": CYAN,
@@ -276,38 +207,35 @@ function theme() {
 
           "link_text.hover": "#6a9589",
           "link_text.border": ZEN_BG2,
-          "link_text.background": INK_BG0,
+          "link_text.background": ZEN_BG1,
           conflict: "#ff5d62",
-          created: "#87a987",
-          deleted: "#c34043",
+          created: GREEN2,
+          deleted: RED,
           error: RED3,
-          warning: "#c4b28a",
+          warning: YELLOW3,
           "warning.border": ZEN_BG2,
-          "warning.background": INK_BG0,
-          hidden: "#949fb5",
-          success: "#87a987",
+          "warning.background": ZEN_BG1,
+          hidden: VIOLET3,
+          success: GREEN2,
           "success.border": ZEN_BG2,
-          "success.background": INK_BG0,
-          info: "#949fb5",
+          "success.background": ZEN_BG1,
+          info: VIOLET3,
           "info.border": ZEN_BG2,
-          "info.background": INK_BG0,
-          hint: "#8ba4b0",
+          "info.background": ZEN_BG1,
+          hint: BLUE3,
           "hint.border": ZEN_BG2,
-          "hint.background": INK_BG0,
-          modified: "#dca561",
-          renamed: "#b6927b",
+          "hint.background": ZEN_BG1,
+          modified: YELLOW,
+          renamed: ORANGE,
           unreachable: FG,
-          ignored: "#b6927b",
-          predictive: "#75797f",
+          ignored: ORANGE,
+          predictive: GRAY4,
 
           players: [
             {
               cursor: FG,
               background: ZEN_BG0,
-              selection: ZEN_BG3,
-            },
-            {
-              cursor: BLUE3,
+              selection: BLUE3 + "33",
             },
             {
               cursor: ORANGE2,
@@ -340,16 +268,16 @@ function theme() {
               color: ORANGE,
             },
             comment: {
-              color: "#75797F",
+              color: GRAY4,
             },
             "comment.doc": {
-              color: "#75797F",
+              color: GRAY4,
             },
             constant: {
               color: ORANGE,
             },
             constructor: {
-              color: "#949FB5",
+              color: VIOLET3,
             },
             embedded: {
               color: ORANGE,
@@ -361,10 +289,10 @@ function theme() {
               color: ORANGE,
             },
             function: {
-              color: "#8BA4B0",
+              color: BLUE3,
             },
             hint: {
-              color: "#9E9B93",
+              color: GRAY5,
               font_weight: 300,
             },
             keyword: {
@@ -374,50 +302,56 @@ function theme() {
               color: VIOLET2,
             },
             link_text: {
-              color: "#9E9B93",
+              color: OPERATORS,
               font_style: "normal",
             },
             link_uri: {
               color: VIOLET2,
             },
             number: {
-              color: "#A292A3",
+              color: PINK,
             },
             operator: {
-              color: "#9E9B93",
+              color: OPERATORS,
             },
             predictive: {
-              color: "#9E9B93",
+              color: OPERATORS,
             },
             preproc: {
-              color: "#9E9B93",
+              color: OPERATORS,
             },
             primary: {
-              color: "#C5C9C7",
+              color: FG,
             },
             property: {
-              color: "#C4B28A",
+              color: YELLOW3,
             },
             punctuation: {
-              color: "#9E9B93",
+              color: OPERATORS,
+              font_weight: 300,
             },
             "punctuation.bracket": {
-              color: "#9E9B93",
+              color: OPERATORS,
+              font_weight: 300,
             },
             "punctuation.delimiter": {
-              color: "#9E9B93",
+              color: OPERATORS,
+              font_weight: 300,
             },
             "punctuation.list_marker": {
-              color: "#9E9B93",
+              color: OPERATORS,
+              font_weight: 300,
             },
             "punctuation.special": {
-              color: "#9E9B93",
+              color: OPERATORS,
+              font_weight: 300,
             },
             string: {
               color: GREEN3,
             },
             "string.escape": {
               color: BLUE3,
+              font_weight: 700,
             },
             "string.regex": {
               color: GREEN3,
@@ -426,10 +360,10 @@ function theme() {
               color: GREEN3,
             },
             tag: {
-              color: "#C4B28A",
+              color: YELLOW3,
             },
             "text.literal": {
-              color: "#C5C9C7",
+              color: FG,
             },
             title: {
               color: VIOLET2,
@@ -445,13 +379,13 @@ function theme() {
               color: CYAN,
             },
             variable: {
-              color: "#C5C9C7",
+              color: FG,
             },
             "variable.parameter": {
-              color: "#C4B28A",
+              color: YELLOW3,
             },
             "variable.special": {
-              color: "#C4B28A",
+              color: YELLOW3,
             },
             variant: {
               color: null,
@@ -467,26 +401,26 @@ function theme() {
 
           background: "#f2f1ef",
 
-          border: "#dddddb",
-          "border.variant": "#dddddba0",
-          "border.focused": "#dddddb",
-          "border.selected": "#dddddb",
-          "border.transparent": "#dddddb00",
-          "border.disabled": "#dddddb80",
+          border: PEARL_WHITE2,
+          "border.variant": PEARL_WHITE2 + "a0",
+          "border.focused": PEARL_WHITE2,
+          "border.selected": PEARL_WHITE2,
+          "border.transparent": PEARL_WHITE2 + "00",
+          "border.disabled": PEARL_WHITE2 + "80",
 
           "elevated_surface.background": "#f2f1ef",
           "surface.background": "#f2f1ef",
           "element.background": "#e2e1df",
-          "element.hover": "#dddddb",
-          "element.active": "#dddddb",
-          "element.selected": "#dddddb",
+          "element.hover": PEARL_WHITE2,
+          "element.active": PEARL_WHITE2,
+          "element.selected": PEARL_WHITE2,
           "element.disabled": "#f2f1ef",
 
           "drop_target.background": "#e2e1df",
           "ghost_element.background": "#f2f1ef",
-          "ghost_element.hover": "#dddddb",
-          "ghost_element.active": "#dddddb",
-          "ghost_element.selected": "#dddddb",
+          "ghost_element.hover": PEARL_WHITE2,
+          "ghost_element.active": PEARL_WHITE2,
+          "ghost_element.selected": PEARL_WHITE2,
           "ghost_element.disabled": "#f2f1ef",
 
           text: "#22262D",
@@ -508,10 +442,10 @@ function theme() {
           "tab.inactive_background": "#f2f1ef",
           "tab.active_background": "#e2e1df",
 
-          "search.match_background": "#9fb5c9",
+          "search.match_background": PEARL_WHITE3,
           "panel.background": "#f2f1ef",
-          "panel.focused_border": "#dddddb",
-          "pane.focused_border": "#dddddb",
+          "panel.focused_border": PEARL_WHITE2,
+          "pane.focused_border": PEARL_WHITE2,
 
           "scrollbar.thumb.background": "#6D6D6934",
           "scrollbar.thumb.hover_background": "#6D6D69",
@@ -523,15 +457,15 @@ function theme() {
           "editor.background": "#f2f1ef",
           "editor.gutter.background": "#f2f1ef",
           "editor.subheader.background": "#f2f1ef",
-          "editor.active_line.background": "#e2e1df",
-          "editor.highlighted_line.background": "#e2e1df",
-          "editor.line_number": "#9F9F99",
+          "editor.active_line.background": PEARL_WHITE2,
+          "editor.highlighted_line.background": PEARL_WHITE2,
+          "editor.line_number": PEARL_GRAY4,
           "editor.active_line_number": "#22262D",
           "editor.invisible": "#e2e1df",
-          "editor.wrap_guide": "#9F9F99",
-          "editor.active_wrap_guide": "#949fb5",
-          "editor.document_highlight.read_background": "#dddddb",
-          "editor.document_highlight.write_background": "#e2e1df",
+          "editor.wrap_guide": PEARL_GRAY4,
+          "editor.active_wrap_guide": VIOLET3,
+          "editor.document_highlight.read_background": PEARL_WHITE3,
+          "editor.document_highlight.write_background": PEARL_WHITE3,
 
           "terminal.background": "#f2f1ef",
           "terminal.foreground": "#22262D",
@@ -561,26 +495,26 @@ function theme() {
           "terminal.ansi.dim_cyan": "#5a7785",
           "terminal.ansi.white": "#e2e1df",
           "terminal.ansi.bright_white": "#f2f1ef",
-          "terminal.ansi.dim_white": "#dddddb",
+          "terminal.ansi.dim_white": PEARL_WHITE2,
 
           "link_text.hover": "#6a9589",
-          "link_text.border": "#dddddb",
+          "link_text.border": PEARL_WHITE2,
           "link_text.background": "#f2f1ef",
           conflict: "#D7474B",
           created: "#6E915F",
           deleted: "#d9a594",
           error: "#D7474B",
           warning: "#77713f",
-          "warning.border": "#dddddb",
+          "warning.border": PEARL_WHITE2,
           "warning.background": "#f2f1ef",
           success: "#6E915F",
-          "success.border": "#dddddb",
+          "success.border": PEARL_WHITE2,
           "success.background": "#f2f1ef",
           info: "#6693BF",
-          "info.border": "#dddddb",
+          "info.border": PEARL_WHITE2,
           "info.background": "#f2f1ef",
           hint: "#6D6D69",
-          "hint.border": "#dddddb",
+          "hint.border": PEARL_WHITE2,
           "hint.background": "#f2f1ef",
           modified: "#DE9800",
           renamed: "#d9a594",
@@ -593,10 +527,7 @@ function theme() {
             {
               cursor: PEARL_BLACK,
               background: PEARL_WHITE,
-              selection: "#C6C6C5",
-            },
-            {
-              cursor: PEARL_BLUE4,
+              selection: PEARL_BLUE4 + "33",
             },
             {
               cursor: PEARL_ORANGE,
@@ -688,18 +619,23 @@ function theme() {
             },
             punctuation: {
               color: "#6D6D69",
+              font_weight: 300,
             },
             "punctuation.bracket": {
               color: "#6D6D69",
+              font_weight: 300,
             },
             "punctuation.delimiter": {
               color: "#6D6D69",
+              font_weight: 300,
             },
             "punctuation.list_marker": {
               color: "#6D6D69",
+              font_weight: 300,
             },
             "punctuation.special": {
               color: "#6D6D69",
+              font_weight: 300,
             },
             string: {
               color: PEARL_GREEN,
