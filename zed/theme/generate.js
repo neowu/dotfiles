@@ -88,11 +88,13 @@ const PEARL_TEAL2 = "#6693bf";
 const PEARL_TEAL3 = "#5a7785";
 const PEARL_CYAN = "#d7e3d8";
 
-let theme_data = theme();
+const C_BG = [ZEN_BG0, PEARL_WHITE];
+
+let theme_data = themes();
 await fs.writeFile("./neo_theme.json", JSON.stringify(theme_data, null, 2));
 await fs.writeFile("/Users/neo/.config/zed/themes/neo_theme.json", JSON.stringify(theme_data, null, 2));
 
-function theme() {
+function themes() {
   return {
     $schema: "https://zed.dev/schema/themes/v0.2.0.json",
     name: "Neo",
@@ -193,7 +195,7 @@ function theme() {
           "terminal.ansi.bright_yellow": YELLOW3,
           "terminal.ansi.dim_yellow": "#dca561",
           "terminal.ansi.blue": BLUE3,
-          "terminal.ansi.bright_blue": "#7fb4ca",
+          "terminal.ansi.bright_blue": BLUE,
           "terminal.ansi.dim_blue": VIOLET3,
           "terminal.ansi.magenta": "#a292a3",
           "terminal.ansi.bright_magenta": "#d27e99",
@@ -399,7 +401,7 @@ function theme() {
         style: {
           accents: [PEARL_BLUE4, PEARL_ORANGE, PEARL_PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
 
-          background: "#f2f1ef",
+          background: PEARL_WHITE,
 
           border: PEARL_WHITE2,
           "border.variant": PEARL_WHITE2 + "a0",
@@ -408,20 +410,20 @@ function theme() {
           "border.transparent": PEARL_WHITE2 + "00",
           "border.disabled": PEARL_WHITE2 + "80",
 
-          "elevated_surface.background": "#f2f1ef",
-          "surface.background": "#f2f1ef",
-          "element.background": "#e2e1df",
+          "elevated_surface.background": PEARL_WHITE,
+          "surface.background": PEARL_WHITE,
+          "element.background": PEARL_WHITE,
           "element.hover": PEARL_WHITE2,
           "element.active": PEARL_WHITE2,
           "element.selected": PEARL_WHITE2,
-          "element.disabled": "#f2f1ef",
+          "element.disabled": PEARL_WHITE,
 
-          "drop_target.background": "#e2e1df",
-          "ghost_element.background": "#f2f1ef",
+          "drop_target.background": PEARL_WHITE1,
+          "ghost_element.background": PEARL_WHITE,
           "ghost_element.hover": PEARL_WHITE2,
           "ghost_element.active": PEARL_WHITE2,
           "ghost_element.selected": PEARL_WHITE2,
-          "ghost_element.disabled": "#f2f1ef",
+          "ghost_element.disabled": PEARL_WHITE,
 
           text: "#22262D",
           "text.muted": "#6D6D69",
@@ -432,42 +434,42 @@ function theme() {
           icon: "#22262D",
           "icon.muted": "#6D6D69",
           "icon.disabled": "#9F9F99",
-          "icon.placeholder": "#f2f1ef",
+          "icon.placeholder": PEARL_WHITE,
           "icon.accent": "#5E857A",
 
-          "status_bar.background": "#f2f1ef",
-          "title_bar.background": "#f2f1ef",
-          "toolbar.background": "#f2f1ef",
-          "tab_bar.background": "#f2f1ef",
-          "tab.inactive_background": "#f2f1ef",
-          "tab.active_background": "#e2e1df",
+          "status_bar.background": PEARL_WHITE,
+          "title_bar.background": PEARL_WHITE,
+          "toolbar.background": PEARL_WHITE,
+          "tab_bar.background": PEARL_WHITE,
+          "tab.inactive_background": PEARL_WHITE,
+          "tab.active_background": PEARL_WHITE1,
 
           "search.match_background": PEARL_WHITE3,
-          "panel.background": "#f2f1ef",
+          "panel.background": PEARL_WHITE,
           "panel.focused_border": PEARL_WHITE2,
           "pane.focused_border": PEARL_WHITE2,
 
           "scrollbar.thumb.background": "#6D6D6934",
           "scrollbar.thumb.hover_background": "#6D6D69",
-          "scrollbar.thumb.border": "#e2e1df",
-          "scrollbar.track.background": "#f2f1ef",
-          "scrollbar.track.border": "#f2f1ef",
+          "scrollbar.thumb.border": PEARL_WHITE1,
+          "scrollbar.track.background": PEARL_WHITE,
+          "scrollbar.track.border": PEARL_WHITE,
 
           "editor.foreground": "#22262D",
-          "editor.background": "#f2f1ef",
-          "editor.gutter.background": "#f2f1ef",
-          "editor.subheader.background": "#f2f1ef",
+          "editor.background": PEARL_WHITE,
+          "editor.gutter.background": PEARL_WHITE,
+          "editor.subheader.background": PEARL_WHITE,
           "editor.active_line.background": PEARL_WHITE2,
           "editor.highlighted_line.background": PEARL_WHITE2,
           "editor.line_number": PEARL_GRAY4,
           "editor.active_line_number": "#22262D",
-          "editor.invisible": "#e2e1df",
+          "editor.invisible": PEARL_WHITE1,
           "editor.wrap_guide": PEARL_GRAY4,
           "editor.active_wrap_guide": VIOLET3,
           "editor.document_highlight.read_background": PEARL_WHITE3,
           "editor.document_highlight.write_background": PEARL_WHITE3,
 
-          "terminal.background": "#f2f1ef",
+          "terminal.background": PEARL_WHITE,
           "terminal.foreground": "#22262D",
           "terminal.bright_foreground": "#22262D",
           "terminal.dim_foreground": "#6D6D69",
@@ -493,29 +495,29 @@ function theme() {
           "terminal.ansi.cyan": "#597b75",
           "terminal.ansi.bright_cyan": "#4e8ca2",
           "terminal.ansi.dim_cyan": "#5a7785",
-          "terminal.ansi.white": "#e2e1df",
-          "terminal.ansi.bright_white": "#f2f1ef",
+          "terminal.ansi.white": PEARL_WHITE1,
+          "terminal.ansi.bright_white": PEARL_WHITE,
           "terminal.ansi.dim_white": PEARL_WHITE2,
 
           "link_text.hover": "#6a9589",
           "link_text.border": PEARL_WHITE2,
-          "link_text.background": "#f2f1ef",
+          "link_text.background": PEARL_WHITE,
           conflict: "#D7474B",
           created: "#6E915F",
           deleted: "#d9a594",
           error: "#D7474B",
           warning: "#77713f",
           "warning.border": PEARL_WHITE2,
-          "warning.background": "#f2f1ef",
+          "warning.background": PEARL_WHITE,
           success: "#6E915F",
           "success.border": PEARL_WHITE2,
-          "success.background": "#f2f1ef",
+          "success.background": PEARL_WHITE,
           info: "#6693BF",
           "info.border": PEARL_WHITE2,
-          "info.background": "#f2f1ef",
+          "info.background": PEARL_WHITE,
           hint: "#6D6D69",
           "hint.border": PEARL_WHITE2,
-          "hint.background": "#f2f1ef",
+          "hint.background": PEARL_WHITE,
           modified: "#DE9800",
           renamed: "#d9a594",
           unreachable: "#22262D",
@@ -683,3 +685,5 @@ function theme() {
     ],
   };
 }
+
+function theme(dark) {}
