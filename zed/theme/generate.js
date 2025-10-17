@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 
 // Zen Bg Shades
-const ZEN_BG0 = "#090E13";
+const ZEN_BG = "#090E13";
 const ZEN_BG1 = "#1C1E25";
 const ZEN_BG2 = "#22262D";
 const ZEN_BG3 = "#393B44";
@@ -88,7 +88,7 @@ const PEARL_TEAL2 = "#6693bf";
 const PEARL_TEAL3 = "#5a7785";
 const PEARL_CYAN = "#d7e3d8";
 
-const C_BG = [ZEN_BG0, PEARL_WHITE];
+const C_BG = [ZEN_BG, PEARL_WHITE];
 
 let theme_data = themes();
 await fs.writeFile("./neo_theme.json", JSON.stringify(theme_data, null, 2));
@@ -106,7 +106,7 @@ function themes() {
         style: {
           accents: [BLUE3, ORANGE2, PINK, GREEN3, VIOLET3, YELLOW3, CYAN, RED3],
 
-          background: ZEN_BG0,
+          background: ZEN_BG,
 
           border: ZEN_BG2,
           "border.variant": ZEN_BG2 + "a0",
@@ -118,8 +118,8 @@ function themes() {
           "drop_target.background": ZEN_BG2,
 
           "editor.foreground": FG,
-          "editor.background": ZEN_BG0,
-          "editor.gutter.background": ZEN_BG0,
+          "editor.background": ZEN_BG,
+          "editor.gutter.background": ZEN_BG,
           "editor.subheader.background": ZEN_BG1,
           "editor.active_line.background": ZEN_BG2,
           "editor.highlighted_line.background": ZEN_BG2,
@@ -133,13 +133,13 @@ function themes() {
 
           "elevated_surface.background": ZEN_BG1,
           "element.background": ZEN_BG2,
-          "element.hover": ZEN_BG3,
+          "element.hover": ZEN_BG2,
           "element.active": ZEN_BG3,
           "element.selected": ZEN_BG3,
           "element.disabled": ZEN_BG1,
 
-          "ghost_element.background": ZEN_BG0,
-          "ghost_element.hover": ZEN_BG3,
+          "ghost_element.background": "#00000000",
+          "ghost_element.hover": ZEN_BG2,
           "ghost_element.active": ZEN_BG3,
           "ghost_element.selected": ZEN_BG3,
           "ghost_element.disabled": ZEN_BG1,
@@ -156,26 +156,26 @@ function themes() {
           "icon.placeholder": ZEN_BG1,
           "icon.accent": BLUE3,
 
-          "tab_bar.background": ZEN_BG0,
-          "tab.inactive_background": ZEN_BG0,
+          "tab_bar.background": ZEN_BG,
+          "tab.inactive_background": ZEN_BG,
           "tab.active_background": ZEN_BG1,
-          "title_bar.background": ZEN_BG0,
-          "toolbar.background": ZEN_BG0,
+          "title_bar.background": ZEN_BG,
+          "toolbar.background": ZEN_BG,
 
-          "panel.background": ZEN_BG0,
+          "panel.background": ZEN_BG,
           "panel.focused_border": BLUE3,
           "pane.focused_border": VIOLET3,
 
           "search.match_background": ZEN_BG3,
-          "status_bar.background": ZEN_BG0,
+          "status_bar.background": ZEN_BG,
           "scrollbar.thumb.background": GRAY5 + "33",
           "scrollbar.thumb.hover_background": GRAY5,
           "scrollbar.thumb.border": ZEN_BG2,
-          "scrollbar.track.background": ZEN_BG0,
-          "scrollbar.track.border": ZEN_BG0,
-          "surface.background": ZEN_BG0,
+          "scrollbar.track.background": ZEN_BG,
+          "scrollbar.track.border": ZEN_BG,
+          "surface.background": ZEN_BG,
 
-          "terminal.background": ZEN_BG0,
+          "terminal.background": ZEN_BG,
           "terminal.foreground": FG,
           "terminal.bright_foreground": YELLOW3,
           "terminal.dim_foreground": GRAY4,
@@ -236,7 +236,7 @@ function themes() {
           players: [
             {
               cursor: FG,
-              background: ZEN_BG0,
+              background: ZEN_BG,
               selection: BLUE3 + "33",
             },
             {
@@ -413,14 +413,14 @@ function themes() {
           "elevated_surface.background": PEARL_WHITE,
           "surface.background": PEARL_WHITE,
           "element.background": PEARL_WHITE1,
-          "element.hover": PEARL_WHITE2,
+          "element.hover": PEARL_WHITE1,
           "element.active": PEARL_WHITE2,
           "element.selected": PEARL_WHITE2,
           "element.disabled": PEARL_WHITE,
 
-          "drop_target.background": PEARL_WHITE1,
+          "drop_target.background": "#00000000",
           "ghost_element.background": PEARL_WHITE,
-          "ghost_element.hover": PEARL_WHITE2,
+          "ghost_element.hover": PEARL_WHITE1,
           "ghost_element.active": PEARL_WHITE2,
           "ghost_element.selected": PEARL_WHITE2,
           "ghost_element.disabled": PEARL_WHITE,
