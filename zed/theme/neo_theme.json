@@ -87,43 +87,43 @@
         "terminal.ansi.green": "#8a9a7b",
         "terminal.ansi.bright_green": "#87a987",
         "terminal.ansi.yellow": "#c4b28a",
-        "terminal.ansi.bright_yellow": "#c4b28a",
+        "terminal.ansi.bright_yellow": "#E6C384",
         "terminal.ansi.blue": "#8ba4b0",
         "terminal.ansi.bright_blue": "#7FB4CA",
         "terminal.ansi.magenta": "#a292a3",
-        "terminal.ansi.bright_magenta": "#d27e99",
+        "terminal.ansi.bright_magenta": "#C6BDC7",
         "terminal.ansi.cyan": "#8ea4a2",
         "terminal.ansi.bright_cyan": "#7AA89F",
         "terminal.ansi.white": "#C5C9C7",
         "terminal.ansi.bright_white": "#b6927b",
         "link_text.hover": "#6A9589",
         "conflict": "#c4746e",
-        "created": "#87a987",
-        "deleted": "#C34043",
+        "created": "#8a9a7b",
+        "deleted": "#c4746e",
         "error": "#c4746e",
         "warning": "#c4b28a",
         "warning.border": "#22262D",
         "warning.background": "#1C1E25",
-        "hidden": "#949fb5",
+        "hidden": "#8992a7",
         "success": "#87a987",
         "success.border": "#22262D",
         "success.background": "#1C1E25",
-        "info": "#949fb5",
+        "info": "#8992a7",
         "info.border": "#22262D",
         "info.background": "#1C1E25",
-        "hint": "#8ba4b0",
+        "hint": "#8992a7",
         "hint.border": "#22262D",
         "hint.background": "#1C1E25",
-        "modified": "#DCA561",
+        "modified": "#c4b28a",
         "renamed": "#b6927b",
         "unreachable": "#C5C9C7",
-        "ignored": "#b6927b",
+        "ignored": "#887244",
         "predictive": "#75797f",
         "players": [
           {
             "cursor": "#C5C9C7",
             "background": "#090E13",
-            "selection": "#4B4D55"
+            "selection": "#949fb533"
           },
           {
             "cursor": "#8ba4b0"
@@ -167,7 +167,7 @@
             "color": "#b6927b"
           },
           "constructor": {
-            "color": "#949fb5"
+            "color": "#8992a7"
           },
           "embedded": {
             "color": "#b6927b"
@@ -360,13 +360,13 @@
         "terminal.ansi.black": "#22262D",
         "terminal.ansi.bright_black": "#22262D",
         "terminal.ansi.red": "#c84053",
-        "terminal.ansi.bright_red": "#C34043",
+        "terminal.ansi.bright_red": "#d7474b",
         "terminal.ansi.green": "#6f894e",
         "terminal.ansi.bright_green": "#6e915f",
         "terminal.ansi.yellow": "#77713f",
         "terminal.ansi.bright_yellow": "#de9800",
         "terminal.ansi.blue": "#4d699b",
-        "terminal.ansi.bright_blue": "#4d699b",
+        "terminal.ansi.bright_blue": "#9fb5c9",
         "terminal.ansi.magenta": "#766b90",
         "terminal.ansi.bright_magenta": "#624c83",
         "terminal.ansi.cyan": "#597B75",
@@ -374,27 +374,27 @@
         "terminal.ansi.white": "#e2e1df",
         "terminal.ansi.bright_white": "#f2f1ef",
         "link_text.hover": "#6A9589",
-        "conflict": "#d7474b",
-        "created": "#6e915f",
-        "deleted": "#d9a594",
-        "error": "#d7474b",
+        "conflict": "#c84053",
+        "created": "#6f894e",
+        "deleted": "#c84053",
+        "error": "#c84053",
         "warning": "#77713f",
         "warning.border": "#dddddb",
         "warning.background": "#e2e1df",
-        "hidden": "#6693bf",
+        "hidden": "#624c83",
         "success": "#6e915f",
         "success.border": "#dddddb",
         "success.background": "#e2e1df",
-        "info": "#6693bf",
+        "info": "#624c83",
         "info.border": "#dddddb",
         "info.background": "#e2e1df",
-        "hint": "#6D6D69",
+        "hint": "#624c83",
         "hint.border": "#dddddb",
         "hint.background": "#e2e1df",
-        "modified": "#de9800",
-        "renamed": "#d9a594",
+        "modified": "#77713f",
+        "renamed": "#cc6d00",
         "unreachable": "#22262D",
-        "ignored": "#d9a594",
+        "ignored": "#836f4a",
         "predictive": "#6D6D69",
         "players": [
           {
@@ -444,7 +444,7 @@
             "color": "#cc6d00"
           },
           "constructor": {
-            "color": "#6693bf"
+            "color": "#624c83"
           },
           "embedded": {
             "color": "#cc6d00"

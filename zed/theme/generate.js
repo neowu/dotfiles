@@ -7,7 +7,7 @@ const BG = "#090E13";
 const BG1 = "#1C1E25";
 const BG2 = "#22262D";
 const BG3 = "#393B44";
-const BG4 = "#4B4D55";
+// const BG4 = "#4B4D55";
 
 // Popup and Floats
 const ALT_BLUE1 = "#223249";
@@ -20,6 +20,7 @@ const RED3 = "#c4746e";
 const YELLOW = "#DCA561";
 const YELLOW2 = "#E6C384";
 const YELLOW3 = "#c4b28a";
+const YELLOW4 = "#887244";
 const GREEN = "#98BB6C";
 const GREEN2 = "#87a987";
 const GREEN3 = "#8a9a7b";
@@ -28,14 +29,15 @@ const GREEN5 = "#7AA89F";
 const BLUE = "#7FB4CA";
 const BLUE2 = "#658594";
 const BLUE3 = "#8ba4b0";
-const BLUE4 = "#8ea4a2";
+
 const VIOLET = "#938AA9";
 const VIOLET2 = "#8992a7";
 const VIOLET3 = "#949fb5";
 const PINK = "#a292a3";
+const PINK1 = "#C6BDC7";
 const ORANGE = "#b6927b";
 const ORANGE2 = "#b98d7b";
-const CYAN = BLUE4;
+const CYAN = "#8ea4a2";
 
 // Fg and Comments
 const FG = "#C5C9C7";
@@ -45,7 +47,6 @@ const GRAY2 = "#A4A7A4";
 const GRAY3 = "#909398";
 const GRAY4 = "#75797f";
 const GRAY5 = "#5C6066";
-const OPERATORS = GRAY3; // original is "#9E9B93";
 
 // Light theme colors (pearl prefix)
 const L_FG = BG2;
@@ -67,7 +68,7 @@ const L_VIOLET2 = "#766b90";
 const PEARL_VIOLET3 = "#c9cbd1";
 const L_VIOLET4 = "#624c83";
 const PEARL_BLUE1 = "#c7d7e0";
-const PEARL_BLUE2 = "#b5cbd2";
+const L_BLUE2 = "#b5cbd2";
 const L_BLUE3 = "#9fb5c9";
 const L_BLUE4 = "#4d699b";
 const PEARL_BLUE5 = "#5d57a3";
@@ -78,7 +79,7 @@ const L_PINK = "#b35b79";
 const L_ORANGE = "#cc6d00";
 const PEARL_ORANGE2 = "#e98a00";
 const L_YELLOW = "#77713f";
-const PEARL_YELLOW2 = "#836f4a";
+const L_YELLOW2 = "#836f4a";
 const L_YELLOW3 = "#de9800";
 const PEARL_YELLOW4 = "#f9d791";
 const L_RED = "#c84053";
@@ -86,7 +87,7 @@ const L_RED2 = "#d7474b";
 const L_RED3 = "#e82424";
 const L_RED4 = "#d9a594";
 const L_AQUA = "#597B75";
-const PEARL_AQUA2 = "#5e857a";
+const L_AQUA2 = "#5e857a";
 const L_TEAL1 = "#4e8ca2";
 const L_TEAL2 = "#6693bf";
 const PEARL_TEAL3 = "#5a7785";
@@ -112,18 +113,31 @@ function theme(dark) {
   let highlight = dark ? BG2 + "a0" : L_BG2 + "a0";
   let active = dark ? BG2 : L_BG2;
   let click = dark ? BG3 : L_BG3;
-  let select = dark ? BG4 : L_BLUE3 + "80";
+  let select = dark ? VIOLET3 + "33" : L_BLUE3 + "80";
 
-  let accent = dark ? RED3 : PEARL_AQUA2;
+  let accent = dark ? RED3 : L_AQUA2;
   let text_muted = dark ? GRAY4 : L_GRAY3;
+
   let red = dark ? RED3 : L_RED;
+  let br_red = dark ? RED2 : L_RED2;
+
   let yellow = dark ? YELLOW3 : L_YELLOW;
+  let br_yellow = dark ? YELLOW2 : L_YELLOW3;
+  let dark_yellow = dark ? YELLOW4 : L_YELLOW2;
+
   let blue = dark ? BLUE3 : L_BLUE4;
+  let br_blue = dark ? BLUE : L_BLUE3;
+
   let green = dark ? GREEN3 : L_GREEN;
   let br_green = dark ? GREEN2 : L_GREEN2;
-  let orange = dark ? ORANGE : L_ORANGE;
+
   let magenta = dark ? PINK : L_VIOLET2;
+  let br_magenta = dark ? PINK1 : L_VIOLET4;
+
   let cyan = dark ? CYAN : L_AQUA;
+  let br_cyan = dark ? GREEN5 : L_TEAL1;
+
+  let orange = dark ? ORANGE : L_ORANGE;
   let pink = dark ? PINK : L_PINK;
   let violet = dark ? VIOLET2 : L_VIOLET4;
 
@@ -216,50 +230,50 @@ function theme(dark) {
       "terminal.ansi.bright_black": dark ? BG2 : L_FG,
 
       "terminal.ansi.red": red,
-      "terminal.ansi.bright_red": dark ? RED2 : RED,
+      "terminal.ansi.bright_red": br_red,
 
       "terminal.ansi.green": green,
       "terminal.ansi.bright_green": br_green,
 
       "terminal.ansi.yellow": yellow,
-      "terminal.ansi.bright_yellow": dark ? YELLOW3 : L_YELLOW3,
+      "terminal.ansi.bright_yellow": br_yellow,
 
       "terminal.ansi.blue": blue,
-      "terminal.ansi.bright_blue": dark ? BLUE : L_BLUE4,
+      "terminal.ansi.bright_blue": br_blue,
 
       "terminal.ansi.magenta": magenta,
-      "terminal.ansi.bright_magenta": dark ? "#d27e99" : L_VIOLET4,
+      "terminal.ansi.bright_magenta": br_magenta,
 
-      "terminal.ansi.cyan": dark ? CYAN : L_AQUA,
-      "terminal.ansi.bright_cyan": dark ? GREEN5 : L_TEAL1,
+      "terminal.ansi.cyan": cyan,
+      "terminal.ansi.bright_cyan": br_cyan,
 
       "terminal.ansi.white": dark ? FG : L_BG1,
       "terminal.ansi.bright_white": dark ? ORANGE : L_BG,
 
       "link_text.hover": GREEN4,
 
-      conflict: dark ? RED3 : L_RED2,
-      created: dark ? GREEN2 : L_GREEN2,
-      deleted: dark ? RED : L_RED4,
-      error: dark ? RED3 : L_RED2,
+      conflict: red,
+      created: green,
+      deleted: red,
+      error: red,
       warning: yellow,
       "warning.border": active,
       "warning.background": border,
-      hidden: dark ? VIOLET3 : L_TEAL2,
+      hidden: violet,
       success: br_green,
       "success.border": active,
       "success.background": border,
-      info: dark ? VIOLET3 : L_TEAL2,
+      info: violet,
       "info.border": active,
       "info.background": border,
-      hint: dark ? BLUE3 : L_GRAY3,
+      hint: violet,
       "hint.border": active,
       "hint.background": border,
-      modified: dark ? YELLOW : L_YELLOW3,
-      renamed: dark ? ORANGE : L_RED4,
+      modified: yellow,
+      renamed: orange,
       unreachable: foreground,
-      ignored: dark ? ORANGE : L_RED4,
-      predictive: dark ? GRAY4 : L_GRAY3,
+      ignored: dark_yellow,
+      predictive: gray,
 
       players: [
         {
@@ -310,7 +324,7 @@ function theme(dark) {
           color: orange,
         },
         constructor: {
-          color: dark ? VIOLET3 : L_TEAL2,
+          color: violet,
         },
         embedded: {
           color: orange,
