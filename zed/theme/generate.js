@@ -63,11 +63,11 @@ const L_BG2 = "#dddddb";
 const L_BG3 = "#EBEBEA";
 
 const PEARL_WHITE3 = "#cacac7";
-const PEARL_VIOLET1 = "#a09cac";
+const L_VIOLET1 = "#a09cac";
 const L_VIOLET2 = "#766b90";
-const PEARL_VIOLET3 = "#c9cbd1";
-const L_VIOLET4 = "#624c83";
-const PEARL_BLUE1 = "#c7d7e0";
+const L_VIOLET3 = "#624c83";
+
+const L_BLUE1 = "#c7d7e0";
 const L_BLUE2 = "#b5cbd2";
 const L_BLUE3 = "#9fb5c9";
 const L_BLUE4 = "#4d699b";
@@ -110,7 +110,7 @@ function theme(dark) {
   let foreground = dark ? FG : L_FG;
   let background = dark ? BG : L_BG;
   let border = dark ? BG1 : L_BG1;
-  let highlight = dark ? BG2 + "a0" : L_BG2 + "a0";
+  let highlight = dark ? BG3 + "a0" : L_VIOLET1 + "33";
   let active = dark ? BG2 : L_BG2;
   let click = dark ? BG3 : L_BG3;
   let select = dark ? VIOLET3 + "33" : L_BLUE3 + "80";
@@ -132,14 +132,14 @@ function theme(dark) {
   let br_green = dark ? GREEN2 : L_GREEN2;
 
   let magenta = dark ? PINK : L_VIOLET2;
-  let br_magenta = dark ? PINK1 : L_VIOLET4;
+  let br_magenta = dark ? PINK1 : L_VIOLET3;
 
   let cyan = dark ? CYAN : L_AQUA;
   let br_cyan = dark ? GREEN5 : L_TEAL1;
 
   let orange = dark ? ORANGE : L_ORANGE;
   let pink = dark ? PINK : L_PINK;
-  let violet = dark ? VIOLET2 : L_VIOLET4;
+  let violet = dark ? VIOLET2 : L_VIOLET3;
 
   let gray = dark ? GRAY4 : L_GRAY3;
 
@@ -164,8 +164,8 @@ function theme(dark) {
       "editor.background": background,
       "editor.gutter.background": background,
       "editor.subheader.background": border,
-      "editor.active_line.background": border + "a0",
-      "editor.highlighted_line.background": border + "a0",
+      "editor.active_line.background": active + "a0",
+      "editor.highlighted_line.background": active + "a0",
       "editor.line_number": gray + "80",
       "editor.active_line_number": foreground,
       "editor.invisible": active, // Text Color. Used to mark invisible characters in the editor. Example: spaces, tabs, carriage returns, etc.
@@ -173,6 +173,7 @@ function theme(dark) {
       "editor.active_wrap_guide": active,
       "editor.document_highlight.read_background": highlight,
       "editor.document_highlight.write_background": highlight,
+      "editor.document_highlight.bracket_background": highlight,
 
       "element.background": active,
       "element.hover": active + "80",
