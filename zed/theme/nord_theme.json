@@ -114,6 +114,8 @@
         "info.border": "#3b4252",
         "info.background": "#3b4252",
         "hint": "#979ba3",
+        "hint.border": "#3b4252",
+        "hint.background": "#3b4252",
         "modified": "#ebcb8b",
         "renamed": "#d08770",
         "unreachable": "#eceff4",

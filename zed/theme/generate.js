@@ -196,6 +196,8 @@ function theme() {
       "info.border": active,
       "info.background": border,
       hint: dim_white, // git blame text
+      "hint.border": active, // clippy hint popup
+      "hint.background": border, // clippy hint popup
       modified: yellow,
       renamed: orange,
       unreachable: foreground,
