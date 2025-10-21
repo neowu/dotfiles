@@ -289,7 +289,7 @@ function theme() {
           color: blue,
         },
         preproc: {
-          color: blue,
+          color: FROST3,
         },
         primary: {
           color: foreground,
