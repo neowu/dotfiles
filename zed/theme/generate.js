@@ -40,10 +40,10 @@ const ORANGE2 = "#b98d7b";
 const CYAN = "#8ea4a2";
 
 // Fg and Comments
-const FG = "#C5C9C7";
 const FG2 = "#f2f1ef";
+const FG = "#C5C9C7";
 const GRAY = "#717C7C";
-const GRAY2 = "#A4A7A4";
+const GRAY2 = "#A4A7A4"; // silver
 const GRAY3 = "#909398";
 const GRAY4 = "#75797f";
 const GRAY5 = "#5C6066";
@@ -110,10 +110,10 @@ function theme(dark) {
   let foreground = dark ? FG : L_FG;
   let background = dark ? BG : L_BG;
   let border = dark ? BG1 : L_BG1;
-  let highlight = dark ? BG3 + "a0" : L_VIOLET1 + "33";
+  let highlight = dark ? GRAY + "33" : L_VIOLET1 + "33";
   let active = dark ? BG2 : L_BG2;
   let click = dark ? BG3 : L_BG3;
-  let select = dark ? VIOLET3 + "33" : L_BLUE3 + "80";
+  let select = dark ? BLUE3 + "80" : L_BLUE3 + "80";
 
   let accent = dark ? RED3 : L_AQUA2;
   let text_muted = dark ? GRAY4 : L_GRAY3;
