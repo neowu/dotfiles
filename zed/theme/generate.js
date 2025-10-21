@@ -98,7 +98,7 @@ function theme() {
       "editor.gutter.background": background, // editor left pane, e.g. line number
       "editor.subheader.background": border,
       "editor.active_line.background": active + "80",
-      "editor.highlighted_line.background": null,
+      "editor.highlighted_line.background": highlight, // open symbol outline, selection will hightlight content
       "editor.line_number": DARK3,
       "editor.active_line_number": foreground,
       "editor.invisible": active, // Text Color. Used to mark invisible characters in the editor. Example: spaces, tabs, carriage returns, etc.

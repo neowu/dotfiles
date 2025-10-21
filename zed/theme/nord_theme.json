@@ -29,7 +29,7 @@
         "editor.gutter.background": "#20242c",
         "editor.subheader.background": "#3b4252",
         "editor.active_line.background": "#3b425280",
-        "editor.highlighted_line.background": null,
+        "editor.highlighted_line.background": "#434c5e",
         "editor.line_number": "#4c566a",
         "editor.active_line_number": "#eceff4",
         "editor.invisible": "#3b4252",
