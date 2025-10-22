@@ -45,9 +45,9 @@ function theme() {
   let popup_background = shade(DARK1, -30);
   let border = DARK1;
   let highlight = DARK2;
+  let scrollbar = DARK2;
   let popup_select = DARK3;
   let select = shade(DARK3, 50) + "80";
-  let scrollbar = shade(DARK3, 50);
 
   let accent = FROST1;
   let text_muted = shade(LIGHT0, -20);
@@ -135,12 +135,11 @@ function theme() {
       "panel.focused_border": accent,
       "pane.focused_border": accent,
 
-      "scrollbar.thumb.background": scrollbar + "60",
-      "scrollbar.thumb.hover_background": scrollbar + "80",
-      "scrollbar.thumb.active_background": scrollbar + "80",
+      "scrollbar.thumb.background": scrollbar + "80",
+      "scrollbar.thumb.hover_background": scrollbar + "aa",
+      "scrollbar.thumb.active_background": scrollbar + "aa",
       "scrollbar.thumb.border": TRANSPARENT,
       "scrollbar.track.background": background,
-      "scrollbar.track.hover_background": scrollbar + "80",
       "scrollbar.track.border": TRANSPARENT,
 
       "search.match_background": highlight,
