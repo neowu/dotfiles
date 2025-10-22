@@ -45,7 +45,7 @@ function theme() {
   let popup_background = shade(DARK1, -30);
   let border = DARK1;
   let highlight = DARK2;
-  let click = DARK3;
+  let popup_select = DARK3;
   let select = shade(DARK3, 50) + "80";
   let scrollbar = shade(DARK3, 50);
 
@@ -108,9 +108,9 @@ function theme() {
       "elevated_surface.background": popup_background, // code completion popup
 
       "ghost_element.background": TRANSPARENT,
-      "ghost_element.selected": click, // code completion popup, keyboard selection background
-      "ghost_element.hover": click, // tab delete hover, code completion popup hover
-      "ghost_element.active": click,
+      "ghost_element.selected": popup_select, // code completion popup, keyboard selection background
+      "ghost_element.hover": highlight, // tab delete hover, code completion popup hover
+      "ghost_element.active": highlight, // color on click
       "ghost_element.disabled": border,
 
       text: foreground,
