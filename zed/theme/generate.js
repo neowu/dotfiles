@@ -6,9 +6,9 @@ const DARK1 = "#3b4252"; // Used as a lighter background color for UI elements l
 const DARK2 = "#434c5e"; // Used as line highlighting in the editor. In the UI scope it may be used as selection- and highlight color.
 const DARK3 = "#4c566a"; // Used for comments, invisibles, indent- and wrap guide marker. In the UI scope used as pseudoclass color for disabled elements.
 
-const LIGHT0 = "#d8dee9"; // Main color for text, variables, constants and attributes. In the UI scope used as semi-light background depending on the theme shading design.
-const LIGHT1 = "#e5e9f0"; // Used as a lighter background color for UI elements like status bars. Used as semi-light background depending on the theme shading design.
-const LIGHT2 = "#eceff4"; // Used for punctuations, carets and structuring characters like curly- and square brackets. In the UI scope used as background, selection- and highlight color depending on the theme shading design.
+const LIGHT0 = "#d8dee9"; // it is used for UI elements like the text editor caret. In the context of syntax highlighting it is used as text color for variables, constants, attributes and fields.
+const LIGHT1 = "#e5e9f0"; // it is used for more subtle/inconspicuous UI text elements that do not need so much visual attention. Other use cases are also state animations like a more brighter text color when a button is hovered, active or focused.
+const LIGHT2 = "#eceff4"; // it is used for elevated UI text elements that require more visual attention. In the context of syntax highlighting it is used as text color for plain text as well as reserved and structuring syntax characters like curly- and square brackets.
 
 // light cyan/greenish
 const FROST0 = "#8fbcbb"; // Used for classes, types and documentation tags.
@@ -41,10 +41,9 @@ function themes() {
 }
 
 function theme() {
-  let foreground = LIGHT2;
   let background = shade(DARK0, -30);
+  let popup_background = shade(DARK1, -30);
   let border = DARK1;
-  let active = DARK1;
   let highlight = DARK2;
   let click = DARK3;
   let select = shade(DARK3, 50) + "80";
@@ -52,32 +51,24 @@ function theme() {
 
   let accent = FROST1;
   let text_muted = shade(LIGHT0, -20);
+  let foreground = LIGHT2;
 
   let red = RED0;
-  let br_red = shade(red, 20);
   let yellow = YELLOW0;
-  let br_yellow = shade(yellow, 20);
-  let dim_yellow = shade(yellow, -30);
   let blue = FROST2;
-  let br_blue = shade(blue, 20);
   let green = GREEN0;
-  let br_green = shade(green, 20);
   let magenta = PURPLE0;
-  let br_magenta = shade(magenta, 20);
   let cyan = FROST1;
   let br_cyan = FROST0;
-
   let orange = ORANGE0;
-
   let white = LIGHT0;
-  let br_white = LIGHT2;
-  let dim_white = shade(white, -30);
+  let dim_white = shade(white, -20);
 
-  let gray = shade(DARK3, 20);
   let comment = shade(LIGHT2, -40);
+  let code_hint = shade(DARK3, 20);
 
   return {
-    name: "Nord Dark",
+    name: "Nord",
     appearance: "dark",
     style: {
       accents: [blue, cyan, red, orange, yellow, green, magenta],
@@ -85,7 +76,7 @@ function theme() {
       background: background,
 
       border: border,
-      "border.variant": border + "a0", // Border color. Used for deemphasized borders, like a visual divider between two sections
+      "border.variant": border, // Border color. Used for deemphasized borders, like a visual divider between two sections
       "border.focused": border,
       "border.selected": border,
       "border.transparent": TRANSPARENT,
@@ -97,24 +88,24 @@ function theme() {
       "editor.background": background,
       "editor.gutter.background": background, // editor left pane, e.g. line number
       "editor.subheader.background": border,
-      "editor.active_line.background": active + "80",
+      "editor.active_line.background": border + "80",
       "editor.highlighted_line.background": highlight, // open symbol outline, selection will hightlight content
       "editor.line_number": DARK3,
       "editor.active_line_number": foreground,
-      "editor.invisible": active, // Text Color. Used to mark invisible characters in the editor. Example: spaces, tabs, carriage returns, etc.
+      "editor.invisible": dim_white, // Text Color. Used to mark invisible characters in the editor. Example: spaces, tabs, carriage returns, etc.
       "editor.wrap_guide": DARK3,
-      "editor.active_wrap_guide": active,
+      "editor.active_wrap_guide": DARK3,
       "editor.document_highlight.read_background": highlight,
       "editor.document_highlight.write_background": highlight,
       "editor.document_highlight.bracket_background": highlight,
 
-      "element.background": active,
-      "element.hover": active + "80",
-      "element.active": active, // e.g. setting UI, left list
-      "element.selected": active,
+      "element.background": border, // e.g. setting UI, drop down button
+      "element.hover": border + "80",
+      "element.active": border, // e.g. setting UI, left list
+      "element.selected": border,
       "element.disabled": border,
 
-      "elevated_surface.background": border, // code completion popup
+      "elevated_surface.background": popup_background, // code completion popup
 
       "ghost_element.background": TRANSPARENT,
       "ghost_element.selected": click, // code completion popup, keyboard selection background
@@ -125,7 +116,7 @@ function theme() {
       text: foreground,
       "text.muted": text_muted,
       "text.placeholder": text_muted,
-      "text.disabled": text_muted,
+      "text.disabled": text_muted, // Text Color. Color used for text denoting disabled elements. Typically, the color is faded or grayed out to emphasize the disabled state.
       "text.accent": accent,
 
       icon: foreground,
@@ -136,13 +127,13 @@ function theme() {
 
       "tab_bar.background": background,
       "tab.inactive_background": background,
-      "tab.active_background": active,
+      "tab.active_background": border,
       "title_bar.background": background,
       "toolbar.background": background,
 
       "panel.background": background,
-      "panel.focused_border": null,
-      "pane.focused_border": null,
+      "panel.focused_border": accent,
+      "pane.focused_border": accent,
 
       "scrollbar.thumb.background": scrollbar + "60",
       "scrollbar.thumb.hover_background": scrollbar + "80",
@@ -157,25 +148,25 @@ function theme() {
       "surface.background": background,
 
       "terminal.background": background,
-      "terminal.foreground": foreground,
+      "terminal.foreground": LIGHT0,
       "terminal.bright_foreground": null,
 
       "terminal.ansi.black": DARK1,
       "terminal.ansi.bright_black": DARK3,
       "terminal.ansi.red": red,
-      "terminal.ansi.bright_red": br_red,
+      "terminal.ansi.bright_red": shade(red, 20),
       "terminal.ansi.green": green,
-      "terminal.ansi.bright_green": br_green,
+      "terminal.ansi.bright_green": shade(green, 20),
       "terminal.ansi.yellow": yellow,
-      "terminal.ansi.bright_yellow": br_yellow,
+      "terminal.ansi.bright_yellow": shade(yellow, 20),
       "terminal.ansi.blue": blue,
-      "terminal.ansi.bright_blue": br_blue,
+      "terminal.ansi.bright_blue": shade(blue, 20),
       "terminal.ansi.magenta": magenta,
-      "terminal.ansi.bright_magenta": br_magenta,
+      "terminal.ansi.bright_magenta": shade(magenta, 20),
       "terminal.ansi.cyan": cyan,
       "terminal.ansi.bright_cyan": br_cyan,
-      "terminal.ansi.white": white,
-      "terminal.ansi.bright_white": br_white,
+      "terminal.ansi.white": LIGHT1,
+      "terminal.ansi.bright_white": LIGHT2,
 
       "link_text.hover": br_cyan,
 
@@ -189,20 +180,20 @@ function theme() {
       "warning.border": yellow,
       "warning.background": yellow + "33",
       hidden: dim_white,
-      success: br_green,
-      "success.border": active,
-      "success.background": border,
+      success: green,
+      "success.border": border,
+      "success.background": popup_background,
       info: dim_white,
-      "info.border": active,
-      "info.background": border,
+      "info.border": border,
+      "info.background": popup_background,
       hint: dim_white, // git blame text
-      "hint.border": active, // clippy hint popup
-      "hint.background": border, // clippy hint popup
+      "hint.border": border, // clippy hint popup
+      "hint.background": popup_background, // clippy hint popup
       modified: yellow,
       renamed: orange,
       unreachable: foreground,
-      ignored: dim_yellow, // git ignored files in file tree
-      predictive: gray,
+      ignored: shade(yellow, -30), // git ignored files in file tree
+      predictive: code_hint, // Indicates something that is predicted, like automatic code completion, or generated code.
 
       players: [
         {
@@ -235,7 +226,7 @@ function theme() {
 
       syntax: {
         attribute: {
-          color: cyan,
+          color: orange,
         },
         boolean: {
           color: blue,
@@ -265,7 +256,7 @@ function theme() {
           color: blue,
         },
         hint: {
-          color: gray,
+          color: code_hint,
           font_weight: 300,
         },
         keyword: {
@@ -285,7 +276,7 @@ function theme() {
           color: magenta,
         },
         operator: {
-          color: blue,
+          color: dim_white,
         },
         predictive: {
           color: blue,
@@ -300,23 +291,23 @@ function theme() {
           color: cyan,
         },
         punctuation: {
-          color: blue,
+          color: dim_white,
           font_weight: 300,
         },
         "punctuation.bracket": {
-          color: blue,
+          color: dim_white,
           font_weight: 300,
         },
         "punctuation.delimiter": {
-          color: blue,
+          color: dim_white,
           font_weight: 300,
         },
         "punctuation.list_marker": {
-          color: blue,
+          color: dim_white,
           font_weight: 300,
         },
         "punctuation.special": {
-          color: blue,
+          color: dim_white,
           font_weight: 300,
         },
         string: {

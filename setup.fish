@@ -20,7 +20,7 @@ set -U fish_color_search_match --reverse
 set -U fish_color_option cyan
 set -U fish_color_operator magenta
 set -U fish_color_escape brred
-set -U fish_color_autosuggestion --dim brwhite
+set -U fish_color_autosuggestion --dim white
 set -U fish_color_cancel red
 set -U fish_color_cwd cyan
 set -U fish_color_user cyan

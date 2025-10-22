@@ -4,7 +4,7 @@
   "author": "Neo",
   "themes": [
     {
-      "name": "Nord Dark",
+      "name": "Nord",
       "appearance": "dark",
       "style": {
         "accents": [
@@ -18,7 +18,7 @@
         ],
         "background": "#20242c",
         "border": "#3b4252",
-        "border.variant": "#3b4252a0",
+        "border.variant": "#3b4252",
         "border.focused": "#3b4252",
         "border.selected": "#3b4252",
         "border.transparent": "#00000000",
@@ -32,9 +32,9 @@
         "editor.highlighted_line.background": "#434c5e",
         "editor.line_number": "#4c566a",
         "editor.active_line_number": "#eceff4",
-        "editor.invisible": "#3b4252",
+        "editor.invisible": "#acb1ba",
         "editor.wrap_guide": "#4c566a",
-        "editor.active_wrap_guide": "#3b4252",
+        "editor.active_wrap_guide": "#4c566a",
         "editor.document_highlight.read_background": "#434c5e",
         "editor.document_highlight.write_background": "#434c5e",
         "editor.document_highlight.bracket_background": "#434c5e",
@@ -43,7 +43,7 @@
         "element.active": "#3b4252",
         "element.selected": "#3b4252",
         "element.disabled": "#3b4252",
-        "elevated_surface.background": "#3b4252",
+        "elevated_surface.background": "#292e39",
         "ghost_element.background": "#00000000",
         "ghost_element.selected": "#4c566a",
         "ghost_element.hover": "#4c566a",
@@ -65,8 +65,8 @@
         "title_bar.background": "#20242c",
         "toolbar.background": "#20242c",
         "panel.background": "#20242c",
-        "panel.focused_border": null,
-        "pane.focused_border": null,
+        "panel.focused_border": "#88c0d0",
+        "pane.focused_border": "#88c0d0",
         "scrollbar.thumb.background": "#72819f60",
         "scrollbar.thumb.hover_background": "#72819f80",
         "scrollbar.thumb.active_background": "#72819f80",
@@ -78,7 +78,7 @@
         "status_bar.background": "#20242c",
         "surface.background": "#20242c",
         "terminal.background": "#20242c",
-        "terminal.foreground": "#eceff4",
+        "terminal.foreground": "#d8dee9",
         "terminal.bright_foreground": null,
         "terminal.ansi.black": "#3b4252",
         "terminal.ansi.bright_black": "#4c566a",
@@ -94,7 +94,7 @@
         "terminal.ansi.bright_magenta": "#d8aacf",
         "terminal.ansi.cyan": "#88c0d0",
         "terminal.ansi.bright_cyan": "#8fbcbb",
-        "terminal.ansi.white": "#d8dee9",
+        "terminal.ansi.white": "#e5e9f0",
         "terminal.ansi.bright_white": "#eceff4",
         "link_text.hover": "#8fbcbb",
         "conflict": "#bf616a",
@@ -106,16 +106,16 @@
         "warning": "#ebcb8b",
         "warning.border": "#ebcb8b",
         "warning.background": "#ebcb8b33",
-        "hidden": "#979ba3",
-        "success": "#c3e4a8",
+        "hidden": "#acb1ba",
+        "success": "#a3be8c",
         "success.border": "#3b4252",
-        "success.background": "#3b4252",
-        "info": "#979ba3",
+        "success.background": "#292e39",
+        "info": "#acb1ba",
         "info.border": "#3b4252",
-        "info.background": "#3b4252",
-        "hint": "#979ba3",
+        "info.background": "#292e39",
+        "hint": "#acb1ba",
         "hint.border": "#3b4252",
-        "hint.background": "#3b4252",
+        "hint.background": "#292e39",
         "modified": "#ebcb8b",
         "renamed": "#d08770",
         "unreachable": "#eceff4",
@@ -151,7 +151,7 @@
         ],
         "syntax": {
           "attribute": {
-            "color": "#88c0d0"
+            "color": "#d08770"
           },
           "boolean": {
             "color": "#81a1c1"
@@ -201,7 +201,7 @@
             "color": "#b48ead"
           },
           "operator": {
-            "color": "#81a1c1"
+            "color": "#acb1ba"
           },
           "predictive": {
             "color": "#81a1c1"
@@ -216,23 +216,23 @@
             "color": "#88c0d0"
           },
           "punctuation": {
-            "color": "#81a1c1",
+            "color": "#acb1ba",
             "font_weight": 300
           },
           "punctuation.bracket": {
-            "color": "#81a1c1",
+            "color": "#acb1ba",
             "font_weight": 300
           },
           "punctuation.delimiter": {
-            "color": "#81a1c1",
+            "color": "#acb1ba",
             "font_weight": 300
           },
           "punctuation.list_marker": {
-            "color": "#81a1c1",
+            "color": "#acb1ba",
             "font_weight": 300
           },
           "punctuation.special": {
-            "color": "#81a1c1",
+            "color": "#acb1ba",
             "font_weight": 300
           },
           "string": {
