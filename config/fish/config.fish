@@ -8,7 +8,7 @@ if command -q /opt/homebrew/bin/brew
 end
 
 if command -q bat
-    set -x BAT_THEME "GitHub"
+    set -x BAT_THEME "Nord"
     set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     abbr cat 'bat -pp'
@@ -16,9 +16,9 @@ end
 
 if command -q eza
     # refer to https://github.com/eza-community/eza/blob/main/src/theme/lsc.rs, ui_styles.rs
-    set -x EZA_COLORS 'uu=2;30:gu=2;30:uw=96:ur=96:ue=96:ux=96:gr=36:gw=36:gx=36:tr=34:tw=34:tx=34:nb=32:nk=32:nm=33:ng=31:nt=31:da=34:lm=4;31:do=32:sc=30'
+    set -x EZA_COLORS 'uu=2:gu=2:uw=96:ur=96:ue=96:ux=96:gr=36:gw=36:gx=36:tr=34:tw=34:tx=34:nb=32:nk=32:nm=33:ng=31:nt=31:da=34:lm=4;31:do=32:sc=0'
 
-    set -x LS_COLORS 'no=00:rs=0:fi=00:di=01;34:ln=36:mh=04;36:pi=04;01;36:so=04;33:do=04;01;36:bd=01;33:cd=33:or=31:mi=01;30;41:ex=01;36:su=01;04;30:sg=01;04;30:ca=01;30:tw=01;30;44:ow=01;04;34:st=04;30;44:*.7z=01;32:*.tar=01;32:*.gz=01;32:*.bz2=01;32:*.lz=01;32:*.xz=01;32:*.zip=01;32:*.jar=01;32:*.rar=01;32:*.aac=32:*.flac=32:*.mid=32:*.mp3=32:*.m4a=32:*.ogg=32:*.wav=32:*.doc=32:*.docx=32:*.pdf=32:*.ppt=32:*.pptx=32:*.xls=32:*.xlsx=32:*~=02;30:*.bak=02;30:*.log=02;30:*.old=02;30:*.orig=02;30:*.swo=02;30:*.swp=02;30:*.lock=02;30:*.DS_Store=02;30:*.gitignore=02;30:*.dockerignore=02;30:*.bmp=35:*.gif=35:*.jpeg=35:*.jpg=35:*.png=35:*.ps=35:*.svg=35:*.tif=35:*.tiff=35:*.avi=01;35:*.mkv=01;35:*.mov=01;35:*.mp4=01;35:*.mpeg=01;35:*.mpg=01;35:*.qt=01;35:*.webm=01;35:*.wmv=01;35'
+    set -x LS_COLORS 'no=00:rs=0:fi=00:di=01;34:ln=36:mh=04;36:pi=04;01;36:so=04;33:do=04;01;36:bd=01;33:cd=33:or=31:mi=01;37;41:ex=01;36:su=01;04;37:sg=01;04;37:ca=01;37:tw=01;37;44:ow=01;04;34:st=04;37;44:*.7z=01;32:*.tar=01;32:*.gz=01;32:*.bz2=01;32:*.lz=01;32:*.xz=01;32:*.zip=01;32:*.jar=01;32:*.rar=01;32:*.aac=32:*.flac=32:*.mid=32:*.mp3=32:*.m4a=32:*.ogg=32:*.wav=32:*.doc=32:*.docx=32:*.pdf=32:*.ppt=32:*.pptx=32:*.xls=32:*.xlsx=32:*~=02:*.bak=02:*.log=02:*.old=02:*.orig=02:*.swo=02:*.swp=02:*.lock=02:*.DS_Store=02:*.gitignore=02:*.dockerignore=02:*.bmp=35:*.gif=35:*.jpeg=35:*.jpg=35:*.png=35:*.ps=35:*.svg=35:*.tif=35:*.tiff=35:*.avi=01;35:*.mkv=01;35:*.mov=01;35:*.mp4=01;35:*.mpeg=01;35:*.mpg=01;35:*.qt=01;35:*.webm=01;35:*.wmv=01;35:'
 
     abbr l 'eza -la'
     abbr ls eza

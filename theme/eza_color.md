@@ -1,5 +1,5 @@
-uu=2;37   # a user that’s you                 = dimmed white
-gu=2;37   # a group that you belong to        = dimmed white
+uu=2      # a user that’s you                 = dimmed
+gu=2      # a group that you belong to        = dimmed
 uw=96     # the user-write permission bit     = bright cyan
 ur=96     # the user-read permission bit      = bright cyan
 ue=96     # the user-execute for other file kinds               = bright cyan
@@ -18,7 +18,7 @@ nt=31     # the numbers of a file’s size if it is 1 TB/TiB or higher          
 da=34     # a file’s date                                                         = blue
 lm=4;31   # a number of hard links for a regular file with at least two           = underline red
 do=32     # a regular file that is a document (ex: office suite document or PDF)  = green
-sc=37     # a regular file that is source code                                    = white
+sc=0      # a regular file that is source code                                    = normal
 
 ###
 oc : the permissions displayed as octal

@@ -1,8 +1,16 @@
 {
+  "cursor_blink": true,
+  "scrollbar": {
+    "axes": {
+      "vertical": false
+    }
+  },
+  "use_system_path_prompts": true,
   "show_edit_predictions": false,
   "autosave": "on_focus_change",
-  "theme": "Primer",
+  "theme": "Nord",
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 15,
   "use_system_window_tabs": true,
   "inlay_hints": {
     "enabled": true
@@ -27,9 +35,7 @@
     "cursor_shape": "bar",
     "keep_selection_on_copy": true,
     "blinking": "on",
-    "toolbar": {
-      "breadcrumbs": false
-    }
+    "line_height": "comfortable"
   },
   "file_finder": {
     "modal_max_width": "large"
@@ -50,6 +56,9 @@
     "git_status": true
   },
   "git": {
+    "blame": {
+      "show_avatar": false
+    },
     "inline_blame": {
       "enabled": false
     }
@@ -82,6 +91,8 @@
     }
   },
   "title_bar": {
+    "show_menus": false,
+    "show_branch_icon": true,
     "show_sign_in": false,
     "show_user_picture": false
   },

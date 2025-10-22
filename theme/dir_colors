@@ -88,17 +88,17 @@ STICKY 04;37;44
 .xlsx 32
 
 # --- ignores / unimportant ---
-*~            02;37
-.bak          02;37
-.log          02;37
-.old          02;37
-.orig         02;37
-.swo          02;37
-.swp          02;37
-.lock         02;37
-.DS_Store     02;37
-.gitignore    02;37
-.dockerignore 02;37
+*~            02
+.bak          02
+.log          02
+.old          02
+.orig         02
+.swo          02
+.swp          02
+.lock         02
+.DS_Store     02
+.gitignore    02
+.dockerignore 02
 
 # --- Images ---
 .bmp  35

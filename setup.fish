@@ -12,9 +12,9 @@ set -U fish_color_keyword magenta
 set -U fish_color_quote green
 set -U fish_color_redirection magenta
 set -U fish_color_end magenta
-set -U fish_color_comment --dim black
+set -U fish_color_comment black
 set -U fish_color_error red
-set -U fish_color_gray --dim black
+set -U fish_color_gray black
 set -U fish_color_selection --background=brwhite
 set -U fish_color_search_match --reverse
 set -U fish_color_option cyan
@@ -31,7 +31,7 @@ set -U fish_pager_color_background
 set -U fish_pager_color_completion normal
 set -U fish_pager_color_description yellow
 set -U fish_pager_color_prefix blue
-set -U fish_pager_color_progress --dim black
+set -U fish_pager_color_progress black
 set -U fish_pager_color_secondary_background
 set -U fish_pager_color_secondary_completion
 set -U fish_pager_color_secondary_description
