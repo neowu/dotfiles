@@ -184,7 +184,12 @@
             "color": "#d08770"
           },
           "emphasis": {
-            "color": "#d08770"
+            "color": "#81a1c1",
+            "font_style": "italic"
+          },
+          "emphasis.strong": {
+            "color": "#81a1c1",
+            "font_weight": 700
           },
           "enum": {
             "color": "#d08770"
@@ -260,7 +265,8 @@
             "color": "#81a1c1"
           },
           "text.literal": {
-            "color": "#eceff4"
+            "color": "#88c0d0",
+            "background_color": "#434c5e"
           },
           "title": {
             "color": "#88c0d0",

@@ -266,7 +266,12 @@ function theme() {
           color: orange,
         },
         emphasis: {
-          color: orange,
+          color: blue,
+          font_style: "italic",
+        },
+        "emphasis.strong": {
+          color: blue,
+          font_weight: 700,
         },
         enum: {
           color: orange,
@@ -342,7 +347,8 @@ function theme() {
           color: blue,
         },
         "text.literal": {
-          color: foreground,
+          color: accent, // markdown quoted text e.g. `quoted`
+          background_color: highlight,
         },
         title: {
           color: cyan,
