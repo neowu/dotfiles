@@ -1,0 +1,27 @@
+{
+  "main function": {
+    "prefix": "main",
+    "description": "Create main function",
+    "body": ["pub fn main() {", "    $0", "}"]
+  },
+  "async main function": {
+    "prefix": "async_main",
+    "description": "Create async main function",
+    "body": ["#[tokio::main]", "pub async fn main() {", "    $0", "}"]
+  },
+  "tests mod": {
+    "prefix": "tests",
+    "description": "Create tests mod",
+    "body": ["#[cfg(test)]", "mod tests {", "    $0", "}"]
+  },
+  "test function": {
+    "prefix": "test",
+    "description": "Create test function",
+    "body": ["#[test]", "fn ${1:test}() {", "    $0", "}"]
+  },
+  "async test function": {
+    "prefix": "async_test",
+    "description": "Create async test function",
+    "body": ["#[tokio::test]", "async fn ${1:test}() {", "    $0", "}"]
+  }
+}

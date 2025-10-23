@@ -223,6 +223,7 @@ function theme() {
         },
       ],
 
+      // https://zed.dev/docs/extensions/languages
       syntax: {
         attribute: {
           color: orange,
@@ -240,7 +241,10 @@ function theme() {
           color: white,
         },
         constructor: {
-          color: blue,
+          color: orange,
+        },
+        "definition.function": {
+          color: orange,
         },
         embedded: {
           color: orange,
@@ -252,7 +256,10 @@ function theme() {
           color: orange,
         },
         function: {
-          color: blue,
+          color: white,
+        },
+        "function.method": {
+          color: white,
         },
         hint: {
           color: code_hint,
@@ -278,7 +285,7 @@ function theme() {
           color: dim_white,
         },
         predictive: {
-          color: blue,
+          color: code_hint,
         },
         preproc: {
           color: FROST3,
@@ -287,7 +294,7 @@ function theme() {
           color: foreground,
         },
         property: {
-          color: cyan,
+          color: white,
         },
         punctuation: {
           color: dim_white,
@@ -348,7 +355,7 @@ function theme() {
           color: white,
         },
         "variable.special": {
-          color: white,
+          color: blue, // rust: "self" variable
         },
       },
     },

@@ -165,7 +165,10 @@
             "color": "#d8dee9"
           },
           "constructor": {
-            "color": "#81a1c1"
+            "color": "#d08770"
+          },
+          "definition.function": {
+            "color": "#d08770"
           },
           "embedded": {
             "color": "#d08770"
@@ -177,7 +180,10 @@
             "color": "#d08770"
           },
           "function": {
-            "color": "#81a1c1"
+            "color": "#d8dee9"
+          },
+          "function.method": {
+            "color": "#d8dee9"
           },
           "hint": {
             "color": "#5b677f",
@@ -212,7 +218,7 @@
             "color": "#eceff4"
           },
           "property": {
-            "color": "#88c0d0"
+            "color": "#d8dee9"
           },
           "punctuation": {
             "color": "#acb1ba",
@@ -273,7 +279,7 @@
             "color": "#d8dee9"
           },
           "variable.special": {
-            "color": "#d8dee9"
+            "color": "#81a1c1"
           }
         }
       }
