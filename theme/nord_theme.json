@@ -96,16 +96,18 @@
         "terminal.ansi.white": "#e5e9f0",
         "terminal.ansi.bright_white": "#eceff4",
         "link_text.hover": "#8fbcbb",
-        "conflict": "#bf616a",
         "created": "#a3be8c",
+        "modified": "#ebcb8b",
         "deleted": "#bf616a",
+        "conflict": "#bf616a",
+        "renamed": "#d08770",
+        "ignored": "#a48e61",
         "error": "#bf616a",
         "error.border": "#bf616a",
         "error.background": "#bf616a33",
         "warning": "#ebcb8b",
         "warning.border": "#ebcb8b",
         "warning.background": "#ebcb8b33",
-        "hidden": "#acb1ba",
         "success": "#a3be8c",
         "success.border": "#3b4252",
         "success.background": "#292e39",
@@ -115,10 +117,8 @@
         "hint": "#acb1ba",
         "hint.border": "#3b4252",
         "hint.background": "#292e39",
-        "modified": "#ebcb8b",
-        "renamed": "#d08770",
-        "unreachable": "#eceff4",
-        "ignored": "#a48e61",
+        "unreachable": "#acb1ba",
+        "hidden": "#acb1ba",
         "predictive": "#5b677f",
         "players": [
           {
@@ -209,7 +209,7 @@
             "color": "#acb1ba"
           },
           "predictive": {
-            "color": "#81a1c1"
+            "color": "#5b677f"
           },
           "preproc": {
             "color": "#5e81ac"
@@ -244,8 +244,7 @@
             "color": "#a3be8c"
           },
           "string.escape": {
-            "color": "#ebcb8b",
-            "font_weight": 700
+            "color": "#ebcb8b"
           },
           "string.regex": {
             "color": "#a3be8c"
@@ -264,13 +263,13 @@
             "font_weight": 700
           },
           "type": {
-            "color": "#8fbcbb"
+            "color": "#88c0d0"
           },
           "type.builtin": {
-            "color": "#8fbcbb"
+            "color": "#88c0d0"
           },
           "type.super": {
-            "color": "#8fbcbb"
+            "color": "#88c0d0"
           },
           "variable": {
             "color": "#d8dee9"

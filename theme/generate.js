@@ -169,16 +169,19 @@ function theme() {
 
       "link_text.hover": br_cyan,
 
-      conflict: red,
       created: green,
+      modified: yellow,
       deleted: red,
+      conflict: red,
+      renamed: orange,
+      ignored: shade(yellow, -30), // git ignored files in file tree
+
       error: red,
       "error.border": red,
       "error.background": red + "33",
       warning: yellow,
       "warning.border": yellow,
       "warning.background": yellow + "33",
-      hidden: dim_white,
       success: green,
       "success.border": border,
       "success.background": popup_background,
@@ -188,10 +191,9 @@ function theme() {
       hint: dim_white, // git blame text
       "hint.border": border, // clippy hint popup
       "hint.background": popup_background, // clippy hint popup
-      modified: yellow,
-      renamed: orange,
-      unreachable: foreground,
-      ignored: shade(yellow, -30), // git ignored files in file tree
+
+      unreachable: text_muted,
+      hidden: dim_white, // Represents a hidden status, such as a file being hidden in a file tree.
       predictive: code_hint, // Indicates something that is predicted, like automatic code completion, or generated code.
 
       players: [
@@ -321,7 +323,6 @@ function theme() {
         },
         "string.escape": {
           color: yellow,
-          font_weight: 700,
         },
         "string.regex": {
           color: green,
@@ -340,13 +341,13 @@ function theme() {
           font_weight: 700,
         },
         type: {
-          color: br_cyan,
+          color: cyan,
         },
         "type.builtin": {
-          color: br_cyan,
+          color: cyan,
         },
         "type.super": {
-          color: br_cyan,
+          color: cyan,
         },
         variable: {
           color: white,
