@@ -160,7 +160,7 @@
         ],
         "syntax": {
           "attribute": {
-            "color": "#d08770"
+            "color": "#8fbcbb"
           },
           "boolean": {
             "color": "#81a1c1"
@@ -265,8 +265,7 @@
             "color": "#81a1c1"
           },
           "text.literal": {
-            "color": "#88c0d0",
-            "background_color": "#434c5e"
+            "color": "#a3be8c"
           },
           "title": {
             "color": "#88c0d0",

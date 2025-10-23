@@ -242,7 +242,7 @@ function theme() {
       // https://zed.dev/docs/extensions/languages
       syntax: {
         attribute: {
-          color: orange,
+          color: br_cyan,
         },
         boolean: {
           color: blue,
@@ -266,11 +266,11 @@ function theme() {
           color: orange,
         },
         emphasis: {
-          color: blue,
+          color: blue, // markdown italic text, e.g. *italic*
           font_style: "italic",
         },
         "emphasis.strong": {
-          color: blue,
+          color: blue, // markdown strong text, e.g. **strong**
           font_weight: 700,
         },
         enum: {
@@ -347,8 +347,8 @@ function theme() {
           color: blue,
         },
         "text.literal": {
-          color: accent, // markdown quoted text e.g. `quoted`
-          background_color: highlight,
+          color: green, // markdown quoted text, e.g. `quoted`
+          // background_color: highlight,
         },
         title: {
           color: cyan,
