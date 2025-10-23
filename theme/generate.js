@@ -62,9 +62,8 @@ function theme() {
   let br_cyan = FROST0;
   let orange = ORANGE0;
   let white = LIGHT0;
-  let dim_white = shade(white, -20);
+  let dim_white = shade(white, -30);
 
-  let comment = shade(LIGHT2, -40);
   let code_hint = shade(DARK3, 20);
 
   return {
@@ -81,6 +80,9 @@ function theme() {
       "border.selected": border,
       "border.transparent": TRANSPARENT,
       "border.disabled": DARK3,
+
+      "debugger.accent": red, // Option<String>, Color used to accent some of the debuggers elements Only accent breakpoint & breakpoint related symbols right now
+      "editor.debugger_active_line.background": shade(yellow, -60) + "80",
 
       "drop_target.background": border,
 
@@ -132,6 +134,9 @@ function theme() {
       "toolbar.background": background,
 
       "panel.background": background,
+      // "panel.indent_guide": border, // file tree indent guide
+      // "panel.indent_guide_hover": border,
+      // "panel.indent_guide_active": border,
       "panel.focused_border": accent,
       "pane.focused_border": accent,
 
@@ -234,10 +239,10 @@ function theme() {
           color: blue,
         },
         comment: {
-          color: comment,
+          color: dim_white,
         },
         "comment.doc": {
-          color: comment,
+          color: dim_white,
         },
         constant: {
           color: white,
@@ -265,7 +270,6 @@ function theme() {
         },
         hint: {
           color: code_hint,
-          font_weight: 300,
         },
         keyword: {
           color: blue,
@@ -300,23 +304,18 @@ function theme() {
         },
         punctuation: {
           color: dim_white,
-          font_weight: 300,
         },
         "punctuation.bracket": {
           color: dim_white,
-          font_weight: 300,
         },
         "punctuation.delimiter": {
           color: dim_white,
-          font_weight: 300,
         },
         "punctuation.list_marker": {
           color: dim_white,
-          font_weight: 300,
         },
         "punctuation.special": {
           color: dim_white,
-          font_weight: 300,
         },
         string: {
           color: green,
