@@ -69,6 +69,7 @@ function theme() {
   return {
     name: "Nord",
     appearance: "dark",
+    // refer to https://github.com/zed-industries/zed/blob/main/crates/settings/src/settings_content/theme.rs
     style: {
       accents: [blue, cyan, red, orange, yellow, green, magenta],
 
@@ -174,12 +175,20 @@ function theme() {
 
       "link_text.hover": br_cyan,
 
-      created: green,
+      created: green, // file name color in file tree
       modified: yellow,
       deleted: red,
       conflict: red,
       renamed: orange,
       ignored: shade(yellow, -30), // git ignored files in file tree
+      "version_control.added": green,
+      "version_control.modified": yellow,
+      "version_control.deleted": red,
+      "version_control.conflict": red,
+      "version_control.renamed": orange,
+      "version_control.ignored": shade(yellow, -30), // git ignored files in file tree
+      "version_control.conflict_marker.ours": shade(green, -60) + "80", // Background color for row highlights of "ours" regions in merge conflicts.
+      "version_control.conflict_marker.theirs": shade(magenta, -60) + "80", // Background color for row highlights of "theirs" regions in merge conflicts.
 
       error: red,
       "error.border": red,
