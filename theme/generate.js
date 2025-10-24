@@ -83,7 +83,7 @@ function theme() {
       "border.disabled": DARK3,
 
       "debugger.accent": red, // Option<String>, Color used to accent some of the debuggers elements Only accent breakpoint & breakpoint related symbols right now
-      "editor.debugger_active_line.background": shade(yellow, -60) + "80",
+      "editor.debugger_active_line.background": shade(FROST3, -40),
 
       "drop_target.background": border,
 
@@ -180,15 +180,15 @@ function theme() {
       deleted: red,
       conflict: red,
       renamed: orange,
-      ignored: shade(yellow, -30), // git ignored files in file tree
+      ignored: shade(yellow, -40), // git ignored files in file tree
       "version_control.added": green,
       "version_control.modified": yellow,
       "version_control.deleted": red,
       "version_control.conflict": red,
       "version_control.renamed": orange,
-      "version_control.ignored": shade(yellow, -30), // git ignored files in file tree
-      "version_control.conflict_marker.ours": shade(green, -60) + "80", // Background color for row highlights of "ours" regions in merge conflicts.
-      "version_control.conflict_marker.theirs": shade(magenta, -60) + "80", // Background color for row highlights of "theirs" regions in merge conflicts.
+      "version_control.ignored": shade(yellow, -40), // git ignored files in file tree
+      "version_control.conflict_marker.ours": green + "20", // Background color for row highlights of "ours" regions in merge conflicts.
+      "version_control.conflict_marker.theirs": red + "20", // Background color for row highlights of "theirs" regions in merge conflicts.
 
       error: red,
       "error.border": red,
