@@ -187,6 +187,8 @@ function theme() {
       "version_control.conflict": red,
       "version_control.renamed": orange,
       "version_control.ignored": shade(yellow, -40), // git ignored files in file tree
+      "version_control.word_added": shade(green, -50),
+      "version_control.word_deleted": shade(red, -50),
       "version_control.conflict_marker.ours": green + "20", // Background color for row highlights of "ours" regions in merge conflicts.
       "version_control.conflict_marker.theirs": red + "20", // Background color for row highlights of "theirs" regions in merge conflicts.
 

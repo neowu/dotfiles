@@ -110,6 +110,8 @@
         "version_control.conflict": "#bf616a",
         "version_control.renamed": "#d08770",
         "version_control.ignored": "#8d7953",
+        "version_control.word_added": "#515f46",
+        "version_control.word_deleted": "#5f3035",
         "version_control.conflict_marker.ours": "#a3be8c20",
         "version_control.conflict_marker.theirs": "#bf616a20",
         "error": "#bf616a",
