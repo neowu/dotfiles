@@ -7,9 +7,12 @@ function fish_prompt
         set -l repo_path $git_info[1]
         set -l rev $git_info[2]
 
-        set -l cwd (string replace -- $repo_path (path dirname $repo_path)'/'(set_color magenta)(path basename $repo_path)(set_color $fish_color_cwd) $PWD)
         set_color $fish_color_cwd
-        printf (prompt_pwd --dir-length=0 $cwd)
+        printf (prompt_pwd --dir-length=0 (path dirname $repo_path)'/')
+        set_color magenta
+        printf (prompt_pwd (path basename $repo_path))
+        set_color $fish_color_cwd
+        printf (prompt_pwd --dir-length=0 (string replace $repo_path '' $PWD))
 
         set_color --dim black
         printf " $rev"
