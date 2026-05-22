@@ -38,3 +38,51 @@ set -x CDPATH . $HOME/depot $HOME/projects
 
 abbr ... ../../
 abbr .... ../../../
+
+# theme
+set -g fish_greeting
+
+set -g fish_color_normal normal
+set -g fish_color_command blue
+set -g fish_color_param normal
+set -g fish_color_keyword magenta
+set -g fish_color_quote green
+set -g fish_color_redirection magenta
+set -g fish_color_end magenta
+set -g fish_color_comment black
+set -g fish_color_error red
+set -g fish_color_gray black
+set -g fish_color_selection --background=brwhite
+set -g fish_color_search_match --reverse
+set -g fish_color_option cyan
+set -g fish_color_operator magenta
+set -g fish_color_escape brred
+set -g fish_color_autosuggestion --dim white
+set -g fish_color_cancel red
+set -g fish_color_cwd cyan
+set -g fish_color_user cyan
+set -g fish_color_host blue
+set -g fish_color_status red
+
+set -g fish_pager_color_background
+set -g fish_pager_color_completion normal
+set -g fish_pager_color_description yellow
+set -g fish_pager_color_prefix blue
+set -g fish_pager_color_progress black
+set -g fish_pager_color_secondary_background
+set -g fish_pager_color_secondary_completion
+set -g fish_pager_color_secondary_description
+set -g fish_pager_color_secondary_prefix
+set -g fish_pager_color_selected_background --reverse
+set -g fish_pager_color_selected_completion
+set -g fish_pager_color_selected_description
+set -g fish_pager_color_selected_prefix
+
+switch (hostname)
+case '*dev*'
+    set -g fish_color_host_remote green
+case '*prod*'
+    set -g fish_color_host_remote red
+case '*'
+    set -g fish_color_host_remote yellow
+end
