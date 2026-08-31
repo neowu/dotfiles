@@ -148,7 +148,9 @@ function theme() {
       "scrollbar.track.background": background,
       "scrollbar.track.border": TRANSPARENT,
 
-      "search.match_background": highlight,
+      "search.match_background": shade(yellow, -20),
+      "search.active_match_background": shade(orange, -20),
+
       "status_bar.background": background,
       "surface.background": background,
 

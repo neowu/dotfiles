@@ -3,7 +3,7 @@ status is-interactive; or exit
 if command -q /opt/homebrew/bin/brew
     /opt/homebrew/bin/brew shellenv | source
 
-    abbr bu 'brew update && brew upgrade && brew cleanup'
+    abbr bu 'brew update && brew upgrade --formula && brew cleanup'
     abbr bl 'brew leaves | xargs brew deps --formula --installed --for-each'
 end
 
