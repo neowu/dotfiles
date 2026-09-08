@@ -1,17 +1,18 @@
 # setup macos
 
 ### brew
+
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git p7zip wget socat
-brew install bat eza fd ripgrep
+brew install git p7zip bat eza fd ripgrep container
 
-brew install font-jetbrains-mono-nerd-font zed firefox
-brew install intellij-idea
+brew install font-jetbrains-mono-nerd-font zed
+brew install firefox intellij-idea
 ```
 
 ### macos options
+
 ```sh
 defaults write com.apple.dock tilesize -float 48
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -25,11 +26,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
 ### sudo
+
 ```sh
 sudo sed -i -e 's/^%admin\t.*/%admin\t\tALL = (ALL) NOPASSWD:ALL/' /etc/sudoers
 ```
 
 ### git
+
 ```sh
 git config --global user.name neo
 git config --global user.email "1100909+neowu@users.noreply.github.com"
@@ -47,6 +50,7 @@ echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.
 ```
 
 ### rust
+
 ```sh
 brew install rustup
 /opt/homebrew/opt/rustup/bin/rustup-init --no-modify-path
@@ -55,6 +59,7 @@ rustup toolchain install nightly
 ```
 
 ### ~/.ssh/config
+
 ```
 Host github.com
   User git
@@ -69,4 +74,10 @@ Host *
   ControlMaster auto
   ControlPath ~/.cache/ssh/%r@%h-%p
   ControlPersist 600
+```
+
+### setup apple container
+
+```
+sudo container system dns create test
 ```

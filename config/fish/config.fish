@@ -26,6 +26,14 @@ if command -q eza
     abbr lt 'eza -Ta --git-ignore'
 end
 
+if command -q /opt/homebrew/bin/container
+    abbr c container
+    abbr cs container system
+    abbr cm container machine
+    abbr cmr container machine run
+    abbr ci container image
+end
+
 set -x XDG_DATA_HOME $HOME/.local/share
 
 set -x LESSHISTFILE $XDG_DATA_HOME/lesshst

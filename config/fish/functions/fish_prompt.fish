@@ -45,7 +45,7 @@ function fish_prompt
     printf '\n'
 
     # ssh host
-    if set -q SSH_TTY
+    if set -q SSH_TTY; or set -q CONTAINER_SHELL
         set_color $fish_color_host_remote
         printf (prompt_hostname)' '
     end
