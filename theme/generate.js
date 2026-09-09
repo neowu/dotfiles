@@ -28,7 +28,7 @@ const PURPLE0 = "#b48ead"; // Used for numbers.
 const TRANSPARENT = "#00000000";
 
 let theme_data = themes();
-await fs.writeFile("./nord_theme.json", JSON.stringify(theme_data, null, 2));
+await fs.writeFile("../config/zed/themes/nord_theme.json", JSON.stringify(theme_data, null, 2));
 await fs.writeFile("/Users/neo/.config/zed/themes/nord_theme.json", JSON.stringify(theme_data, null, 2));
 
 function themes() {

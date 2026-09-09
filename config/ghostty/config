@@ -1,0 +1,15 @@
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-size = 15
+theme = Nord Wave
+cursor-style = bar
+mouse-hide-while-typing = true
+
+keybind = super+shift+==equalize_splits
+keybind = super+shift+arrow_down=resize_split:down,10
+keybind = super+shift+arrow_left=resize_split:left,10
+keybind = super+shift+arrow_right=resize_split:right,10
+keybind = super+shift+arrow_up=resize_split:up,10
+
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+macos-option-as-alt = true

@@ -1,3 +1,5 @@
 #!/usr/bin/env fish
 cp -r config/fish $HOME/.config/
+cp -r config/zed $HOME/.config/
+cp -r config/ghostty $HOME/.config/
 cp -r config/container $HOME/.config/

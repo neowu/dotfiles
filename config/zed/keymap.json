@@ -2,14 +2,25 @@
   {
     "bindings": {
       "cmd-[": "pane::GoBack",
-      "cmd-]": "pane::GoForward"
-    }
+      "cmd-]": "pane::GoForward",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
       "f1": "editor::OpenDocs",
-      "cmd-shift-u": "editor::ToggleCase"
-    }
-  }
+      "cmd-shift-u": "editor::ToggleCase",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
+    },
+  },
+  {
+    "unbind": {
+      "cmd-shift-c": "collab_panel::ToggleFocus",
+    },
+  },
 ]

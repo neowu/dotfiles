@@ -38,11 +38,23 @@ set -x XDG_DATA_HOME $HOME/.local/share
 
 set -x LESSHISTFILE $XDG_DATA_HOME/lesshst
 
-set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
-set -x CARGO_HOME $XDG_DATA_HOME/cargo
-fish_add_path -g $CARGO_HOME/bin
+if not set -q CONTAINER_SHELL
+    set -x CDPATH . $HOME/depot $HOME/projects
+else
+    # apple container machine
+    set -x CDPATH /Users/$USER/depot /Users/$USER/projects
+end
 
-set -x CDPATH . $HOME/depot $HOME/projects
+if command -q rustup
+    set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
+    set -x CARGO_HOME $XDG_DATA_HOME/cargo
+    fish_add_path -g $CARGO_HOME/bin
+end
+
+if command -q go
+    set -x GOPATH $XDG_DATA_HOME/go
+    fish_add_path -g $GOPATH/bin
+end
 
 abbr ... ../../
 abbr .... ../../../
