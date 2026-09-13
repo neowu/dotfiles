@@ -15,11 +15,11 @@ RUN curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dea
     > /etc/apt/sources.list.d/gcloud.sources
 
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp.gpg && \
-    printf 'Types: deb\nURIs: https://apt.releases.hashicorp.com\nSuites: bookworm\nComponents: main\nSigned-By: /usr/share/keyrings/hashicorp.gpg\n' \
+    printf 'Types: deb\nURIs: https://apt.releases.hashicorp.com\nSuites: trixie\nComponents: main\nSigned-By: /usr/share/keyrings/hashicorp.gpg\n' \
     > /etc/apt/sources.list.d/hashicorp.sources
 
 RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft.gpg && \
-    printf 'Types: deb\nURIs: https://packages.microsoft.com/repos/azure-cli/\nSuites: bookworm\nComponents: main\nSigned-By: /usr/share/keyrings/microsoft.gpg\n' \
+    printf 'Types: deb\nURIs: https://packages.microsoft.com/repos/azure-cli/\nSuites: trixie\nComponents: main\nSigned-By: /usr/share/keyrings/microsoft.gpg\n' \
     > /etc/apt/sources.list.d/azure-cli.sources
 
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
