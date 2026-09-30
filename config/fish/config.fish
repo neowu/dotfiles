@@ -35,15 +35,16 @@ if command -q /opt/homebrew/bin/container
 end
 
 set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_CACHE_HOME $HOME/.cache
 set -x XDG_DATA_HOME $HOME/.local/share
 
 set -x LESSHISTFILE $XDG_DATA_HOME/lesshst
 
 if not set -q CONTAINER_SHELL
-    set -x CDPATH . $HOME/depot $HOME/projects
+    set -x CDPATH . $HOME/projects
 else
     # apple container machine
-    set -x CDPATH /Users/$USER/depot /Users/$USER/projects
+    set -x CDPATH /Users/$USER/projects
     set -x SHELL /usr/bin/fish # for herder to start with fish
     fish_add_path -g $HOME/.local/bin # many agent tools installs here
 end
@@ -51,7 +52,16 @@ end
 if command -q rustup
     set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
     set -x CARGO_HOME $XDG_DATA_HOME/cargo
-    fish_add_path -g $CARGO_HOME/bin
+
+    if command -q /opt/homebrew/bin/brew
+        fish_add_path -g $(brew --prefix rustup)/bin
+    end
+end
+
+if command -q npm
+    set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/config
+    set -x NPM_CONFIG_CACHE $XDG_CACHE_HOME/npm
+    set -x NPM_CONFIG_PREFIX $XDG_DATA_HOME/npm
 end
 
 if command -q go
