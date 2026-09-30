@@ -3,7 +3,7 @@ FROM debian:trixie-slim
 RUN apt-get update \
     && apt-get install -y systemd systemd-sysv sudo curl gnupg ca-certificates \
     fish bat fd-find ripgrep eza \
-    net-tools iproute2 iputils-ping dnsutils netcat-openbsd \
+    net-tools iproute2 iputils-ping dnsutils netcat-openbsd rsync \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN systemctl mask getty@.service systemd-logind.service apt-daily.timer apt-daily-upgrade.timer

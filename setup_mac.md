@@ -46,6 +46,8 @@ git config --global gpg.format ssh
 git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
 git config --global commit.gpgsign true
 
+git config --global init.defaultBranch main
+
 echo "$(git config --get user.email) namespaces=\"git\" $(git config --get user.signingkey)" > ~/.ssh/allowed_signers
 ```
 

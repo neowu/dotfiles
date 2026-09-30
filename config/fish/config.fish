@@ -44,6 +44,8 @@ if not set -q CONTAINER_SHELL
 else
     # apple container machine
     set -x CDPATH /Users/$USER/depot /Users/$USER/projects
+    set -x SHELL /usr/bin/fish # for herder to start with fish
+    fish_add_path -g $HOME/.local/bin # many agent tools installs here
 end
 
 if command -q rustup
