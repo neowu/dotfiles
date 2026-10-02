@@ -5,7 +5,8 @@
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git p7zip bat eza fd ripgrep node container sing-box
+brew install git bat eza fd ripgrep container sing-box
+brew install node uv
 brew install font-jetbrains-mono-nerd-font zed ghostty
 brew install intellij-idea
 ```

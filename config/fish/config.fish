@@ -73,6 +73,7 @@ end
 
 set -x CLAUDE_CONFIG_DIR $XDG_DATA_HOME/claude
 set -x CODEX_HOME $XDG_DATA_HOME/codex
+set -x PI_CODING_AGENT_DIR $XDG_DATA_HOME/pi/agent
 
 abbr ... ../../
 abbr .... ../../../
