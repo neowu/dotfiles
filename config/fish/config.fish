@@ -38,6 +38,8 @@ set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
 set -x XDG_DATA_HOME $HOME/.local/share
 
+fish_add_path -g $HOME/.local/bin
+
 set -x LESSHISTFILE $XDG_DATA_HOME/lesshst
 
 if not set -q CONTAINER_SHELL
@@ -46,7 +48,6 @@ else
     # apple container machine
     set -x CDPATH /Users/$USER/projects
     set -x SHELL /usr/bin/fish # for herder to start with fish
-    fish_add_path -g $HOME/.local/bin # many agent tools installs here
 end
 
 if command -q rustup
@@ -71,6 +72,9 @@ if command -q go
     set -x GOPATH $XDG_DATA_HOME/go
     fish_add_path -g $GOPATH/bin
 end
+
+set -x CLAUDE_CONFIG_DIR $XDG_DATA_HOME/claude
+set -x CODEX_HOME $XDG_DATA_HOME/codex
 
 abbr ... ../../
 abbr .... ../../../
