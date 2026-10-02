@@ -53,9 +53,12 @@ if command -q rustup
     set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
     set -x CARGO_HOME $XDG_DATA_HOME/cargo
 
-    if command -q /opt/homebrew/bin/brew
-        fish_add_path -g $(brew --prefix rustup)/bin
-    end
+    # fish_add_path skip if path not exists
+    fish_add_path -g /opt/homebrew/opt/rustup/bin $CARGO_HOME/bin
+end
+
+if command -q uv
+    fish_add_path -g $(uv tool dir --bin)
 end
 
 if command -q npm
