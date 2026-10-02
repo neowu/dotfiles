@@ -1,8 +1,6 @@
 {
   "disable_ai": true,
-  "edit_predictions": {
-    "provider": "none",
-  },
+
   "autosave": "on_focus_change",
   "format_on_save": "on",
   "theme": "Nord",
@@ -17,6 +15,9 @@
     "inactive_opacity": 0.7,
   },
   "cursor_blink": true,
+  "cursor_animation": {
+    "enabled": true,
+  },
   "preferred_line_length": 120,
   "wrap_guides": [120],
   "excerpt_context_lines": 5,
