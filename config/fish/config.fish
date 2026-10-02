@@ -62,6 +62,8 @@ if command -q npm
     set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/config
     set -x NPM_CONFIG_CACHE $XDG_CACHE_HOME/npm
     set -x NPM_CONFIG_PREFIX $XDG_DATA_HOME/npm
+
+    fish_add_path -g $NPM_CONFIG_PREFIX/bin
 end
 
 if command -q go

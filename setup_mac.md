@@ -21,7 +21,7 @@ chsh -s /opt/homebrew/bin/fish
 ### macos options
 
 ```sh
-# defaults write com.apple.dock tilesize -float 48
+# defaults delete com.apple.dock tilesize; killall Dock     # reset tile size
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
