@@ -58,10 +58,6 @@ if command -q rustup
     fish_add_path -g /opt/homebrew/opt/rustup/bin $CARGO_HOME/bin
 end
 
-if command -q uv
-    fish_add_path -g $(uv tool dir --bin)
-end
-
 if command -q npm
     set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/config
     set -x NPM_CONFIG_CACHE $XDG_CACHE_HOME/npm
